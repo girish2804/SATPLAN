@@ -1,0 +1,6115 @@
+(set-logic QF_BV) 
+
+;Boolean variables for each cell and time step 
+(declare-fun c_1_1_0 () Bool) 
+(declare-fun c_1_2_0 () Bool) 
+(declare-fun c_1_3_0 () Bool) 
+(declare-fun c_1_4_0 () Bool) 
+(declare-fun c_2_1_0 () Bool) 
+(declare-fun c_2_2_0 () Bool) 
+(declare-fun c_2_3_0 () Bool) 
+(declare-fun c_2_4_0 () Bool) 
+(declare-fun c_3_1_0 () Bool) 
+(declare-fun c_3_2_0 () Bool) 
+(declare-fun c_3_3_0 () Bool) 
+(declare-fun c_3_4_0 () Bool) 
+(declare-fun c_4_1_0 () Bool) 
+(declare-fun c_4_2_0 () Bool) 
+(declare-fun c_4_3_0 () Bool) 
+(declare-fun c_4_4_0 () Bool) 
+(declare-fun c_1_1_1 () Bool) 
+(declare-fun c_1_2_1 () Bool) 
+(declare-fun c_1_3_1 () Bool) 
+(declare-fun c_1_4_1 () Bool) 
+(declare-fun c_2_1_1 () Bool) 
+(declare-fun c_2_2_1 () Bool) 
+(declare-fun c_2_3_1 () Bool) 
+(declare-fun c_2_4_1 () Bool) 
+(declare-fun c_3_1_1 () Bool) 
+(declare-fun c_3_2_1 () Bool) 
+(declare-fun c_3_3_1 () Bool) 
+(declare-fun c_3_4_1 () Bool) 
+(declare-fun c_4_1_1 () Bool) 
+(declare-fun c_4_2_1 () Bool) 
+(declare-fun c_4_3_1 () Bool) 
+(declare-fun c_4_4_1 () Bool) 
+(declare-fun c_1_1_2 () Bool) 
+(declare-fun c_1_2_2 () Bool) 
+(declare-fun c_1_3_2 () Bool) 
+(declare-fun c_1_4_2 () Bool) 
+(declare-fun c_2_1_2 () Bool) 
+(declare-fun c_2_2_2 () Bool) 
+(declare-fun c_2_3_2 () Bool) 
+(declare-fun c_2_4_2 () Bool) 
+(declare-fun c_3_1_2 () Bool) 
+(declare-fun c_3_2_2 () Bool) 
+(declare-fun c_3_3_2 () Bool) 
+(declare-fun c_3_4_2 () Bool) 
+(declare-fun c_4_1_2 () Bool) 
+(declare-fun c_4_2_2 () Bool) 
+(declare-fun c_4_3_2 () Bool) 
+(declare-fun c_4_4_2 () Bool) 
+(declare-fun c_1_1_3 () Bool) 
+(declare-fun c_1_2_3 () Bool) 
+(declare-fun c_1_3_3 () Bool) 
+(declare-fun c_1_4_3 () Bool) 
+(declare-fun c_2_1_3 () Bool) 
+(declare-fun c_2_2_3 () Bool) 
+(declare-fun c_2_3_3 () Bool) 
+(declare-fun c_2_4_3 () Bool) 
+(declare-fun c_3_1_3 () Bool) 
+(declare-fun c_3_2_3 () Bool) 
+(declare-fun c_3_3_3 () Bool) 
+(declare-fun c_3_4_3 () Bool) 
+(declare-fun c_4_1_3 () Bool) 
+(declare-fun c_4_2_3 () Bool) 
+(declare-fun c_4_3_3 () Bool) 
+(declare-fun c_4_4_3 () Bool) 
+(declare-fun c_1_1_4 () Bool) 
+(declare-fun c_1_2_4 () Bool) 
+(declare-fun c_1_3_4 () Bool) 
+(declare-fun c_1_4_4 () Bool) 
+(declare-fun c_2_1_4 () Bool) 
+(declare-fun c_2_2_4 () Bool) 
+(declare-fun c_2_3_4 () Bool) 
+(declare-fun c_2_4_4 () Bool) 
+(declare-fun c_3_1_4 () Bool) 
+(declare-fun c_3_2_4 () Bool) 
+(declare-fun c_3_3_4 () Bool) 
+(declare-fun c_3_4_4 () Bool) 
+(declare-fun c_4_1_4 () Bool) 
+(declare-fun c_4_2_4 () Bool) 
+(declare-fun c_4_3_4 () Bool) 
+(declare-fun c_4_4_4 () Bool) 
+(declare-fun c_1_1_5 () Bool) 
+(declare-fun c_1_2_5 () Bool) 
+(declare-fun c_1_3_5 () Bool) 
+(declare-fun c_1_4_5 () Bool) 
+(declare-fun c_2_1_5 () Bool) 
+(declare-fun c_2_2_5 () Bool) 
+(declare-fun c_2_3_5 () Bool) 
+(declare-fun c_2_4_5 () Bool) 
+(declare-fun c_3_1_5 () Bool) 
+(declare-fun c_3_2_5 () Bool) 
+(declare-fun c_3_3_5 () Bool) 
+(declare-fun c_3_4_5 () Bool) 
+(declare-fun c_4_1_5 () Bool) 
+(declare-fun c_4_2_5 () Bool) 
+(declare-fun c_4_3_5 () Bool) 
+(declare-fun c_4_4_5 () Bool) 
+(declare-fun c_1_1_6 () Bool) 
+(declare-fun c_1_2_6 () Bool) 
+(declare-fun c_1_3_6 () Bool) 
+(declare-fun c_1_4_6 () Bool) 
+(declare-fun c_2_1_6 () Bool) 
+(declare-fun c_2_2_6 () Bool) 
+(declare-fun c_2_3_6 () Bool) 
+(declare-fun c_2_4_6 () Bool) 
+(declare-fun c_3_1_6 () Bool) 
+(declare-fun c_3_2_6 () Bool) 
+(declare-fun c_3_3_6 () Bool) 
+(declare-fun c_3_4_6 () Bool) 
+(declare-fun c_4_1_6 () Bool) 
+(declare-fun c_4_2_6 () Bool) 
+(declare-fun c_4_3_6 () Bool) 
+(declare-fun c_4_4_6 () Bool) 
+(declare-fun c_1_1_7 () Bool) 
+(declare-fun c_1_2_7 () Bool) 
+(declare-fun c_1_3_7 () Bool) 
+(declare-fun c_1_4_7 () Bool) 
+(declare-fun c_2_1_7 () Bool) 
+(declare-fun c_2_2_7 () Bool) 
+(declare-fun c_2_3_7 () Bool) 
+(declare-fun c_2_4_7 () Bool) 
+(declare-fun c_3_1_7 () Bool) 
+(declare-fun c_3_2_7 () Bool) 
+(declare-fun c_3_3_7 () Bool) 
+(declare-fun c_3_4_7 () Bool) 
+(declare-fun c_4_1_7 () Bool) 
+(declare-fun c_4_2_7 () Bool) 
+(declare-fun c_4_3_7 () Bool) 
+(declare-fun c_4_4_7 () Bool) 
+(declare-fun c_1_1_8 () Bool) 
+(declare-fun c_1_2_8 () Bool) 
+(declare-fun c_1_3_8 () Bool) 
+(declare-fun c_1_4_8 () Bool) 
+(declare-fun c_2_1_8 () Bool) 
+(declare-fun c_2_2_8 () Bool) 
+(declare-fun c_2_3_8 () Bool) 
+(declare-fun c_2_4_8 () Bool) 
+(declare-fun c_3_1_8 () Bool) 
+(declare-fun c_3_2_8 () Bool) 
+(declare-fun c_3_3_8 () Bool) 
+(declare-fun c_3_4_8 () Bool) 
+(declare-fun c_4_1_8 () Bool) 
+(declare-fun c_4_2_8 () Bool) 
+(declare-fun c_4_3_8 () Bool) 
+(declare-fun c_4_4_8 () Bool) 
+(declare-fun c_1_1_9 () Bool) 
+(declare-fun c_1_2_9 () Bool) 
+(declare-fun c_1_3_9 () Bool) 
+(declare-fun c_1_4_9 () Bool) 
+(declare-fun c_2_1_9 () Bool) 
+(declare-fun c_2_2_9 () Bool) 
+(declare-fun c_2_3_9 () Bool) 
+(declare-fun c_2_4_9 () Bool) 
+(declare-fun c_3_1_9 () Bool) 
+(declare-fun c_3_2_9 () Bool) 
+(declare-fun c_3_3_9 () Bool) 
+(declare-fun c_3_4_9 () Bool) 
+(declare-fun c_4_1_9 () Bool) 
+(declare-fun c_4_2_9 () Bool) 
+(declare-fun c_4_3_9 () Bool) 
+(declare-fun c_4_4_9 () Bool) 
+(declare-fun c_1_1_10 () Bool) 
+(declare-fun c_1_2_10 () Bool) 
+(declare-fun c_1_3_10 () Bool) 
+(declare-fun c_1_4_10 () Bool) 
+(declare-fun c_2_1_10 () Bool) 
+(declare-fun c_2_2_10 () Bool) 
+(declare-fun c_2_3_10 () Bool) 
+(declare-fun c_2_4_10 () Bool) 
+(declare-fun c_3_1_10 () Bool) 
+(declare-fun c_3_2_10 () Bool) 
+(declare-fun c_3_3_10 () Bool) 
+(declare-fun c_3_4_10 () Bool) 
+(declare-fun c_4_1_10 () Bool) 
+(declare-fun c_4_2_10 () Bool) 
+(declare-fun c_4_3_10 () Bool) 
+(declare-fun c_4_4_10 () Bool) 
+(declare-fun c_1_1_11 () Bool) 
+(declare-fun c_1_2_11 () Bool) 
+(declare-fun c_1_3_11 () Bool) 
+(declare-fun c_1_4_11 () Bool) 
+(declare-fun c_2_1_11 () Bool) 
+(declare-fun c_2_2_11 () Bool) 
+(declare-fun c_2_3_11 () Bool) 
+(declare-fun c_2_4_11 () Bool) 
+(declare-fun c_3_1_11 () Bool) 
+(declare-fun c_3_2_11 () Bool) 
+(declare-fun c_3_3_11 () Bool) 
+(declare-fun c_3_4_11 () Bool) 
+(declare-fun c_4_1_11 () Bool) 
+(declare-fun c_4_2_11 () Bool) 
+(declare-fun c_4_3_11 () Bool) 
+(declare-fun c_4_4_11 () Bool) 
+(declare-fun c_1_1_12 () Bool) 
+(declare-fun c_1_2_12 () Bool) 
+(declare-fun c_1_3_12 () Bool) 
+(declare-fun c_1_4_12 () Bool) 
+(declare-fun c_2_1_12 () Bool) 
+(declare-fun c_2_2_12 () Bool) 
+(declare-fun c_2_3_12 () Bool) 
+(declare-fun c_2_4_12 () Bool) 
+(declare-fun c_3_1_12 () Bool) 
+(declare-fun c_3_2_12 () Bool) 
+(declare-fun c_3_3_12 () Bool) 
+(declare-fun c_3_4_12 () Bool) 
+(declare-fun c_4_1_12 () Bool) 
+(declare-fun c_4_2_12 () Bool) 
+(declare-fun c_4_3_12 () Bool) 
+(declare-fun c_4_4_12 () Bool) 
+(declare-fun c_1_1_13 () Bool) 
+(declare-fun c_1_2_13 () Bool) 
+(declare-fun c_1_3_13 () Bool) 
+(declare-fun c_1_4_13 () Bool) 
+(declare-fun c_2_1_13 () Bool) 
+(declare-fun c_2_2_13 () Bool) 
+(declare-fun c_2_3_13 () Bool) 
+(declare-fun c_2_4_13 () Bool) 
+(declare-fun c_3_1_13 () Bool) 
+(declare-fun c_3_2_13 () Bool) 
+(declare-fun c_3_3_13 () Bool) 
+(declare-fun c_3_4_13 () Bool) 
+(declare-fun c_4_1_13 () Bool) 
+(declare-fun c_4_2_13 () Bool) 
+(declare-fun c_4_3_13 () Bool) 
+(declare-fun c_4_4_13 () Bool) 
+(declare-fun c_1_1_14 () Bool) 
+(declare-fun c_1_2_14 () Bool) 
+(declare-fun c_1_3_14 () Bool) 
+(declare-fun c_1_4_14 () Bool) 
+(declare-fun c_2_1_14 () Bool) 
+(declare-fun c_2_2_14 () Bool) 
+(declare-fun c_2_3_14 () Bool) 
+(declare-fun c_2_4_14 () Bool) 
+(declare-fun c_3_1_14 () Bool) 
+(declare-fun c_3_2_14 () Bool) 
+(declare-fun c_3_3_14 () Bool) 
+(declare-fun c_3_4_14 () Bool) 
+(declare-fun c_4_1_14 () Bool) 
+(declare-fun c_4_2_14 () Bool) 
+(declare-fun c_4_3_14 () Bool) 
+(declare-fun c_4_4_14 () Bool) 
+(declare-fun c_1_1_15 () Bool) 
+(declare-fun c_1_2_15 () Bool) 
+(declare-fun c_1_3_15 () Bool) 
+(declare-fun c_1_4_15 () Bool) 
+(declare-fun c_2_1_15 () Bool) 
+(declare-fun c_2_2_15 () Bool) 
+(declare-fun c_2_3_15 () Bool) 
+(declare-fun c_2_4_15 () Bool) 
+(declare-fun c_3_1_15 () Bool) 
+(declare-fun c_3_2_15 () Bool) 
+(declare-fun c_3_3_15 () Bool) 
+(declare-fun c_3_4_15 () Bool) 
+(declare-fun c_4_1_15 () Bool) 
+(declare-fun c_4_2_15 () Bool) 
+(declare-fun c_4_3_15 () Bool) 
+(declare-fun c_4_4_15 () Bool) 
+
+;Initial position 
+(assert c_1_1_0) 
+
+;Goal positions 
+(assert (or 
+  c_4_4_0 
+  c_4_4_1 
+  c_4_4_2 
+  c_4_4_3 
+  c_4_4_4 
+  c_4_4_5 
+  c_4_4_6 
+  c_4_4_7 
+  c_4_4_8 
+  c_4_4_9 
+  c_4_4_10 
+  c_4_4_11 
+  c_4_4_12 
+  c_4_4_13 
+  c_4_4_14 
+  c_4_4_15 
+)) 
+
+;Obstacle variables 
+(assert (not c_3_3_0)) 
+(assert (not c_4_1_0)) 
+(assert (not c_3_4_0)) 
+(assert (not c_2_2_0)) 
+(assert (not c_3_3_1)) 
+(assert (not c_4_1_1)) 
+(assert (not c_3_4_1)) 
+(assert (not c_2_2_1)) 
+(assert (not c_3_3_2)) 
+(assert (not c_4_1_2)) 
+(assert (not c_3_4_2)) 
+(assert (not c_2_2_2)) 
+(assert (not c_3_3_3)) 
+(assert (not c_4_1_3)) 
+(assert (not c_3_4_3)) 
+(assert (not c_2_2_3)) 
+(assert (not c_3_3_4)) 
+(assert (not c_4_1_4)) 
+(assert (not c_3_4_4)) 
+(assert (not c_2_2_4)) 
+(assert (not c_3_3_5)) 
+(assert (not c_4_1_5)) 
+(assert (not c_3_4_5)) 
+(assert (not c_2_2_5)) 
+(assert (not c_3_3_6)) 
+(assert (not c_4_1_6)) 
+(assert (not c_3_4_6)) 
+(assert (not c_2_2_6)) 
+(assert (not c_3_3_7)) 
+(assert (not c_4_1_7)) 
+(assert (not c_3_4_7)) 
+(assert (not c_2_2_7)) 
+(assert (not c_3_3_8)) 
+(assert (not c_4_1_8)) 
+(assert (not c_3_4_8)) 
+(assert (not c_2_2_8)) 
+(assert (not c_3_3_9)) 
+(assert (not c_4_1_9)) 
+(assert (not c_3_4_9)) 
+(assert (not c_2_2_9)) 
+(assert (not c_3_3_10)) 
+(assert (not c_4_1_10)) 
+(assert (not c_3_4_10)) 
+(assert (not c_2_2_10)) 
+(assert (not c_3_3_11)) 
+(assert (not c_4_1_11)) 
+(assert (not c_3_4_11)) 
+(assert (not c_2_2_11)) 
+(assert (not c_3_3_12)) 
+(assert (not c_4_1_12)) 
+(assert (not c_3_4_12)) 
+(assert (not c_2_2_12)) 
+(assert (not c_3_3_13)) 
+(assert (not c_4_1_13)) 
+(assert (not c_3_4_13)) 
+(assert (not c_2_2_13)) 
+(assert (not c_3_3_14)) 
+(assert (not c_4_1_14)) 
+(assert (not c_3_4_14)) 
+(assert (not c_2_2_14)) 
+(assert (not c_3_3_15)) 
+(assert (not c_4_1_15)) 
+(assert (not c_3_4_15)) 
+(assert (not c_2_2_15)) 
+
+;Precondition variables 
+(assert (=> c_1_1_0 (not c_1_2_0))) 
+(assert (=> c_1_1_0 (not c_1_3_0))) 
+(assert (=> c_1_1_0 (not c_1_4_0))) 
+(assert (=> c_1_1_0 (not c_2_1_0))) 
+(assert (=> c_1_1_0 (not c_2_2_0))) 
+(assert (=> c_1_1_0 (not c_2_3_0))) 
+(assert (=> c_1_1_0 (not c_2_4_0))) 
+(assert (=> c_1_1_0 (not c_3_1_0))) 
+(assert (=> c_1_1_0 (not c_3_2_0))) 
+(assert (=> c_1_1_0 (not c_3_3_0))) 
+(assert (=> c_1_1_0 (not c_3_4_0))) 
+(assert (=> c_1_1_0 (not c_4_1_0))) 
+(assert (=> c_1_1_0 (not c_4_2_0))) 
+(assert (=> c_1_1_0 (not c_4_3_0))) 
+(assert (=> c_1_1_0 (not c_4_4_0))) 
+(assert (=> c_1_2_0 (not c_1_1_0))) 
+(assert (=> c_1_2_0 (not c_1_3_0))) 
+(assert (=> c_1_2_0 (not c_1_4_0))) 
+(assert (=> c_1_2_0 (not c_2_1_0))) 
+(assert (=> c_1_2_0 (not c_2_2_0))) 
+(assert (=> c_1_2_0 (not c_2_3_0))) 
+(assert (=> c_1_2_0 (not c_2_4_0))) 
+(assert (=> c_1_2_0 (not c_3_1_0))) 
+(assert (=> c_1_2_0 (not c_3_2_0))) 
+(assert (=> c_1_2_0 (not c_3_3_0))) 
+(assert (=> c_1_2_0 (not c_3_4_0))) 
+(assert (=> c_1_2_0 (not c_4_1_0))) 
+(assert (=> c_1_2_0 (not c_4_2_0))) 
+(assert (=> c_1_2_0 (not c_4_3_0))) 
+(assert (=> c_1_2_0 (not c_4_4_0))) 
+(assert (=> c_1_3_0 (not c_1_1_0))) 
+(assert (=> c_1_3_0 (not c_1_2_0))) 
+(assert (=> c_1_3_0 (not c_1_4_0))) 
+(assert (=> c_1_3_0 (not c_2_1_0))) 
+(assert (=> c_1_3_0 (not c_2_2_0))) 
+(assert (=> c_1_3_0 (not c_2_3_0))) 
+(assert (=> c_1_3_0 (not c_2_4_0))) 
+(assert (=> c_1_3_0 (not c_3_1_0))) 
+(assert (=> c_1_3_0 (not c_3_2_0))) 
+(assert (=> c_1_3_0 (not c_3_3_0))) 
+(assert (=> c_1_3_0 (not c_3_4_0))) 
+(assert (=> c_1_3_0 (not c_4_1_0))) 
+(assert (=> c_1_3_0 (not c_4_2_0))) 
+(assert (=> c_1_3_0 (not c_4_3_0))) 
+(assert (=> c_1_3_0 (not c_4_4_0))) 
+(assert (=> c_1_4_0 (not c_1_1_0))) 
+(assert (=> c_1_4_0 (not c_1_2_0))) 
+(assert (=> c_1_4_0 (not c_1_3_0))) 
+(assert (=> c_1_4_0 (not c_2_1_0))) 
+(assert (=> c_1_4_0 (not c_2_2_0))) 
+(assert (=> c_1_4_0 (not c_2_3_0))) 
+(assert (=> c_1_4_0 (not c_2_4_0))) 
+(assert (=> c_1_4_0 (not c_3_1_0))) 
+(assert (=> c_1_4_0 (not c_3_2_0))) 
+(assert (=> c_1_4_0 (not c_3_3_0))) 
+(assert (=> c_1_4_0 (not c_3_4_0))) 
+(assert (=> c_1_4_0 (not c_4_1_0))) 
+(assert (=> c_1_4_0 (not c_4_2_0))) 
+(assert (=> c_1_4_0 (not c_4_3_0))) 
+(assert (=> c_1_4_0 (not c_4_4_0))) 
+(assert (=> c_2_1_0 (not c_1_1_0))) 
+(assert (=> c_2_1_0 (not c_1_2_0))) 
+(assert (=> c_2_1_0 (not c_1_3_0))) 
+(assert (=> c_2_1_0 (not c_1_4_0))) 
+(assert (=> c_2_1_0 (not c_2_2_0))) 
+(assert (=> c_2_1_0 (not c_2_3_0))) 
+(assert (=> c_2_1_0 (not c_2_4_0))) 
+(assert (=> c_2_1_0 (not c_3_1_0))) 
+(assert (=> c_2_1_0 (not c_3_2_0))) 
+(assert (=> c_2_1_0 (not c_3_3_0))) 
+(assert (=> c_2_1_0 (not c_3_4_0))) 
+(assert (=> c_2_1_0 (not c_4_1_0))) 
+(assert (=> c_2_1_0 (not c_4_2_0))) 
+(assert (=> c_2_1_0 (not c_4_3_0))) 
+(assert (=> c_2_1_0 (not c_4_4_0))) 
+(assert (=> c_2_2_0 (not c_1_1_0))) 
+(assert (=> c_2_2_0 (not c_1_2_0))) 
+(assert (=> c_2_2_0 (not c_1_3_0))) 
+(assert (=> c_2_2_0 (not c_1_4_0))) 
+(assert (=> c_2_2_0 (not c_2_1_0))) 
+(assert (=> c_2_2_0 (not c_2_3_0))) 
+(assert (=> c_2_2_0 (not c_2_4_0))) 
+(assert (=> c_2_2_0 (not c_3_1_0))) 
+(assert (=> c_2_2_0 (not c_3_2_0))) 
+(assert (=> c_2_2_0 (not c_3_3_0))) 
+(assert (=> c_2_2_0 (not c_3_4_0))) 
+(assert (=> c_2_2_0 (not c_4_1_0))) 
+(assert (=> c_2_2_0 (not c_4_2_0))) 
+(assert (=> c_2_2_0 (not c_4_3_0))) 
+(assert (=> c_2_2_0 (not c_4_4_0))) 
+(assert (=> c_2_3_0 (not c_1_1_0))) 
+(assert (=> c_2_3_0 (not c_1_2_0))) 
+(assert (=> c_2_3_0 (not c_1_3_0))) 
+(assert (=> c_2_3_0 (not c_1_4_0))) 
+(assert (=> c_2_3_0 (not c_2_1_0))) 
+(assert (=> c_2_3_0 (not c_2_2_0))) 
+(assert (=> c_2_3_0 (not c_2_4_0))) 
+(assert (=> c_2_3_0 (not c_3_1_0))) 
+(assert (=> c_2_3_0 (not c_3_2_0))) 
+(assert (=> c_2_3_0 (not c_3_3_0))) 
+(assert (=> c_2_3_0 (not c_3_4_0))) 
+(assert (=> c_2_3_0 (not c_4_1_0))) 
+(assert (=> c_2_3_0 (not c_4_2_0))) 
+(assert (=> c_2_3_0 (not c_4_3_0))) 
+(assert (=> c_2_3_0 (not c_4_4_0))) 
+(assert (=> c_2_4_0 (not c_1_1_0))) 
+(assert (=> c_2_4_0 (not c_1_2_0))) 
+(assert (=> c_2_4_0 (not c_1_3_0))) 
+(assert (=> c_2_4_0 (not c_1_4_0))) 
+(assert (=> c_2_4_0 (not c_2_1_0))) 
+(assert (=> c_2_4_0 (not c_2_2_0))) 
+(assert (=> c_2_4_0 (not c_2_3_0))) 
+(assert (=> c_2_4_0 (not c_3_1_0))) 
+(assert (=> c_2_4_0 (not c_3_2_0))) 
+(assert (=> c_2_4_0 (not c_3_3_0))) 
+(assert (=> c_2_4_0 (not c_3_4_0))) 
+(assert (=> c_2_4_0 (not c_4_1_0))) 
+(assert (=> c_2_4_0 (not c_4_2_0))) 
+(assert (=> c_2_4_0 (not c_4_3_0))) 
+(assert (=> c_2_4_0 (not c_4_4_0))) 
+(assert (=> c_3_1_0 (not c_1_1_0))) 
+(assert (=> c_3_1_0 (not c_1_2_0))) 
+(assert (=> c_3_1_0 (not c_1_3_0))) 
+(assert (=> c_3_1_0 (not c_1_4_0))) 
+(assert (=> c_3_1_0 (not c_2_1_0))) 
+(assert (=> c_3_1_0 (not c_2_2_0))) 
+(assert (=> c_3_1_0 (not c_2_3_0))) 
+(assert (=> c_3_1_0 (not c_2_4_0))) 
+(assert (=> c_3_1_0 (not c_3_2_0))) 
+(assert (=> c_3_1_0 (not c_3_3_0))) 
+(assert (=> c_3_1_0 (not c_3_4_0))) 
+(assert (=> c_3_1_0 (not c_4_1_0))) 
+(assert (=> c_3_1_0 (not c_4_2_0))) 
+(assert (=> c_3_1_0 (not c_4_3_0))) 
+(assert (=> c_3_1_0 (not c_4_4_0))) 
+(assert (=> c_3_2_0 (not c_1_1_0))) 
+(assert (=> c_3_2_0 (not c_1_2_0))) 
+(assert (=> c_3_2_0 (not c_1_3_0))) 
+(assert (=> c_3_2_0 (not c_1_4_0))) 
+(assert (=> c_3_2_0 (not c_2_1_0))) 
+(assert (=> c_3_2_0 (not c_2_2_0))) 
+(assert (=> c_3_2_0 (not c_2_3_0))) 
+(assert (=> c_3_2_0 (not c_2_4_0))) 
+(assert (=> c_3_2_0 (not c_3_1_0))) 
+(assert (=> c_3_2_0 (not c_3_3_0))) 
+(assert (=> c_3_2_0 (not c_3_4_0))) 
+(assert (=> c_3_2_0 (not c_4_1_0))) 
+(assert (=> c_3_2_0 (not c_4_2_0))) 
+(assert (=> c_3_2_0 (not c_4_3_0))) 
+(assert (=> c_3_2_0 (not c_4_4_0))) 
+(assert (=> c_3_3_0 (not c_1_1_0))) 
+(assert (=> c_3_3_0 (not c_1_2_0))) 
+(assert (=> c_3_3_0 (not c_1_3_0))) 
+(assert (=> c_3_3_0 (not c_1_4_0))) 
+(assert (=> c_3_3_0 (not c_2_1_0))) 
+(assert (=> c_3_3_0 (not c_2_2_0))) 
+(assert (=> c_3_3_0 (not c_2_3_0))) 
+(assert (=> c_3_3_0 (not c_2_4_0))) 
+(assert (=> c_3_3_0 (not c_3_1_0))) 
+(assert (=> c_3_3_0 (not c_3_2_0))) 
+(assert (=> c_3_3_0 (not c_3_4_0))) 
+(assert (=> c_3_3_0 (not c_4_1_0))) 
+(assert (=> c_3_3_0 (not c_4_2_0))) 
+(assert (=> c_3_3_0 (not c_4_3_0))) 
+(assert (=> c_3_3_0 (not c_4_4_0))) 
+(assert (=> c_3_4_0 (not c_1_1_0))) 
+(assert (=> c_3_4_0 (not c_1_2_0))) 
+(assert (=> c_3_4_0 (not c_1_3_0))) 
+(assert (=> c_3_4_0 (not c_1_4_0))) 
+(assert (=> c_3_4_0 (not c_2_1_0))) 
+(assert (=> c_3_4_0 (not c_2_2_0))) 
+(assert (=> c_3_4_0 (not c_2_3_0))) 
+(assert (=> c_3_4_0 (not c_2_4_0))) 
+(assert (=> c_3_4_0 (not c_3_1_0))) 
+(assert (=> c_3_4_0 (not c_3_2_0))) 
+(assert (=> c_3_4_0 (not c_3_3_0))) 
+(assert (=> c_3_4_0 (not c_4_1_0))) 
+(assert (=> c_3_4_0 (not c_4_2_0))) 
+(assert (=> c_3_4_0 (not c_4_3_0))) 
+(assert (=> c_3_4_0 (not c_4_4_0))) 
+(assert (=> c_4_1_0 (not c_1_1_0))) 
+(assert (=> c_4_1_0 (not c_1_2_0))) 
+(assert (=> c_4_1_0 (not c_1_3_0))) 
+(assert (=> c_4_1_0 (not c_1_4_0))) 
+(assert (=> c_4_1_0 (not c_2_1_0))) 
+(assert (=> c_4_1_0 (not c_2_2_0))) 
+(assert (=> c_4_1_0 (not c_2_3_0))) 
+(assert (=> c_4_1_0 (not c_2_4_0))) 
+(assert (=> c_4_1_0 (not c_3_1_0))) 
+(assert (=> c_4_1_0 (not c_3_2_0))) 
+(assert (=> c_4_1_0 (not c_3_3_0))) 
+(assert (=> c_4_1_0 (not c_3_4_0))) 
+(assert (=> c_4_1_0 (not c_4_2_0))) 
+(assert (=> c_4_1_0 (not c_4_3_0))) 
+(assert (=> c_4_1_0 (not c_4_4_0))) 
+(assert (=> c_4_2_0 (not c_1_1_0))) 
+(assert (=> c_4_2_0 (not c_1_2_0))) 
+(assert (=> c_4_2_0 (not c_1_3_0))) 
+(assert (=> c_4_2_0 (not c_1_4_0))) 
+(assert (=> c_4_2_0 (not c_2_1_0))) 
+(assert (=> c_4_2_0 (not c_2_2_0))) 
+(assert (=> c_4_2_0 (not c_2_3_0))) 
+(assert (=> c_4_2_0 (not c_2_4_0))) 
+(assert (=> c_4_2_0 (not c_3_1_0))) 
+(assert (=> c_4_2_0 (not c_3_2_0))) 
+(assert (=> c_4_2_0 (not c_3_3_0))) 
+(assert (=> c_4_2_0 (not c_3_4_0))) 
+(assert (=> c_4_2_0 (not c_4_1_0))) 
+(assert (=> c_4_2_0 (not c_4_3_0))) 
+(assert (=> c_4_2_0 (not c_4_4_0))) 
+(assert (=> c_4_3_0 (not c_1_1_0))) 
+(assert (=> c_4_3_0 (not c_1_2_0))) 
+(assert (=> c_4_3_0 (not c_1_3_0))) 
+(assert (=> c_4_3_0 (not c_1_4_0))) 
+(assert (=> c_4_3_0 (not c_2_1_0))) 
+(assert (=> c_4_3_0 (not c_2_2_0))) 
+(assert (=> c_4_3_0 (not c_2_3_0))) 
+(assert (=> c_4_3_0 (not c_2_4_0))) 
+(assert (=> c_4_3_0 (not c_3_1_0))) 
+(assert (=> c_4_3_0 (not c_3_2_0))) 
+(assert (=> c_4_3_0 (not c_3_3_0))) 
+(assert (=> c_4_3_0 (not c_3_4_0))) 
+(assert (=> c_4_3_0 (not c_4_1_0))) 
+(assert (=> c_4_3_0 (not c_4_2_0))) 
+(assert (=> c_4_3_0 (not c_4_4_0))) 
+(assert (=> c_4_4_0 (not c_1_1_0))) 
+(assert (=> c_4_4_0 (not c_1_2_0))) 
+(assert (=> c_4_4_0 (not c_1_3_0))) 
+(assert (=> c_4_4_0 (not c_1_4_0))) 
+(assert (=> c_4_4_0 (not c_2_1_0))) 
+(assert (=> c_4_4_0 (not c_2_2_0))) 
+(assert (=> c_4_4_0 (not c_2_3_0))) 
+(assert (=> c_4_4_0 (not c_2_4_0))) 
+(assert (=> c_4_4_0 (not c_3_1_0))) 
+(assert (=> c_4_4_0 (not c_3_2_0))) 
+(assert (=> c_4_4_0 (not c_3_3_0))) 
+(assert (=> c_4_4_0 (not c_3_4_0))) 
+(assert (=> c_4_4_0 (not c_4_1_0))) 
+(assert (=> c_4_4_0 (not c_4_2_0))) 
+(assert (=> c_4_4_0 (not c_4_3_0))) 
+(assert (=> c_1_1_1 (not c_1_2_1))) 
+(assert (=> c_1_1_1 (not c_1_3_1))) 
+(assert (=> c_1_1_1 (not c_1_4_1))) 
+(assert (=> c_1_1_1 (not c_2_1_1))) 
+(assert (=> c_1_1_1 (not c_2_2_1))) 
+(assert (=> c_1_1_1 (not c_2_3_1))) 
+(assert (=> c_1_1_1 (not c_2_4_1))) 
+(assert (=> c_1_1_1 (not c_3_1_1))) 
+(assert (=> c_1_1_1 (not c_3_2_1))) 
+(assert (=> c_1_1_1 (not c_3_3_1))) 
+(assert (=> c_1_1_1 (not c_3_4_1))) 
+(assert (=> c_1_1_1 (not c_4_1_1))) 
+(assert (=> c_1_1_1 (not c_4_2_1))) 
+(assert (=> c_1_1_1 (not c_4_3_1))) 
+(assert (=> c_1_1_1 (not c_4_4_1))) 
+(assert (=> c_1_2_1 (not c_1_1_1))) 
+(assert (=> c_1_2_1 (not c_1_3_1))) 
+(assert (=> c_1_2_1 (not c_1_4_1))) 
+(assert (=> c_1_2_1 (not c_2_1_1))) 
+(assert (=> c_1_2_1 (not c_2_2_1))) 
+(assert (=> c_1_2_1 (not c_2_3_1))) 
+(assert (=> c_1_2_1 (not c_2_4_1))) 
+(assert (=> c_1_2_1 (not c_3_1_1))) 
+(assert (=> c_1_2_1 (not c_3_2_1))) 
+(assert (=> c_1_2_1 (not c_3_3_1))) 
+(assert (=> c_1_2_1 (not c_3_4_1))) 
+(assert (=> c_1_2_1 (not c_4_1_1))) 
+(assert (=> c_1_2_1 (not c_4_2_1))) 
+(assert (=> c_1_2_1 (not c_4_3_1))) 
+(assert (=> c_1_2_1 (not c_4_4_1))) 
+(assert (=> c_1_3_1 (not c_1_1_1))) 
+(assert (=> c_1_3_1 (not c_1_2_1))) 
+(assert (=> c_1_3_1 (not c_1_4_1))) 
+(assert (=> c_1_3_1 (not c_2_1_1))) 
+(assert (=> c_1_3_1 (not c_2_2_1))) 
+(assert (=> c_1_3_1 (not c_2_3_1))) 
+(assert (=> c_1_3_1 (not c_2_4_1))) 
+(assert (=> c_1_3_1 (not c_3_1_1))) 
+(assert (=> c_1_3_1 (not c_3_2_1))) 
+(assert (=> c_1_3_1 (not c_3_3_1))) 
+(assert (=> c_1_3_1 (not c_3_4_1))) 
+(assert (=> c_1_3_1 (not c_4_1_1))) 
+(assert (=> c_1_3_1 (not c_4_2_1))) 
+(assert (=> c_1_3_1 (not c_4_3_1))) 
+(assert (=> c_1_3_1 (not c_4_4_1))) 
+(assert (=> c_1_4_1 (not c_1_1_1))) 
+(assert (=> c_1_4_1 (not c_1_2_1))) 
+(assert (=> c_1_4_1 (not c_1_3_1))) 
+(assert (=> c_1_4_1 (not c_2_1_1))) 
+(assert (=> c_1_4_1 (not c_2_2_1))) 
+(assert (=> c_1_4_1 (not c_2_3_1))) 
+(assert (=> c_1_4_1 (not c_2_4_1))) 
+(assert (=> c_1_4_1 (not c_3_1_1))) 
+(assert (=> c_1_4_1 (not c_3_2_1))) 
+(assert (=> c_1_4_1 (not c_3_3_1))) 
+(assert (=> c_1_4_1 (not c_3_4_1))) 
+(assert (=> c_1_4_1 (not c_4_1_1))) 
+(assert (=> c_1_4_1 (not c_4_2_1))) 
+(assert (=> c_1_4_1 (not c_4_3_1))) 
+(assert (=> c_1_4_1 (not c_4_4_1))) 
+(assert (=> c_2_1_1 (not c_1_1_1))) 
+(assert (=> c_2_1_1 (not c_1_2_1))) 
+(assert (=> c_2_1_1 (not c_1_3_1))) 
+(assert (=> c_2_1_1 (not c_1_4_1))) 
+(assert (=> c_2_1_1 (not c_2_2_1))) 
+(assert (=> c_2_1_1 (not c_2_3_1))) 
+(assert (=> c_2_1_1 (not c_2_4_1))) 
+(assert (=> c_2_1_1 (not c_3_1_1))) 
+(assert (=> c_2_1_1 (not c_3_2_1))) 
+(assert (=> c_2_1_1 (not c_3_3_1))) 
+(assert (=> c_2_1_1 (not c_3_4_1))) 
+(assert (=> c_2_1_1 (not c_4_1_1))) 
+(assert (=> c_2_1_1 (not c_4_2_1))) 
+(assert (=> c_2_1_1 (not c_4_3_1))) 
+(assert (=> c_2_1_1 (not c_4_4_1))) 
+(assert (=> c_2_2_1 (not c_1_1_1))) 
+(assert (=> c_2_2_1 (not c_1_2_1))) 
+(assert (=> c_2_2_1 (not c_1_3_1))) 
+(assert (=> c_2_2_1 (not c_1_4_1))) 
+(assert (=> c_2_2_1 (not c_2_1_1))) 
+(assert (=> c_2_2_1 (not c_2_3_1))) 
+(assert (=> c_2_2_1 (not c_2_4_1))) 
+(assert (=> c_2_2_1 (not c_3_1_1))) 
+(assert (=> c_2_2_1 (not c_3_2_1))) 
+(assert (=> c_2_2_1 (not c_3_3_1))) 
+(assert (=> c_2_2_1 (not c_3_4_1))) 
+(assert (=> c_2_2_1 (not c_4_1_1))) 
+(assert (=> c_2_2_1 (not c_4_2_1))) 
+(assert (=> c_2_2_1 (not c_4_3_1))) 
+(assert (=> c_2_2_1 (not c_4_4_1))) 
+(assert (=> c_2_3_1 (not c_1_1_1))) 
+(assert (=> c_2_3_1 (not c_1_2_1))) 
+(assert (=> c_2_3_1 (not c_1_3_1))) 
+(assert (=> c_2_3_1 (not c_1_4_1))) 
+(assert (=> c_2_3_1 (not c_2_1_1))) 
+(assert (=> c_2_3_1 (not c_2_2_1))) 
+(assert (=> c_2_3_1 (not c_2_4_1))) 
+(assert (=> c_2_3_1 (not c_3_1_1))) 
+(assert (=> c_2_3_1 (not c_3_2_1))) 
+(assert (=> c_2_3_1 (not c_3_3_1))) 
+(assert (=> c_2_3_1 (not c_3_4_1))) 
+(assert (=> c_2_3_1 (not c_4_1_1))) 
+(assert (=> c_2_3_1 (not c_4_2_1))) 
+(assert (=> c_2_3_1 (not c_4_3_1))) 
+(assert (=> c_2_3_1 (not c_4_4_1))) 
+(assert (=> c_2_4_1 (not c_1_1_1))) 
+(assert (=> c_2_4_1 (not c_1_2_1))) 
+(assert (=> c_2_4_1 (not c_1_3_1))) 
+(assert (=> c_2_4_1 (not c_1_4_1))) 
+(assert (=> c_2_4_1 (not c_2_1_1))) 
+(assert (=> c_2_4_1 (not c_2_2_1))) 
+(assert (=> c_2_4_1 (not c_2_3_1))) 
+(assert (=> c_2_4_1 (not c_3_1_1))) 
+(assert (=> c_2_4_1 (not c_3_2_1))) 
+(assert (=> c_2_4_1 (not c_3_3_1))) 
+(assert (=> c_2_4_1 (not c_3_4_1))) 
+(assert (=> c_2_4_1 (not c_4_1_1))) 
+(assert (=> c_2_4_1 (not c_4_2_1))) 
+(assert (=> c_2_4_1 (not c_4_3_1))) 
+(assert (=> c_2_4_1 (not c_4_4_1))) 
+(assert (=> c_3_1_1 (not c_1_1_1))) 
+(assert (=> c_3_1_1 (not c_1_2_1))) 
+(assert (=> c_3_1_1 (not c_1_3_1))) 
+(assert (=> c_3_1_1 (not c_1_4_1))) 
+(assert (=> c_3_1_1 (not c_2_1_1))) 
+(assert (=> c_3_1_1 (not c_2_2_1))) 
+(assert (=> c_3_1_1 (not c_2_3_1))) 
+(assert (=> c_3_1_1 (not c_2_4_1))) 
+(assert (=> c_3_1_1 (not c_3_2_1))) 
+(assert (=> c_3_1_1 (not c_3_3_1))) 
+(assert (=> c_3_1_1 (not c_3_4_1))) 
+(assert (=> c_3_1_1 (not c_4_1_1))) 
+(assert (=> c_3_1_1 (not c_4_2_1))) 
+(assert (=> c_3_1_1 (not c_4_3_1))) 
+(assert (=> c_3_1_1 (not c_4_4_1))) 
+(assert (=> c_3_2_1 (not c_1_1_1))) 
+(assert (=> c_3_2_1 (not c_1_2_1))) 
+(assert (=> c_3_2_1 (not c_1_3_1))) 
+(assert (=> c_3_2_1 (not c_1_4_1))) 
+(assert (=> c_3_2_1 (not c_2_1_1))) 
+(assert (=> c_3_2_1 (not c_2_2_1))) 
+(assert (=> c_3_2_1 (not c_2_3_1))) 
+(assert (=> c_3_2_1 (not c_2_4_1))) 
+(assert (=> c_3_2_1 (not c_3_1_1))) 
+(assert (=> c_3_2_1 (not c_3_3_1))) 
+(assert (=> c_3_2_1 (not c_3_4_1))) 
+(assert (=> c_3_2_1 (not c_4_1_1))) 
+(assert (=> c_3_2_1 (not c_4_2_1))) 
+(assert (=> c_3_2_1 (not c_4_3_1))) 
+(assert (=> c_3_2_1 (not c_4_4_1))) 
+(assert (=> c_3_3_1 (not c_1_1_1))) 
+(assert (=> c_3_3_1 (not c_1_2_1))) 
+(assert (=> c_3_3_1 (not c_1_3_1))) 
+(assert (=> c_3_3_1 (not c_1_4_1))) 
+(assert (=> c_3_3_1 (not c_2_1_1))) 
+(assert (=> c_3_3_1 (not c_2_2_1))) 
+(assert (=> c_3_3_1 (not c_2_3_1))) 
+(assert (=> c_3_3_1 (not c_2_4_1))) 
+(assert (=> c_3_3_1 (not c_3_1_1))) 
+(assert (=> c_3_3_1 (not c_3_2_1))) 
+(assert (=> c_3_3_1 (not c_3_4_1))) 
+(assert (=> c_3_3_1 (not c_4_1_1))) 
+(assert (=> c_3_3_1 (not c_4_2_1))) 
+(assert (=> c_3_3_1 (not c_4_3_1))) 
+(assert (=> c_3_3_1 (not c_4_4_1))) 
+(assert (=> c_3_4_1 (not c_1_1_1))) 
+(assert (=> c_3_4_1 (not c_1_2_1))) 
+(assert (=> c_3_4_1 (not c_1_3_1))) 
+(assert (=> c_3_4_1 (not c_1_4_1))) 
+(assert (=> c_3_4_1 (not c_2_1_1))) 
+(assert (=> c_3_4_1 (not c_2_2_1))) 
+(assert (=> c_3_4_1 (not c_2_3_1))) 
+(assert (=> c_3_4_1 (not c_2_4_1))) 
+(assert (=> c_3_4_1 (not c_3_1_1))) 
+(assert (=> c_3_4_1 (not c_3_2_1))) 
+(assert (=> c_3_4_1 (not c_3_3_1))) 
+(assert (=> c_3_4_1 (not c_4_1_1))) 
+(assert (=> c_3_4_1 (not c_4_2_1))) 
+(assert (=> c_3_4_1 (not c_4_3_1))) 
+(assert (=> c_3_4_1 (not c_4_4_1))) 
+(assert (=> c_4_1_1 (not c_1_1_1))) 
+(assert (=> c_4_1_1 (not c_1_2_1))) 
+(assert (=> c_4_1_1 (not c_1_3_1))) 
+(assert (=> c_4_1_1 (not c_1_4_1))) 
+(assert (=> c_4_1_1 (not c_2_1_1))) 
+(assert (=> c_4_1_1 (not c_2_2_1))) 
+(assert (=> c_4_1_1 (not c_2_3_1))) 
+(assert (=> c_4_1_1 (not c_2_4_1))) 
+(assert (=> c_4_1_1 (not c_3_1_1))) 
+(assert (=> c_4_1_1 (not c_3_2_1))) 
+(assert (=> c_4_1_1 (not c_3_3_1))) 
+(assert (=> c_4_1_1 (not c_3_4_1))) 
+(assert (=> c_4_1_1 (not c_4_2_1))) 
+(assert (=> c_4_1_1 (not c_4_3_1))) 
+(assert (=> c_4_1_1 (not c_4_4_1))) 
+(assert (=> c_4_2_1 (not c_1_1_1))) 
+(assert (=> c_4_2_1 (not c_1_2_1))) 
+(assert (=> c_4_2_1 (not c_1_3_1))) 
+(assert (=> c_4_2_1 (not c_1_4_1))) 
+(assert (=> c_4_2_1 (not c_2_1_1))) 
+(assert (=> c_4_2_1 (not c_2_2_1))) 
+(assert (=> c_4_2_1 (not c_2_3_1))) 
+(assert (=> c_4_2_1 (not c_2_4_1))) 
+(assert (=> c_4_2_1 (not c_3_1_1))) 
+(assert (=> c_4_2_1 (not c_3_2_1))) 
+(assert (=> c_4_2_1 (not c_3_3_1))) 
+(assert (=> c_4_2_1 (not c_3_4_1))) 
+(assert (=> c_4_2_1 (not c_4_1_1))) 
+(assert (=> c_4_2_1 (not c_4_3_1))) 
+(assert (=> c_4_2_1 (not c_4_4_1))) 
+(assert (=> c_4_3_1 (not c_1_1_1))) 
+(assert (=> c_4_3_1 (not c_1_2_1))) 
+(assert (=> c_4_3_1 (not c_1_3_1))) 
+(assert (=> c_4_3_1 (not c_1_4_1))) 
+(assert (=> c_4_3_1 (not c_2_1_1))) 
+(assert (=> c_4_3_1 (not c_2_2_1))) 
+(assert (=> c_4_3_1 (not c_2_3_1))) 
+(assert (=> c_4_3_1 (not c_2_4_1))) 
+(assert (=> c_4_3_1 (not c_3_1_1))) 
+(assert (=> c_4_3_1 (not c_3_2_1))) 
+(assert (=> c_4_3_1 (not c_3_3_1))) 
+(assert (=> c_4_3_1 (not c_3_4_1))) 
+(assert (=> c_4_3_1 (not c_4_1_1))) 
+(assert (=> c_4_3_1 (not c_4_2_1))) 
+(assert (=> c_4_3_1 (not c_4_4_1))) 
+(assert (=> c_4_4_1 (not c_1_1_1))) 
+(assert (=> c_4_4_1 (not c_1_2_1))) 
+(assert (=> c_4_4_1 (not c_1_3_1))) 
+(assert (=> c_4_4_1 (not c_1_4_1))) 
+(assert (=> c_4_4_1 (not c_2_1_1))) 
+(assert (=> c_4_4_1 (not c_2_2_1))) 
+(assert (=> c_4_4_1 (not c_2_3_1))) 
+(assert (=> c_4_4_1 (not c_2_4_1))) 
+(assert (=> c_4_4_1 (not c_3_1_1))) 
+(assert (=> c_4_4_1 (not c_3_2_1))) 
+(assert (=> c_4_4_1 (not c_3_3_1))) 
+(assert (=> c_4_4_1 (not c_3_4_1))) 
+(assert (=> c_4_4_1 (not c_4_1_1))) 
+(assert (=> c_4_4_1 (not c_4_2_1))) 
+(assert (=> c_4_4_1 (not c_4_3_1))) 
+(assert (=> c_1_1_2 (not c_1_2_2))) 
+(assert (=> c_1_1_2 (not c_1_3_2))) 
+(assert (=> c_1_1_2 (not c_1_4_2))) 
+(assert (=> c_1_1_2 (not c_2_1_2))) 
+(assert (=> c_1_1_2 (not c_2_2_2))) 
+(assert (=> c_1_1_2 (not c_2_3_2))) 
+(assert (=> c_1_1_2 (not c_2_4_2))) 
+(assert (=> c_1_1_2 (not c_3_1_2))) 
+(assert (=> c_1_1_2 (not c_3_2_2))) 
+(assert (=> c_1_1_2 (not c_3_3_2))) 
+(assert (=> c_1_1_2 (not c_3_4_2))) 
+(assert (=> c_1_1_2 (not c_4_1_2))) 
+(assert (=> c_1_1_2 (not c_4_2_2))) 
+(assert (=> c_1_1_2 (not c_4_3_2))) 
+(assert (=> c_1_1_2 (not c_4_4_2))) 
+(assert (=> c_1_2_2 (not c_1_1_2))) 
+(assert (=> c_1_2_2 (not c_1_3_2))) 
+(assert (=> c_1_2_2 (not c_1_4_2))) 
+(assert (=> c_1_2_2 (not c_2_1_2))) 
+(assert (=> c_1_2_2 (not c_2_2_2))) 
+(assert (=> c_1_2_2 (not c_2_3_2))) 
+(assert (=> c_1_2_2 (not c_2_4_2))) 
+(assert (=> c_1_2_2 (not c_3_1_2))) 
+(assert (=> c_1_2_2 (not c_3_2_2))) 
+(assert (=> c_1_2_2 (not c_3_3_2))) 
+(assert (=> c_1_2_2 (not c_3_4_2))) 
+(assert (=> c_1_2_2 (not c_4_1_2))) 
+(assert (=> c_1_2_2 (not c_4_2_2))) 
+(assert (=> c_1_2_2 (not c_4_3_2))) 
+(assert (=> c_1_2_2 (not c_4_4_2))) 
+(assert (=> c_1_3_2 (not c_1_1_2))) 
+(assert (=> c_1_3_2 (not c_1_2_2))) 
+(assert (=> c_1_3_2 (not c_1_4_2))) 
+(assert (=> c_1_3_2 (not c_2_1_2))) 
+(assert (=> c_1_3_2 (not c_2_2_2))) 
+(assert (=> c_1_3_2 (not c_2_3_2))) 
+(assert (=> c_1_3_2 (not c_2_4_2))) 
+(assert (=> c_1_3_2 (not c_3_1_2))) 
+(assert (=> c_1_3_2 (not c_3_2_2))) 
+(assert (=> c_1_3_2 (not c_3_3_2))) 
+(assert (=> c_1_3_2 (not c_3_4_2))) 
+(assert (=> c_1_3_2 (not c_4_1_2))) 
+(assert (=> c_1_3_2 (not c_4_2_2))) 
+(assert (=> c_1_3_2 (not c_4_3_2))) 
+(assert (=> c_1_3_2 (not c_4_4_2))) 
+(assert (=> c_1_4_2 (not c_1_1_2))) 
+(assert (=> c_1_4_2 (not c_1_2_2))) 
+(assert (=> c_1_4_2 (not c_1_3_2))) 
+(assert (=> c_1_4_2 (not c_2_1_2))) 
+(assert (=> c_1_4_2 (not c_2_2_2))) 
+(assert (=> c_1_4_2 (not c_2_3_2))) 
+(assert (=> c_1_4_2 (not c_2_4_2))) 
+(assert (=> c_1_4_2 (not c_3_1_2))) 
+(assert (=> c_1_4_2 (not c_3_2_2))) 
+(assert (=> c_1_4_2 (not c_3_3_2))) 
+(assert (=> c_1_4_2 (not c_3_4_2))) 
+(assert (=> c_1_4_2 (not c_4_1_2))) 
+(assert (=> c_1_4_2 (not c_4_2_2))) 
+(assert (=> c_1_4_2 (not c_4_3_2))) 
+(assert (=> c_1_4_2 (not c_4_4_2))) 
+(assert (=> c_2_1_2 (not c_1_1_2))) 
+(assert (=> c_2_1_2 (not c_1_2_2))) 
+(assert (=> c_2_1_2 (not c_1_3_2))) 
+(assert (=> c_2_1_2 (not c_1_4_2))) 
+(assert (=> c_2_1_2 (not c_2_2_2))) 
+(assert (=> c_2_1_2 (not c_2_3_2))) 
+(assert (=> c_2_1_2 (not c_2_4_2))) 
+(assert (=> c_2_1_2 (not c_3_1_2))) 
+(assert (=> c_2_1_2 (not c_3_2_2))) 
+(assert (=> c_2_1_2 (not c_3_3_2))) 
+(assert (=> c_2_1_2 (not c_3_4_2))) 
+(assert (=> c_2_1_2 (not c_4_1_2))) 
+(assert (=> c_2_1_2 (not c_4_2_2))) 
+(assert (=> c_2_1_2 (not c_4_3_2))) 
+(assert (=> c_2_1_2 (not c_4_4_2))) 
+(assert (=> c_2_2_2 (not c_1_1_2))) 
+(assert (=> c_2_2_2 (not c_1_2_2))) 
+(assert (=> c_2_2_2 (not c_1_3_2))) 
+(assert (=> c_2_2_2 (not c_1_4_2))) 
+(assert (=> c_2_2_2 (not c_2_1_2))) 
+(assert (=> c_2_2_2 (not c_2_3_2))) 
+(assert (=> c_2_2_2 (not c_2_4_2))) 
+(assert (=> c_2_2_2 (not c_3_1_2))) 
+(assert (=> c_2_2_2 (not c_3_2_2))) 
+(assert (=> c_2_2_2 (not c_3_3_2))) 
+(assert (=> c_2_2_2 (not c_3_4_2))) 
+(assert (=> c_2_2_2 (not c_4_1_2))) 
+(assert (=> c_2_2_2 (not c_4_2_2))) 
+(assert (=> c_2_2_2 (not c_4_3_2))) 
+(assert (=> c_2_2_2 (not c_4_4_2))) 
+(assert (=> c_2_3_2 (not c_1_1_2))) 
+(assert (=> c_2_3_2 (not c_1_2_2))) 
+(assert (=> c_2_3_2 (not c_1_3_2))) 
+(assert (=> c_2_3_2 (not c_1_4_2))) 
+(assert (=> c_2_3_2 (not c_2_1_2))) 
+(assert (=> c_2_3_2 (not c_2_2_2))) 
+(assert (=> c_2_3_2 (not c_2_4_2))) 
+(assert (=> c_2_3_2 (not c_3_1_2))) 
+(assert (=> c_2_3_2 (not c_3_2_2))) 
+(assert (=> c_2_3_2 (not c_3_3_2))) 
+(assert (=> c_2_3_2 (not c_3_4_2))) 
+(assert (=> c_2_3_2 (not c_4_1_2))) 
+(assert (=> c_2_3_2 (not c_4_2_2))) 
+(assert (=> c_2_3_2 (not c_4_3_2))) 
+(assert (=> c_2_3_2 (not c_4_4_2))) 
+(assert (=> c_2_4_2 (not c_1_1_2))) 
+(assert (=> c_2_4_2 (not c_1_2_2))) 
+(assert (=> c_2_4_2 (not c_1_3_2))) 
+(assert (=> c_2_4_2 (not c_1_4_2))) 
+(assert (=> c_2_4_2 (not c_2_1_2))) 
+(assert (=> c_2_4_2 (not c_2_2_2))) 
+(assert (=> c_2_4_2 (not c_2_3_2))) 
+(assert (=> c_2_4_2 (not c_3_1_2))) 
+(assert (=> c_2_4_2 (not c_3_2_2))) 
+(assert (=> c_2_4_2 (not c_3_3_2))) 
+(assert (=> c_2_4_2 (not c_3_4_2))) 
+(assert (=> c_2_4_2 (not c_4_1_2))) 
+(assert (=> c_2_4_2 (not c_4_2_2))) 
+(assert (=> c_2_4_2 (not c_4_3_2))) 
+(assert (=> c_2_4_2 (not c_4_4_2))) 
+(assert (=> c_3_1_2 (not c_1_1_2))) 
+(assert (=> c_3_1_2 (not c_1_2_2))) 
+(assert (=> c_3_1_2 (not c_1_3_2))) 
+(assert (=> c_3_1_2 (not c_1_4_2))) 
+(assert (=> c_3_1_2 (not c_2_1_2))) 
+(assert (=> c_3_1_2 (not c_2_2_2))) 
+(assert (=> c_3_1_2 (not c_2_3_2))) 
+(assert (=> c_3_1_2 (not c_2_4_2))) 
+(assert (=> c_3_1_2 (not c_3_2_2))) 
+(assert (=> c_3_1_2 (not c_3_3_2))) 
+(assert (=> c_3_1_2 (not c_3_4_2))) 
+(assert (=> c_3_1_2 (not c_4_1_2))) 
+(assert (=> c_3_1_2 (not c_4_2_2))) 
+(assert (=> c_3_1_2 (not c_4_3_2))) 
+(assert (=> c_3_1_2 (not c_4_4_2))) 
+(assert (=> c_3_2_2 (not c_1_1_2))) 
+(assert (=> c_3_2_2 (not c_1_2_2))) 
+(assert (=> c_3_2_2 (not c_1_3_2))) 
+(assert (=> c_3_2_2 (not c_1_4_2))) 
+(assert (=> c_3_2_2 (not c_2_1_2))) 
+(assert (=> c_3_2_2 (not c_2_2_2))) 
+(assert (=> c_3_2_2 (not c_2_3_2))) 
+(assert (=> c_3_2_2 (not c_2_4_2))) 
+(assert (=> c_3_2_2 (not c_3_1_2))) 
+(assert (=> c_3_2_2 (not c_3_3_2))) 
+(assert (=> c_3_2_2 (not c_3_4_2))) 
+(assert (=> c_3_2_2 (not c_4_1_2))) 
+(assert (=> c_3_2_2 (not c_4_2_2))) 
+(assert (=> c_3_2_2 (not c_4_3_2))) 
+(assert (=> c_3_2_2 (not c_4_4_2))) 
+(assert (=> c_3_3_2 (not c_1_1_2))) 
+(assert (=> c_3_3_2 (not c_1_2_2))) 
+(assert (=> c_3_3_2 (not c_1_3_2))) 
+(assert (=> c_3_3_2 (not c_1_4_2))) 
+(assert (=> c_3_3_2 (not c_2_1_2))) 
+(assert (=> c_3_3_2 (not c_2_2_2))) 
+(assert (=> c_3_3_2 (not c_2_3_2))) 
+(assert (=> c_3_3_2 (not c_2_4_2))) 
+(assert (=> c_3_3_2 (not c_3_1_2))) 
+(assert (=> c_3_3_2 (not c_3_2_2))) 
+(assert (=> c_3_3_2 (not c_3_4_2))) 
+(assert (=> c_3_3_2 (not c_4_1_2))) 
+(assert (=> c_3_3_2 (not c_4_2_2))) 
+(assert (=> c_3_3_2 (not c_4_3_2))) 
+(assert (=> c_3_3_2 (not c_4_4_2))) 
+(assert (=> c_3_4_2 (not c_1_1_2))) 
+(assert (=> c_3_4_2 (not c_1_2_2))) 
+(assert (=> c_3_4_2 (not c_1_3_2))) 
+(assert (=> c_3_4_2 (not c_1_4_2))) 
+(assert (=> c_3_4_2 (not c_2_1_2))) 
+(assert (=> c_3_4_2 (not c_2_2_2))) 
+(assert (=> c_3_4_2 (not c_2_3_2))) 
+(assert (=> c_3_4_2 (not c_2_4_2))) 
+(assert (=> c_3_4_2 (not c_3_1_2))) 
+(assert (=> c_3_4_2 (not c_3_2_2))) 
+(assert (=> c_3_4_2 (not c_3_3_2))) 
+(assert (=> c_3_4_2 (not c_4_1_2))) 
+(assert (=> c_3_4_2 (not c_4_2_2))) 
+(assert (=> c_3_4_2 (not c_4_3_2))) 
+(assert (=> c_3_4_2 (not c_4_4_2))) 
+(assert (=> c_4_1_2 (not c_1_1_2))) 
+(assert (=> c_4_1_2 (not c_1_2_2))) 
+(assert (=> c_4_1_2 (not c_1_3_2))) 
+(assert (=> c_4_1_2 (not c_1_4_2))) 
+(assert (=> c_4_1_2 (not c_2_1_2))) 
+(assert (=> c_4_1_2 (not c_2_2_2))) 
+(assert (=> c_4_1_2 (not c_2_3_2))) 
+(assert (=> c_4_1_2 (not c_2_4_2))) 
+(assert (=> c_4_1_2 (not c_3_1_2))) 
+(assert (=> c_4_1_2 (not c_3_2_2))) 
+(assert (=> c_4_1_2 (not c_3_3_2))) 
+(assert (=> c_4_1_2 (not c_3_4_2))) 
+(assert (=> c_4_1_2 (not c_4_2_2))) 
+(assert (=> c_4_1_2 (not c_4_3_2))) 
+(assert (=> c_4_1_2 (not c_4_4_2))) 
+(assert (=> c_4_2_2 (not c_1_1_2))) 
+(assert (=> c_4_2_2 (not c_1_2_2))) 
+(assert (=> c_4_2_2 (not c_1_3_2))) 
+(assert (=> c_4_2_2 (not c_1_4_2))) 
+(assert (=> c_4_2_2 (not c_2_1_2))) 
+(assert (=> c_4_2_2 (not c_2_2_2))) 
+(assert (=> c_4_2_2 (not c_2_3_2))) 
+(assert (=> c_4_2_2 (not c_2_4_2))) 
+(assert (=> c_4_2_2 (not c_3_1_2))) 
+(assert (=> c_4_2_2 (not c_3_2_2))) 
+(assert (=> c_4_2_2 (not c_3_3_2))) 
+(assert (=> c_4_2_2 (not c_3_4_2))) 
+(assert (=> c_4_2_2 (not c_4_1_2))) 
+(assert (=> c_4_2_2 (not c_4_3_2))) 
+(assert (=> c_4_2_2 (not c_4_4_2))) 
+(assert (=> c_4_3_2 (not c_1_1_2))) 
+(assert (=> c_4_3_2 (not c_1_2_2))) 
+(assert (=> c_4_3_2 (not c_1_3_2))) 
+(assert (=> c_4_3_2 (not c_1_4_2))) 
+(assert (=> c_4_3_2 (not c_2_1_2))) 
+(assert (=> c_4_3_2 (not c_2_2_2))) 
+(assert (=> c_4_3_2 (not c_2_3_2))) 
+(assert (=> c_4_3_2 (not c_2_4_2))) 
+(assert (=> c_4_3_2 (not c_3_1_2))) 
+(assert (=> c_4_3_2 (not c_3_2_2))) 
+(assert (=> c_4_3_2 (not c_3_3_2))) 
+(assert (=> c_4_3_2 (not c_3_4_2))) 
+(assert (=> c_4_3_2 (not c_4_1_2))) 
+(assert (=> c_4_3_2 (not c_4_2_2))) 
+(assert (=> c_4_3_2 (not c_4_4_2))) 
+(assert (=> c_4_4_2 (not c_1_1_2))) 
+(assert (=> c_4_4_2 (not c_1_2_2))) 
+(assert (=> c_4_4_2 (not c_1_3_2))) 
+(assert (=> c_4_4_2 (not c_1_4_2))) 
+(assert (=> c_4_4_2 (not c_2_1_2))) 
+(assert (=> c_4_4_2 (not c_2_2_2))) 
+(assert (=> c_4_4_2 (not c_2_3_2))) 
+(assert (=> c_4_4_2 (not c_2_4_2))) 
+(assert (=> c_4_4_2 (not c_3_1_2))) 
+(assert (=> c_4_4_2 (not c_3_2_2))) 
+(assert (=> c_4_4_2 (not c_3_3_2))) 
+(assert (=> c_4_4_2 (not c_3_4_2))) 
+(assert (=> c_4_4_2 (not c_4_1_2))) 
+(assert (=> c_4_4_2 (not c_4_2_2))) 
+(assert (=> c_4_4_2 (not c_4_3_2))) 
+(assert (=> c_1_1_3 (not c_1_2_3))) 
+(assert (=> c_1_1_3 (not c_1_3_3))) 
+(assert (=> c_1_1_3 (not c_1_4_3))) 
+(assert (=> c_1_1_3 (not c_2_1_3))) 
+(assert (=> c_1_1_3 (not c_2_2_3))) 
+(assert (=> c_1_1_3 (not c_2_3_3))) 
+(assert (=> c_1_1_3 (not c_2_4_3))) 
+(assert (=> c_1_1_3 (not c_3_1_3))) 
+(assert (=> c_1_1_3 (not c_3_2_3))) 
+(assert (=> c_1_1_3 (not c_3_3_3))) 
+(assert (=> c_1_1_3 (not c_3_4_3))) 
+(assert (=> c_1_1_3 (not c_4_1_3))) 
+(assert (=> c_1_1_3 (not c_4_2_3))) 
+(assert (=> c_1_1_3 (not c_4_3_3))) 
+(assert (=> c_1_1_3 (not c_4_4_3))) 
+(assert (=> c_1_2_3 (not c_1_1_3))) 
+(assert (=> c_1_2_3 (not c_1_3_3))) 
+(assert (=> c_1_2_3 (not c_1_4_3))) 
+(assert (=> c_1_2_3 (not c_2_1_3))) 
+(assert (=> c_1_2_3 (not c_2_2_3))) 
+(assert (=> c_1_2_3 (not c_2_3_3))) 
+(assert (=> c_1_2_3 (not c_2_4_3))) 
+(assert (=> c_1_2_3 (not c_3_1_3))) 
+(assert (=> c_1_2_3 (not c_3_2_3))) 
+(assert (=> c_1_2_3 (not c_3_3_3))) 
+(assert (=> c_1_2_3 (not c_3_4_3))) 
+(assert (=> c_1_2_3 (not c_4_1_3))) 
+(assert (=> c_1_2_3 (not c_4_2_3))) 
+(assert (=> c_1_2_3 (not c_4_3_3))) 
+(assert (=> c_1_2_3 (not c_4_4_3))) 
+(assert (=> c_1_3_3 (not c_1_1_3))) 
+(assert (=> c_1_3_3 (not c_1_2_3))) 
+(assert (=> c_1_3_3 (not c_1_4_3))) 
+(assert (=> c_1_3_3 (not c_2_1_3))) 
+(assert (=> c_1_3_3 (not c_2_2_3))) 
+(assert (=> c_1_3_3 (not c_2_3_3))) 
+(assert (=> c_1_3_3 (not c_2_4_3))) 
+(assert (=> c_1_3_3 (not c_3_1_3))) 
+(assert (=> c_1_3_3 (not c_3_2_3))) 
+(assert (=> c_1_3_3 (not c_3_3_3))) 
+(assert (=> c_1_3_3 (not c_3_4_3))) 
+(assert (=> c_1_3_3 (not c_4_1_3))) 
+(assert (=> c_1_3_3 (not c_4_2_3))) 
+(assert (=> c_1_3_3 (not c_4_3_3))) 
+(assert (=> c_1_3_3 (not c_4_4_3))) 
+(assert (=> c_1_4_3 (not c_1_1_3))) 
+(assert (=> c_1_4_3 (not c_1_2_3))) 
+(assert (=> c_1_4_3 (not c_1_3_3))) 
+(assert (=> c_1_4_3 (not c_2_1_3))) 
+(assert (=> c_1_4_3 (not c_2_2_3))) 
+(assert (=> c_1_4_3 (not c_2_3_3))) 
+(assert (=> c_1_4_3 (not c_2_4_3))) 
+(assert (=> c_1_4_3 (not c_3_1_3))) 
+(assert (=> c_1_4_3 (not c_3_2_3))) 
+(assert (=> c_1_4_3 (not c_3_3_3))) 
+(assert (=> c_1_4_3 (not c_3_4_3))) 
+(assert (=> c_1_4_3 (not c_4_1_3))) 
+(assert (=> c_1_4_3 (not c_4_2_3))) 
+(assert (=> c_1_4_3 (not c_4_3_3))) 
+(assert (=> c_1_4_3 (not c_4_4_3))) 
+(assert (=> c_2_1_3 (not c_1_1_3))) 
+(assert (=> c_2_1_3 (not c_1_2_3))) 
+(assert (=> c_2_1_3 (not c_1_3_3))) 
+(assert (=> c_2_1_3 (not c_1_4_3))) 
+(assert (=> c_2_1_3 (not c_2_2_3))) 
+(assert (=> c_2_1_3 (not c_2_3_3))) 
+(assert (=> c_2_1_3 (not c_2_4_3))) 
+(assert (=> c_2_1_3 (not c_3_1_3))) 
+(assert (=> c_2_1_3 (not c_3_2_3))) 
+(assert (=> c_2_1_3 (not c_3_3_3))) 
+(assert (=> c_2_1_3 (not c_3_4_3))) 
+(assert (=> c_2_1_3 (not c_4_1_3))) 
+(assert (=> c_2_1_3 (not c_4_2_3))) 
+(assert (=> c_2_1_3 (not c_4_3_3))) 
+(assert (=> c_2_1_3 (not c_4_4_3))) 
+(assert (=> c_2_2_3 (not c_1_1_3))) 
+(assert (=> c_2_2_3 (not c_1_2_3))) 
+(assert (=> c_2_2_3 (not c_1_3_3))) 
+(assert (=> c_2_2_3 (not c_1_4_3))) 
+(assert (=> c_2_2_3 (not c_2_1_3))) 
+(assert (=> c_2_2_3 (not c_2_3_3))) 
+(assert (=> c_2_2_3 (not c_2_4_3))) 
+(assert (=> c_2_2_3 (not c_3_1_3))) 
+(assert (=> c_2_2_3 (not c_3_2_3))) 
+(assert (=> c_2_2_3 (not c_3_3_3))) 
+(assert (=> c_2_2_3 (not c_3_4_3))) 
+(assert (=> c_2_2_3 (not c_4_1_3))) 
+(assert (=> c_2_2_3 (not c_4_2_3))) 
+(assert (=> c_2_2_3 (not c_4_3_3))) 
+(assert (=> c_2_2_3 (not c_4_4_3))) 
+(assert (=> c_2_3_3 (not c_1_1_3))) 
+(assert (=> c_2_3_3 (not c_1_2_3))) 
+(assert (=> c_2_3_3 (not c_1_3_3))) 
+(assert (=> c_2_3_3 (not c_1_4_3))) 
+(assert (=> c_2_3_3 (not c_2_1_3))) 
+(assert (=> c_2_3_3 (not c_2_2_3))) 
+(assert (=> c_2_3_3 (not c_2_4_3))) 
+(assert (=> c_2_3_3 (not c_3_1_3))) 
+(assert (=> c_2_3_3 (not c_3_2_3))) 
+(assert (=> c_2_3_3 (not c_3_3_3))) 
+(assert (=> c_2_3_3 (not c_3_4_3))) 
+(assert (=> c_2_3_3 (not c_4_1_3))) 
+(assert (=> c_2_3_3 (not c_4_2_3))) 
+(assert (=> c_2_3_3 (not c_4_3_3))) 
+(assert (=> c_2_3_3 (not c_4_4_3))) 
+(assert (=> c_2_4_3 (not c_1_1_3))) 
+(assert (=> c_2_4_3 (not c_1_2_3))) 
+(assert (=> c_2_4_3 (not c_1_3_3))) 
+(assert (=> c_2_4_3 (not c_1_4_3))) 
+(assert (=> c_2_4_3 (not c_2_1_3))) 
+(assert (=> c_2_4_3 (not c_2_2_3))) 
+(assert (=> c_2_4_3 (not c_2_3_3))) 
+(assert (=> c_2_4_3 (not c_3_1_3))) 
+(assert (=> c_2_4_3 (not c_3_2_3))) 
+(assert (=> c_2_4_3 (not c_3_3_3))) 
+(assert (=> c_2_4_3 (not c_3_4_3))) 
+(assert (=> c_2_4_3 (not c_4_1_3))) 
+(assert (=> c_2_4_3 (not c_4_2_3))) 
+(assert (=> c_2_4_3 (not c_4_3_3))) 
+(assert (=> c_2_4_3 (not c_4_4_3))) 
+(assert (=> c_3_1_3 (not c_1_1_3))) 
+(assert (=> c_3_1_3 (not c_1_2_3))) 
+(assert (=> c_3_1_3 (not c_1_3_3))) 
+(assert (=> c_3_1_3 (not c_1_4_3))) 
+(assert (=> c_3_1_3 (not c_2_1_3))) 
+(assert (=> c_3_1_3 (not c_2_2_3))) 
+(assert (=> c_3_1_3 (not c_2_3_3))) 
+(assert (=> c_3_1_3 (not c_2_4_3))) 
+(assert (=> c_3_1_3 (not c_3_2_3))) 
+(assert (=> c_3_1_3 (not c_3_3_3))) 
+(assert (=> c_3_1_3 (not c_3_4_3))) 
+(assert (=> c_3_1_3 (not c_4_1_3))) 
+(assert (=> c_3_1_3 (not c_4_2_3))) 
+(assert (=> c_3_1_3 (not c_4_3_3))) 
+(assert (=> c_3_1_3 (not c_4_4_3))) 
+(assert (=> c_3_2_3 (not c_1_1_3))) 
+(assert (=> c_3_2_3 (not c_1_2_3))) 
+(assert (=> c_3_2_3 (not c_1_3_3))) 
+(assert (=> c_3_2_3 (not c_1_4_3))) 
+(assert (=> c_3_2_3 (not c_2_1_3))) 
+(assert (=> c_3_2_3 (not c_2_2_3))) 
+(assert (=> c_3_2_3 (not c_2_3_3))) 
+(assert (=> c_3_2_3 (not c_2_4_3))) 
+(assert (=> c_3_2_3 (not c_3_1_3))) 
+(assert (=> c_3_2_3 (not c_3_3_3))) 
+(assert (=> c_3_2_3 (not c_3_4_3))) 
+(assert (=> c_3_2_3 (not c_4_1_3))) 
+(assert (=> c_3_2_3 (not c_4_2_3))) 
+(assert (=> c_3_2_3 (not c_4_3_3))) 
+(assert (=> c_3_2_3 (not c_4_4_3))) 
+(assert (=> c_3_3_3 (not c_1_1_3))) 
+(assert (=> c_3_3_3 (not c_1_2_3))) 
+(assert (=> c_3_3_3 (not c_1_3_3))) 
+(assert (=> c_3_3_3 (not c_1_4_3))) 
+(assert (=> c_3_3_3 (not c_2_1_3))) 
+(assert (=> c_3_3_3 (not c_2_2_3))) 
+(assert (=> c_3_3_3 (not c_2_3_3))) 
+(assert (=> c_3_3_3 (not c_2_4_3))) 
+(assert (=> c_3_3_3 (not c_3_1_3))) 
+(assert (=> c_3_3_3 (not c_3_2_3))) 
+(assert (=> c_3_3_3 (not c_3_4_3))) 
+(assert (=> c_3_3_3 (not c_4_1_3))) 
+(assert (=> c_3_3_3 (not c_4_2_3))) 
+(assert (=> c_3_3_3 (not c_4_3_3))) 
+(assert (=> c_3_3_3 (not c_4_4_3))) 
+(assert (=> c_3_4_3 (not c_1_1_3))) 
+(assert (=> c_3_4_3 (not c_1_2_3))) 
+(assert (=> c_3_4_3 (not c_1_3_3))) 
+(assert (=> c_3_4_3 (not c_1_4_3))) 
+(assert (=> c_3_4_3 (not c_2_1_3))) 
+(assert (=> c_3_4_3 (not c_2_2_3))) 
+(assert (=> c_3_4_3 (not c_2_3_3))) 
+(assert (=> c_3_4_3 (not c_2_4_3))) 
+(assert (=> c_3_4_3 (not c_3_1_3))) 
+(assert (=> c_3_4_3 (not c_3_2_3))) 
+(assert (=> c_3_4_3 (not c_3_3_3))) 
+(assert (=> c_3_4_3 (not c_4_1_3))) 
+(assert (=> c_3_4_3 (not c_4_2_3))) 
+(assert (=> c_3_4_3 (not c_4_3_3))) 
+(assert (=> c_3_4_3 (not c_4_4_3))) 
+(assert (=> c_4_1_3 (not c_1_1_3))) 
+(assert (=> c_4_1_3 (not c_1_2_3))) 
+(assert (=> c_4_1_3 (not c_1_3_3))) 
+(assert (=> c_4_1_3 (not c_1_4_3))) 
+(assert (=> c_4_1_3 (not c_2_1_3))) 
+(assert (=> c_4_1_3 (not c_2_2_3))) 
+(assert (=> c_4_1_3 (not c_2_3_3))) 
+(assert (=> c_4_1_3 (not c_2_4_3))) 
+(assert (=> c_4_1_3 (not c_3_1_3))) 
+(assert (=> c_4_1_3 (not c_3_2_3))) 
+(assert (=> c_4_1_3 (not c_3_3_3))) 
+(assert (=> c_4_1_3 (not c_3_4_3))) 
+(assert (=> c_4_1_3 (not c_4_2_3))) 
+(assert (=> c_4_1_3 (not c_4_3_3))) 
+(assert (=> c_4_1_3 (not c_4_4_3))) 
+(assert (=> c_4_2_3 (not c_1_1_3))) 
+(assert (=> c_4_2_3 (not c_1_2_3))) 
+(assert (=> c_4_2_3 (not c_1_3_3))) 
+(assert (=> c_4_2_3 (not c_1_4_3))) 
+(assert (=> c_4_2_3 (not c_2_1_3))) 
+(assert (=> c_4_2_3 (not c_2_2_3))) 
+(assert (=> c_4_2_3 (not c_2_3_3))) 
+(assert (=> c_4_2_3 (not c_2_4_3))) 
+(assert (=> c_4_2_3 (not c_3_1_3))) 
+(assert (=> c_4_2_3 (not c_3_2_3))) 
+(assert (=> c_4_2_3 (not c_3_3_3))) 
+(assert (=> c_4_2_3 (not c_3_4_3))) 
+(assert (=> c_4_2_3 (not c_4_1_3))) 
+(assert (=> c_4_2_3 (not c_4_3_3))) 
+(assert (=> c_4_2_3 (not c_4_4_3))) 
+(assert (=> c_4_3_3 (not c_1_1_3))) 
+(assert (=> c_4_3_3 (not c_1_2_3))) 
+(assert (=> c_4_3_3 (not c_1_3_3))) 
+(assert (=> c_4_3_3 (not c_1_4_3))) 
+(assert (=> c_4_3_3 (not c_2_1_3))) 
+(assert (=> c_4_3_3 (not c_2_2_3))) 
+(assert (=> c_4_3_3 (not c_2_3_3))) 
+(assert (=> c_4_3_3 (not c_2_4_3))) 
+(assert (=> c_4_3_3 (not c_3_1_3))) 
+(assert (=> c_4_3_3 (not c_3_2_3))) 
+(assert (=> c_4_3_3 (not c_3_3_3))) 
+(assert (=> c_4_3_3 (not c_3_4_3))) 
+(assert (=> c_4_3_3 (not c_4_1_3))) 
+(assert (=> c_4_3_3 (not c_4_2_3))) 
+(assert (=> c_4_3_3 (not c_4_4_3))) 
+(assert (=> c_4_4_3 (not c_1_1_3))) 
+(assert (=> c_4_4_3 (not c_1_2_3))) 
+(assert (=> c_4_4_3 (not c_1_3_3))) 
+(assert (=> c_4_4_3 (not c_1_4_3))) 
+(assert (=> c_4_4_3 (not c_2_1_3))) 
+(assert (=> c_4_4_3 (not c_2_2_3))) 
+(assert (=> c_4_4_3 (not c_2_3_3))) 
+(assert (=> c_4_4_3 (not c_2_4_3))) 
+(assert (=> c_4_4_3 (not c_3_1_3))) 
+(assert (=> c_4_4_3 (not c_3_2_3))) 
+(assert (=> c_4_4_3 (not c_3_3_3))) 
+(assert (=> c_4_4_3 (not c_3_4_3))) 
+(assert (=> c_4_4_3 (not c_4_1_3))) 
+(assert (=> c_4_4_3 (not c_4_2_3))) 
+(assert (=> c_4_4_3 (not c_4_3_3))) 
+(assert (=> c_1_1_4 (not c_1_2_4))) 
+(assert (=> c_1_1_4 (not c_1_3_4))) 
+(assert (=> c_1_1_4 (not c_1_4_4))) 
+(assert (=> c_1_1_4 (not c_2_1_4))) 
+(assert (=> c_1_1_4 (not c_2_2_4))) 
+(assert (=> c_1_1_4 (not c_2_3_4))) 
+(assert (=> c_1_1_4 (not c_2_4_4))) 
+(assert (=> c_1_1_4 (not c_3_1_4))) 
+(assert (=> c_1_1_4 (not c_3_2_4))) 
+(assert (=> c_1_1_4 (not c_3_3_4))) 
+(assert (=> c_1_1_4 (not c_3_4_4))) 
+(assert (=> c_1_1_4 (not c_4_1_4))) 
+(assert (=> c_1_1_4 (not c_4_2_4))) 
+(assert (=> c_1_1_4 (not c_4_3_4))) 
+(assert (=> c_1_1_4 (not c_4_4_4))) 
+(assert (=> c_1_2_4 (not c_1_1_4))) 
+(assert (=> c_1_2_4 (not c_1_3_4))) 
+(assert (=> c_1_2_4 (not c_1_4_4))) 
+(assert (=> c_1_2_4 (not c_2_1_4))) 
+(assert (=> c_1_2_4 (not c_2_2_4))) 
+(assert (=> c_1_2_4 (not c_2_3_4))) 
+(assert (=> c_1_2_4 (not c_2_4_4))) 
+(assert (=> c_1_2_4 (not c_3_1_4))) 
+(assert (=> c_1_2_4 (not c_3_2_4))) 
+(assert (=> c_1_2_4 (not c_3_3_4))) 
+(assert (=> c_1_2_4 (not c_3_4_4))) 
+(assert (=> c_1_2_4 (not c_4_1_4))) 
+(assert (=> c_1_2_4 (not c_4_2_4))) 
+(assert (=> c_1_2_4 (not c_4_3_4))) 
+(assert (=> c_1_2_4 (not c_4_4_4))) 
+(assert (=> c_1_3_4 (not c_1_1_4))) 
+(assert (=> c_1_3_4 (not c_1_2_4))) 
+(assert (=> c_1_3_4 (not c_1_4_4))) 
+(assert (=> c_1_3_4 (not c_2_1_4))) 
+(assert (=> c_1_3_4 (not c_2_2_4))) 
+(assert (=> c_1_3_4 (not c_2_3_4))) 
+(assert (=> c_1_3_4 (not c_2_4_4))) 
+(assert (=> c_1_3_4 (not c_3_1_4))) 
+(assert (=> c_1_3_4 (not c_3_2_4))) 
+(assert (=> c_1_3_4 (not c_3_3_4))) 
+(assert (=> c_1_3_4 (not c_3_4_4))) 
+(assert (=> c_1_3_4 (not c_4_1_4))) 
+(assert (=> c_1_3_4 (not c_4_2_4))) 
+(assert (=> c_1_3_4 (not c_4_3_4))) 
+(assert (=> c_1_3_4 (not c_4_4_4))) 
+(assert (=> c_1_4_4 (not c_1_1_4))) 
+(assert (=> c_1_4_4 (not c_1_2_4))) 
+(assert (=> c_1_4_4 (not c_1_3_4))) 
+(assert (=> c_1_4_4 (not c_2_1_4))) 
+(assert (=> c_1_4_4 (not c_2_2_4))) 
+(assert (=> c_1_4_4 (not c_2_3_4))) 
+(assert (=> c_1_4_4 (not c_2_4_4))) 
+(assert (=> c_1_4_4 (not c_3_1_4))) 
+(assert (=> c_1_4_4 (not c_3_2_4))) 
+(assert (=> c_1_4_4 (not c_3_3_4))) 
+(assert (=> c_1_4_4 (not c_3_4_4))) 
+(assert (=> c_1_4_4 (not c_4_1_4))) 
+(assert (=> c_1_4_4 (not c_4_2_4))) 
+(assert (=> c_1_4_4 (not c_4_3_4))) 
+(assert (=> c_1_4_4 (not c_4_4_4))) 
+(assert (=> c_2_1_4 (not c_1_1_4))) 
+(assert (=> c_2_1_4 (not c_1_2_4))) 
+(assert (=> c_2_1_4 (not c_1_3_4))) 
+(assert (=> c_2_1_4 (not c_1_4_4))) 
+(assert (=> c_2_1_4 (not c_2_2_4))) 
+(assert (=> c_2_1_4 (not c_2_3_4))) 
+(assert (=> c_2_1_4 (not c_2_4_4))) 
+(assert (=> c_2_1_4 (not c_3_1_4))) 
+(assert (=> c_2_1_4 (not c_3_2_4))) 
+(assert (=> c_2_1_4 (not c_3_3_4))) 
+(assert (=> c_2_1_4 (not c_3_4_4))) 
+(assert (=> c_2_1_4 (not c_4_1_4))) 
+(assert (=> c_2_1_4 (not c_4_2_4))) 
+(assert (=> c_2_1_4 (not c_4_3_4))) 
+(assert (=> c_2_1_4 (not c_4_4_4))) 
+(assert (=> c_2_2_4 (not c_1_1_4))) 
+(assert (=> c_2_2_4 (not c_1_2_4))) 
+(assert (=> c_2_2_4 (not c_1_3_4))) 
+(assert (=> c_2_2_4 (not c_1_4_4))) 
+(assert (=> c_2_2_4 (not c_2_1_4))) 
+(assert (=> c_2_2_4 (not c_2_3_4))) 
+(assert (=> c_2_2_4 (not c_2_4_4))) 
+(assert (=> c_2_2_4 (not c_3_1_4))) 
+(assert (=> c_2_2_4 (not c_3_2_4))) 
+(assert (=> c_2_2_4 (not c_3_3_4))) 
+(assert (=> c_2_2_4 (not c_3_4_4))) 
+(assert (=> c_2_2_4 (not c_4_1_4))) 
+(assert (=> c_2_2_4 (not c_4_2_4))) 
+(assert (=> c_2_2_4 (not c_4_3_4))) 
+(assert (=> c_2_2_4 (not c_4_4_4))) 
+(assert (=> c_2_3_4 (not c_1_1_4))) 
+(assert (=> c_2_3_4 (not c_1_2_4))) 
+(assert (=> c_2_3_4 (not c_1_3_4))) 
+(assert (=> c_2_3_4 (not c_1_4_4))) 
+(assert (=> c_2_3_4 (not c_2_1_4))) 
+(assert (=> c_2_3_4 (not c_2_2_4))) 
+(assert (=> c_2_3_4 (not c_2_4_4))) 
+(assert (=> c_2_3_4 (not c_3_1_4))) 
+(assert (=> c_2_3_4 (not c_3_2_4))) 
+(assert (=> c_2_3_4 (not c_3_3_4))) 
+(assert (=> c_2_3_4 (not c_3_4_4))) 
+(assert (=> c_2_3_4 (not c_4_1_4))) 
+(assert (=> c_2_3_4 (not c_4_2_4))) 
+(assert (=> c_2_3_4 (not c_4_3_4))) 
+(assert (=> c_2_3_4 (not c_4_4_4))) 
+(assert (=> c_2_4_4 (not c_1_1_4))) 
+(assert (=> c_2_4_4 (not c_1_2_4))) 
+(assert (=> c_2_4_4 (not c_1_3_4))) 
+(assert (=> c_2_4_4 (not c_1_4_4))) 
+(assert (=> c_2_4_4 (not c_2_1_4))) 
+(assert (=> c_2_4_4 (not c_2_2_4))) 
+(assert (=> c_2_4_4 (not c_2_3_4))) 
+(assert (=> c_2_4_4 (not c_3_1_4))) 
+(assert (=> c_2_4_4 (not c_3_2_4))) 
+(assert (=> c_2_4_4 (not c_3_3_4))) 
+(assert (=> c_2_4_4 (not c_3_4_4))) 
+(assert (=> c_2_4_4 (not c_4_1_4))) 
+(assert (=> c_2_4_4 (not c_4_2_4))) 
+(assert (=> c_2_4_4 (not c_4_3_4))) 
+(assert (=> c_2_4_4 (not c_4_4_4))) 
+(assert (=> c_3_1_4 (not c_1_1_4))) 
+(assert (=> c_3_1_4 (not c_1_2_4))) 
+(assert (=> c_3_1_4 (not c_1_3_4))) 
+(assert (=> c_3_1_4 (not c_1_4_4))) 
+(assert (=> c_3_1_4 (not c_2_1_4))) 
+(assert (=> c_3_1_4 (not c_2_2_4))) 
+(assert (=> c_3_1_4 (not c_2_3_4))) 
+(assert (=> c_3_1_4 (not c_2_4_4))) 
+(assert (=> c_3_1_4 (not c_3_2_4))) 
+(assert (=> c_3_1_4 (not c_3_3_4))) 
+(assert (=> c_3_1_4 (not c_3_4_4))) 
+(assert (=> c_3_1_4 (not c_4_1_4))) 
+(assert (=> c_3_1_4 (not c_4_2_4))) 
+(assert (=> c_3_1_4 (not c_4_3_4))) 
+(assert (=> c_3_1_4 (not c_4_4_4))) 
+(assert (=> c_3_2_4 (not c_1_1_4))) 
+(assert (=> c_3_2_4 (not c_1_2_4))) 
+(assert (=> c_3_2_4 (not c_1_3_4))) 
+(assert (=> c_3_2_4 (not c_1_4_4))) 
+(assert (=> c_3_2_4 (not c_2_1_4))) 
+(assert (=> c_3_2_4 (not c_2_2_4))) 
+(assert (=> c_3_2_4 (not c_2_3_4))) 
+(assert (=> c_3_2_4 (not c_2_4_4))) 
+(assert (=> c_3_2_4 (not c_3_1_4))) 
+(assert (=> c_3_2_4 (not c_3_3_4))) 
+(assert (=> c_3_2_4 (not c_3_4_4))) 
+(assert (=> c_3_2_4 (not c_4_1_4))) 
+(assert (=> c_3_2_4 (not c_4_2_4))) 
+(assert (=> c_3_2_4 (not c_4_3_4))) 
+(assert (=> c_3_2_4 (not c_4_4_4))) 
+(assert (=> c_3_3_4 (not c_1_1_4))) 
+(assert (=> c_3_3_4 (not c_1_2_4))) 
+(assert (=> c_3_3_4 (not c_1_3_4))) 
+(assert (=> c_3_3_4 (not c_1_4_4))) 
+(assert (=> c_3_3_4 (not c_2_1_4))) 
+(assert (=> c_3_3_4 (not c_2_2_4))) 
+(assert (=> c_3_3_4 (not c_2_3_4))) 
+(assert (=> c_3_3_4 (not c_2_4_4))) 
+(assert (=> c_3_3_4 (not c_3_1_4))) 
+(assert (=> c_3_3_4 (not c_3_2_4))) 
+(assert (=> c_3_3_4 (not c_3_4_4))) 
+(assert (=> c_3_3_4 (not c_4_1_4))) 
+(assert (=> c_3_3_4 (not c_4_2_4))) 
+(assert (=> c_3_3_4 (not c_4_3_4))) 
+(assert (=> c_3_3_4 (not c_4_4_4))) 
+(assert (=> c_3_4_4 (not c_1_1_4))) 
+(assert (=> c_3_4_4 (not c_1_2_4))) 
+(assert (=> c_3_4_4 (not c_1_3_4))) 
+(assert (=> c_3_4_4 (not c_1_4_4))) 
+(assert (=> c_3_4_4 (not c_2_1_4))) 
+(assert (=> c_3_4_4 (not c_2_2_4))) 
+(assert (=> c_3_4_4 (not c_2_3_4))) 
+(assert (=> c_3_4_4 (not c_2_4_4))) 
+(assert (=> c_3_4_4 (not c_3_1_4))) 
+(assert (=> c_3_4_4 (not c_3_2_4))) 
+(assert (=> c_3_4_4 (not c_3_3_4))) 
+(assert (=> c_3_4_4 (not c_4_1_4))) 
+(assert (=> c_3_4_4 (not c_4_2_4))) 
+(assert (=> c_3_4_4 (not c_4_3_4))) 
+(assert (=> c_3_4_4 (not c_4_4_4))) 
+(assert (=> c_4_1_4 (not c_1_1_4))) 
+(assert (=> c_4_1_4 (not c_1_2_4))) 
+(assert (=> c_4_1_4 (not c_1_3_4))) 
+(assert (=> c_4_1_4 (not c_1_4_4))) 
+(assert (=> c_4_1_4 (not c_2_1_4))) 
+(assert (=> c_4_1_4 (not c_2_2_4))) 
+(assert (=> c_4_1_4 (not c_2_3_4))) 
+(assert (=> c_4_1_4 (not c_2_4_4))) 
+(assert (=> c_4_1_4 (not c_3_1_4))) 
+(assert (=> c_4_1_4 (not c_3_2_4))) 
+(assert (=> c_4_1_4 (not c_3_3_4))) 
+(assert (=> c_4_1_4 (not c_3_4_4))) 
+(assert (=> c_4_1_4 (not c_4_2_4))) 
+(assert (=> c_4_1_4 (not c_4_3_4))) 
+(assert (=> c_4_1_4 (not c_4_4_4))) 
+(assert (=> c_4_2_4 (not c_1_1_4))) 
+(assert (=> c_4_2_4 (not c_1_2_4))) 
+(assert (=> c_4_2_4 (not c_1_3_4))) 
+(assert (=> c_4_2_4 (not c_1_4_4))) 
+(assert (=> c_4_2_4 (not c_2_1_4))) 
+(assert (=> c_4_2_4 (not c_2_2_4))) 
+(assert (=> c_4_2_4 (not c_2_3_4))) 
+(assert (=> c_4_2_4 (not c_2_4_4))) 
+(assert (=> c_4_2_4 (not c_3_1_4))) 
+(assert (=> c_4_2_4 (not c_3_2_4))) 
+(assert (=> c_4_2_4 (not c_3_3_4))) 
+(assert (=> c_4_2_4 (not c_3_4_4))) 
+(assert (=> c_4_2_4 (not c_4_1_4))) 
+(assert (=> c_4_2_4 (not c_4_3_4))) 
+(assert (=> c_4_2_4 (not c_4_4_4))) 
+(assert (=> c_4_3_4 (not c_1_1_4))) 
+(assert (=> c_4_3_4 (not c_1_2_4))) 
+(assert (=> c_4_3_4 (not c_1_3_4))) 
+(assert (=> c_4_3_4 (not c_1_4_4))) 
+(assert (=> c_4_3_4 (not c_2_1_4))) 
+(assert (=> c_4_3_4 (not c_2_2_4))) 
+(assert (=> c_4_3_4 (not c_2_3_4))) 
+(assert (=> c_4_3_4 (not c_2_4_4))) 
+(assert (=> c_4_3_4 (not c_3_1_4))) 
+(assert (=> c_4_3_4 (not c_3_2_4))) 
+(assert (=> c_4_3_4 (not c_3_3_4))) 
+(assert (=> c_4_3_4 (not c_3_4_4))) 
+(assert (=> c_4_3_4 (not c_4_1_4))) 
+(assert (=> c_4_3_4 (not c_4_2_4))) 
+(assert (=> c_4_3_4 (not c_4_4_4))) 
+(assert (=> c_4_4_4 (not c_1_1_4))) 
+(assert (=> c_4_4_4 (not c_1_2_4))) 
+(assert (=> c_4_4_4 (not c_1_3_4))) 
+(assert (=> c_4_4_4 (not c_1_4_4))) 
+(assert (=> c_4_4_4 (not c_2_1_4))) 
+(assert (=> c_4_4_4 (not c_2_2_4))) 
+(assert (=> c_4_4_4 (not c_2_3_4))) 
+(assert (=> c_4_4_4 (not c_2_4_4))) 
+(assert (=> c_4_4_4 (not c_3_1_4))) 
+(assert (=> c_4_4_4 (not c_3_2_4))) 
+(assert (=> c_4_4_4 (not c_3_3_4))) 
+(assert (=> c_4_4_4 (not c_3_4_4))) 
+(assert (=> c_4_4_4 (not c_4_1_4))) 
+(assert (=> c_4_4_4 (not c_4_2_4))) 
+(assert (=> c_4_4_4 (not c_4_3_4))) 
+(assert (=> c_1_1_5 (not c_1_2_5))) 
+(assert (=> c_1_1_5 (not c_1_3_5))) 
+(assert (=> c_1_1_5 (not c_1_4_5))) 
+(assert (=> c_1_1_5 (not c_2_1_5))) 
+(assert (=> c_1_1_5 (not c_2_2_5))) 
+(assert (=> c_1_1_5 (not c_2_3_5))) 
+(assert (=> c_1_1_5 (not c_2_4_5))) 
+(assert (=> c_1_1_5 (not c_3_1_5))) 
+(assert (=> c_1_1_5 (not c_3_2_5))) 
+(assert (=> c_1_1_5 (not c_3_3_5))) 
+(assert (=> c_1_1_5 (not c_3_4_5))) 
+(assert (=> c_1_1_5 (not c_4_1_5))) 
+(assert (=> c_1_1_5 (not c_4_2_5))) 
+(assert (=> c_1_1_5 (not c_4_3_5))) 
+(assert (=> c_1_1_5 (not c_4_4_5))) 
+(assert (=> c_1_2_5 (not c_1_1_5))) 
+(assert (=> c_1_2_5 (not c_1_3_5))) 
+(assert (=> c_1_2_5 (not c_1_4_5))) 
+(assert (=> c_1_2_5 (not c_2_1_5))) 
+(assert (=> c_1_2_5 (not c_2_2_5))) 
+(assert (=> c_1_2_5 (not c_2_3_5))) 
+(assert (=> c_1_2_5 (not c_2_4_5))) 
+(assert (=> c_1_2_5 (not c_3_1_5))) 
+(assert (=> c_1_2_5 (not c_3_2_5))) 
+(assert (=> c_1_2_5 (not c_3_3_5))) 
+(assert (=> c_1_2_5 (not c_3_4_5))) 
+(assert (=> c_1_2_5 (not c_4_1_5))) 
+(assert (=> c_1_2_5 (not c_4_2_5))) 
+(assert (=> c_1_2_5 (not c_4_3_5))) 
+(assert (=> c_1_2_5 (not c_4_4_5))) 
+(assert (=> c_1_3_5 (not c_1_1_5))) 
+(assert (=> c_1_3_5 (not c_1_2_5))) 
+(assert (=> c_1_3_5 (not c_1_4_5))) 
+(assert (=> c_1_3_5 (not c_2_1_5))) 
+(assert (=> c_1_3_5 (not c_2_2_5))) 
+(assert (=> c_1_3_5 (not c_2_3_5))) 
+(assert (=> c_1_3_5 (not c_2_4_5))) 
+(assert (=> c_1_3_5 (not c_3_1_5))) 
+(assert (=> c_1_3_5 (not c_3_2_5))) 
+(assert (=> c_1_3_5 (not c_3_3_5))) 
+(assert (=> c_1_3_5 (not c_3_4_5))) 
+(assert (=> c_1_3_5 (not c_4_1_5))) 
+(assert (=> c_1_3_5 (not c_4_2_5))) 
+(assert (=> c_1_3_5 (not c_4_3_5))) 
+(assert (=> c_1_3_5 (not c_4_4_5))) 
+(assert (=> c_1_4_5 (not c_1_1_5))) 
+(assert (=> c_1_4_5 (not c_1_2_5))) 
+(assert (=> c_1_4_5 (not c_1_3_5))) 
+(assert (=> c_1_4_5 (not c_2_1_5))) 
+(assert (=> c_1_4_5 (not c_2_2_5))) 
+(assert (=> c_1_4_5 (not c_2_3_5))) 
+(assert (=> c_1_4_5 (not c_2_4_5))) 
+(assert (=> c_1_4_5 (not c_3_1_5))) 
+(assert (=> c_1_4_5 (not c_3_2_5))) 
+(assert (=> c_1_4_5 (not c_3_3_5))) 
+(assert (=> c_1_4_5 (not c_3_4_5))) 
+(assert (=> c_1_4_5 (not c_4_1_5))) 
+(assert (=> c_1_4_5 (not c_4_2_5))) 
+(assert (=> c_1_4_5 (not c_4_3_5))) 
+(assert (=> c_1_4_5 (not c_4_4_5))) 
+(assert (=> c_2_1_5 (not c_1_1_5))) 
+(assert (=> c_2_1_5 (not c_1_2_5))) 
+(assert (=> c_2_1_5 (not c_1_3_5))) 
+(assert (=> c_2_1_5 (not c_1_4_5))) 
+(assert (=> c_2_1_5 (not c_2_2_5))) 
+(assert (=> c_2_1_5 (not c_2_3_5))) 
+(assert (=> c_2_1_5 (not c_2_4_5))) 
+(assert (=> c_2_1_5 (not c_3_1_5))) 
+(assert (=> c_2_1_5 (not c_3_2_5))) 
+(assert (=> c_2_1_5 (not c_3_3_5))) 
+(assert (=> c_2_1_5 (not c_3_4_5))) 
+(assert (=> c_2_1_5 (not c_4_1_5))) 
+(assert (=> c_2_1_5 (not c_4_2_5))) 
+(assert (=> c_2_1_5 (not c_4_3_5))) 
+(assert (=> c_2_1_5 (not c_4_4_5))) 
+(assert (=> c_2_2_5 (not c_1_1_5))) 
+(assert (=> c_2_2_5 (not c_1_2_5))) 
+(assert (=> c_2_2_5 (not c_1_3_5))) 
+(assert (=> c_2_2_5 (not c_1_4_5))) 
+(assert (=> c_2_2_5 (not c_2_1_5))) 
+(assert (=> c_2_2_5 (not c_2_3_5))) 
+(assert (=> c_2_2_5 (not c_2_4_5))) 
+(assert (=> c_2_2_5 (not c_3_1_5))) 
+(assert (=> c_2_2_5 (not c_3_2_5))) 
+(assert (=> c_2_2_5 (not c_3_3_5))) 
+(assert (=> c_2_2_5 (not c_3_4_5))) 
+(assert (=> c_2_2_5 (not c_4_1_5))) 
+(assert (=> c_2_2_5 (not c_4_2_5))) 
+(assert (=> c_2_2_5 (not c_4_3_5))) 
+(assert (=> c_2_2_5 (not c_4_4_5))) 
+(assert (=> c_2_3_5 (not c_1_1_5))) 
+(assert (=> c_2_3_5 (not c_1_2_5))) 
+(assert (=> c_2_3_5 (not c_1_3_5))) 
+(assert (=> c_2_3_5 (not c_1_4_5))) 
+(assert (=> c_2_3_5 (not c_2_1_5))) 
+(assert (=> c_2_3_5 (not c_2_2_5))) 
+(assert (=> c_2_3_5 (not c_2_4_5))) 
+(assert (=> c_2_3_5 (not c_3_1_5))) 
+(assert (=> c_2_3_5 (not c_3_2_5))) 
+(assert (=> c_2_3_5 (not c_3_3_5))) 
+(assert (=> c_2_3_5 (not c_3_4_5))) 
+(assert (=> c_2_3_5 (not c_4_1_5))) 
+(assert (=> c_2_3_5 (not c_4_2_5))) 
+(assert (=> c_2_3_5 (not c_4_3_5))) 
+(assert (=> c_2_3_5 (not c_4_4_5))) 
+(assert (=> c_2_4_5 (not c_1_1_5))) 
+(assert (=> c_2_4_5 (not c_1_2_5))) 
+(assert (=> c_2_4_5 (not c_1_3_5))) 
+(assert (=> c_2_4_5 (not c_1_4_5))) 
+(assert (=> c_2_4_5 (not c_2_1_5))) 
+(assert (=> c_2_4_5 (not c_2_2_5))) 
+(assert (=> c_2_4_5 (not c_2_3_5))) 
+(assert (=> c_2_4_5 (not c_3_1_5))) 
+(assert (=> c_2_4_5 (not c_3_2_5))) 
+(assert (=> c_2_4_5 (not c_3_3_5))) 
+(assert (=> c_2_4_5 (not c_3_4_5))) 
+(assert (=> c_2_4_5 (not c_4_1_5))) 
+(assert (=> c_2_4_5 (not c_4_2_5))) 
+(assert (=> c_2_4_5 (not c_4_3_5))) 
+(assert (=> c_2_4_5 (not c_4_4_5))) 
+(assert (=> c_3_1_5 (not c_1_1_5))) 
+(assert (=> c_3_1_5 (not c_1_2_5))) 
+(assert (=> c_3_1_5 (not c_1_3_5))) 
+(assert (=> c_3_1_5 (not c_1_4_5))) 
+(assert (=> c_3_1_5 (not c_2_1_5))) 
+(assert (=> c_3_1_5 (not c_2_2_5))) 
+(assert (=> c_3_1_5 (not c_2_3_5))) 
+(assert (=> c_3_1_5 (not c_2_4_5))) 
+(assert (=> c_3_1_5 (not c_3_2_5))) 
+(assert (=> c_3_1_5 (not c_3_3_5))) 
+(assert (=> c_3_1_5 (not c_3_4_5))) 
+(assert (=> c_3_1_5 (not c_4_1_5))) 
+(assert (=> c_3_1_5 (not c_4_2_5))) 
+(assert (=> c_3_1_5 (not c_4_3_5))) 
+(assert (=> c_3_1_5 (not c_4_4_5))) 
+(assert (=> c_3_2_5 (not c_1_1_5))) 
+(assert (=> c_3_2_5 (not c_1_2_5))) 
+(assert (=> c_3_2_5 (not c_1_3_5))) 
+(assert (=> c_3_2_5 (not c_1_4_5))) 
+(assert (=> c_3_2_5 (not c_2_1_5))) 
+(assert (=> c_3_2_5 (not c_2_2_5))) 
+(assert (=> c_3_2_5 (not c_2_3_5))) 
+(assert (=> c_3_2_5 (not c_2_4_5))) 
+(assert (=> c_3_2_5 (not c_3_1_5))) 
+(assert (=> c_3_2_5 (not c_3_3_5))) 
+(assert (=> c_3_2_5 (not c_3_4_5))) 
+(assert (=> c_3_2_5 (not c_4_1_5))) 
+(assert (=> c_3_2_5 (not c_4_2_5))) 
+(assert (=> c_3_2_5 (not c_4_3_5))) 
+(assert (=> c_3_2_5 (not c_4_4_5))) 
+(assert (=> c_3_3_5 (not c_1_1_5))) 
+(assert (=> c_3_3_5 (not c_1_2_5))) 
+(assert (=> c_3_3_5 (not c_1_3_5))) 
+(assert (=> c_3_3_5 (not c_1_4_5))) 
+(assert (=> c_3_3_5 (not c_2_1_5))) 
+(assert (=> c_3_3_5 (not c_2_2_5))) 
+(assert (=> c_3_3_5 (not c_2_3_5))) 
+(assert (=> c_3_3_5 (not c_2_4_5))) 
+(assert (=> c_3_3_5 (not c_3_1_5))) 
+(assert (=> c_3_3_5 (not c_3_2_5))) 
+(assert (=> c_3_3_5 (not c_3_4_5))) 
+(assert (=> c_3_3_5 (not c_4_1_5))) 
+(assert (=> c_3_3_5 (not c_4_2_5))) 
+(assert (=> c_3_3_5 (not c_4_3_5))) 
+(assert (=> c_3_3_5 (not c_4_4_5))) 
+(assert (=> c_3_4_5 (not c_1_1_5))) 
+(assert (=> c_3_4_5 (not c_1_2_5))) 
+(assert (=> c_3_4_5 (not c_1_3_5))) 
+(assert (=> c_3_4_5 (not c_1_4_5))) 
+(assert (=> c_3_4_5 (not c_2_1_5))) 
+(assert (=> c_3_4_5 (not c_2_2_5))) 
+(assert (=> c_3_4_5 (not c_2_3_5))) 
+(assert (=> c_3_4_5 (not c_2_4_5))) 
+(assert (=> c_3_4_5 (not c_3_1_5))) 
+(assert (=> c_3_4_5 (not c_3_2_5))) 
+(assert (=> c_3_4_5 (not c_3_3_5))) 
+(assert (=> c_3_4_5 (not c_4_1_5))) 
+(assert (=> c_3_4_5 (not c_4_2_5))) 
+(assert (=> c_3_4_5 (not c_4_3_5))) 
+(assert (=> c_3_4_5 (not c_4_4_5))) 
+(assert (=> c_4_1_5 (not c_1_1_5))) 
+(assert (=> c_4_1_5 (not c_1_2_5))) 
+(assert (=> c_4_1_5 (not c_1_3_5))) 
+(assert (=> c_4_1_5 (not c_1_4_5))) 
+(assert (=> c_4_1_5 (not c_2_1_5))) 
+(assert (=> c_4_1_5 (not c_2_2_5))) 
+(assert (=> c_4_1_5 (not c_2_3_5))) 
+(assert (=> c_4_1_5 (not c_2_4_5))) 
+(assert (=> c_4_1_5 (not c_3_1_5))) 
+(assert (=> c_4_1_5 (not c_3_2_5))) 
+(assert (=> c_4_1_5 (not c_3_3_5))) 
+(assert (=> c_4_1_5 (not c_3_4_5))) 
+(assert (=> c_4_1_5 (not c_4_2_5))) 
+(assert (=> c_4_1_5 (not c_4_3_5))) 
+(assert (=> c_4_1_5 (not c_4_4_5))) 
+(assert (=> c_4_2_5 (not c_1_1_5))) 
+(assert (=> c_4_2_5 (not c_1_2_5))) 
+(assert (=> c_4_2_5 (not c_1_3_5))) 
+(assert (=> c_4_2_5 (not c_1_4_5))) 
+(assert (=> c_4_2_5 (not c_2_1_5))) 
+(assert (=> c_4_2_5 (not c_2_2_5))) 
+(assert (=> c_4_2_5 (not c_2_3_5))) 
+(assert (=> c_4_2_5 (not c_2_4_5))) 
+(assert (=> c_4_2_5 (not c_3_1_5))) 
+(assert (=> c_4_2_5 (not c_3_2_5))) 
+(assert (=> c_4_2_5 (not c_3_3_5))) 
+(assert (=> c_4_2_5 (not c_3_4_5))) 
+(assert (=> c_4_2_5 (not c_4_1_5))) 
+(assert (=> c_4_2_5 (not c_4_3_5))) 
+(assert (=> c_4_2_5 (not c_4_4_5))) 
+(assert (=> c_4_3_5 (not c_1_1_5))) 
+(assert (=> c_4_3_5 (not c_1_2_5))) 
+(assert (=> c_4_3_5 (not c_1_3_5))) 
+(assert (=> c_4_3_5 (not c_1_4_5))) 
+(assert (=> c_4_3_5 (not c_2_1_5))) 
+(assert (=> c_4_3_5 (not c_2_2_5))) 
+(assert (=> c_4_3_5 (not c_2_3_5))) 
+(assert (=> c_4_3_5 (not c_2_4_5))) 
+(assert (=> c_4_3_5 (not c_3_1_5))) 
+(assert (=> c_4_3_5 (not c_3_2_5))) 
+(assert (=> c_4_3_5 (not c_3_3_5))) 
+(assert (=> c_4_3_5 (not c_3_4_5))) 
+(assert (=> c_4_3_5 (not c_4_1_5))) 
+(assert (=> c_4_3_5 (not c_4_2_5))) 
+(assert (=> c_4_3_5 (not c_4_4_5))) 
+(assert (=> c_4_4_5 (not c_1_1_5))) 
+(assert (=> c_4_4_5 (not c_1_2_5))) 
+(assert (=> c_4_4_5 (not c_1_3_5))) 
+(assert (=> c_4_4_5 (not c_1_4_5))) 
+(assert (=> c_4_4_5 (not c_2_1_5))) 
+(assert (=> c_4_4_5 (not c_2_2_5))) 
+(assert (=> c_4_4_5 (not c_2_3_5))) 
+(assert (=> c_4_4_5 (not c_2_4_5))) 
+(assert (=> c_4_4_5 (not c_3_1_5))) 
+(assert (=> c_4_4_5 (not c_3_2_5))) 
+(assert (=> c_4_4_5 (not c_3_3_5))) 
+(assert (=> c_4_4_5 (not c_3_4_5))) 
+(assert (=> c_4_4_5 (not c_4_1_5))) 
+(assert (=> c_4_4_5 (not c_4_2_5))) 
+(assert (=> c_4_4_5 (not c_4_3_5))) 
+(assert (=> c_1_1_6 (not c_1_2_6))) 
+(assert (=> c_1_1_6 (not c_1_3_6))) 
+(assert (=> c_1_1_6 (not c_1_4_6))) 
+(assert (=> c_1_1_6 (not c_2_1_6))) 
+(assert (=> c_1_1_6 (not c_2_2_6))) 
+(assert (=> c_1_1_6 (not c_2_3_6))) 
+(assert (=> c_1_1_6 (not c_2_4_6))) 
+(assert (=> c_1_1_6 (not c_3_1_6))) 
+(assert (=> c_1_1_6 (not c_3_2_6))) 
+(assert (=> c_1_1_6 (not c_3_3_6))) 
+(assert (=> c_1_1_6 (not c_3_4_6))) 
+(assert (=> c_1_1_6 (not c_4_1_6))) 
+(assert (=> c_1_1_6 (not c_4_2_6))) 
+(assert (=> c_1_1_6 (not c_4_3_6))) 
+(assert (=> c_1_1_6 (not c_4_4_6))) 
+(assert (=> c_1_2_6 (not c_1_1_6))) 
+(assert (=> c_1_2_6 (not c_1_3_6))) 
+(assert (=> c_1_2_6 (not c_1_4_6))) 
+(assert (=> c_1_2_6 (not c_2_1_6))) 
+(assert (=> c_1_2_6 (not c_2_2_6))) 
+(assert (=> c_1_2_6 (not c_2_3_6))) 
+(assert (=> c_1_2_6 (not c_2_4_6))) 
+(assert (=> c_1_2_6 (not c_3_1_6))) 
+(assert (=> c_1_2_6 (not c_3_2_6))) 
+(assert (=> c_1_2_6 (not c_3_3_6))) 
+(assert (=> c_1_2_6 (not c_3_4_6))) 
+(assert (=> c_1_2_6 (not c_4_1_6))) 
+(assert (=> c_1_2_6 (not c_4_2_6))) 
+(assert (=> c_1_2_6 (not c_4_3_6))) 
+(assert (=> c_1_2_6 (not c_4_4_6))) 
+(assert (=> c_1_3_6 (not c_1_1_6))) 
+(assert (=> c_1_3_6 (not c_1_2_6))) 
+(assert (=> c_1_3_6 (not c_1_4_6))) 
+(assert (=> c_1_3_6 (not c_2_1_6))) 
+(assert (=> c_1_3_6 (not c_2_2_6))) 
+(assert (=> c_1_3_6 (not c_2_3_6))) 
+(assert (=> c_1_3_6 (not c_2_4_6))) 
+(assert (=> c_1_3_6 (not c_3_1_6))) 
+(assert (=> c_1_3_6 (not c_3_2_6))) 
+(assert (=> c_1_3_6 (not c_3_3_6))) 
+(assert (=> c_1_3_6 (not c_3_4_6))) 
+(assert (=> c_1_3_6 (not c_4_1_6))) 
+(assert (=> c_1_3_6 (not c_4_2_6))) 
+(assert (=> c_1_3_6 (not c_4_3_6))) 
+(assert (=> c_1_3_6 (not c_4_4_6))) 
+(assert (=> c_1_4_6 (not c_1_1_6))) 
+(assert (=> c_1_4_6 (not c_1_2_6))) 
+(assert (=> c_1_4_6 (not c_1_3_6))) 
+(assert (=> c_1_4_6 (not c_2_1_6))) 
+(assert (=> c_1_4_6 (not c_2_2_6))) 
+(assert (=> c_1_4_6 (not c_2_3_6))) 
+(assert (=> c_1_4_6 (not c_2_4_6))) 
+(assert (=> c_1_4_6 (not c_3_1_6))) 
+(assert (=> c_1_4_6 (not c_3_2_6))) 
+(assert (=> c_1_4_6 (not c_3_3_6))) 
+(assert (=> c_1_4_6 (not c_3_4_6))) 
+(assert (=> c_1_4_6 (not c_4_1_6))) 
+(assert (=> c_1_4_6 (not c_4_2_6))) 
+(assert (=> c_1_4_6 (not c_4_3_6))) 
+(assert (=> c_1_4_6 (not c_4_4_6))) 
+(assert (=> c_2_1_6 (not c_1_1_6))) 
+(assert (=> c_2_1_6 (not c_1_2_6))) 
+(assert (=> c_2_1_6 (not c_1_3_6))) 
+(assert (=> c_2_1_6 (not c_1_4_6))) 
+(assert (=> c_2_1_6 (not c_2_2_6))) 
+(assert (=> c_2_1_6 (not c_2_3_6))) 
+(assert (=> c_2_1_6 (not c_2_4_6))) 
+(assert (=> c_2_1_6 (not c_3_1_6))) 
+(assert (=> c_2_1_6 (not c_3_2_6))) 
+(assert (=> c_2_1_6 (not c_3_3_6))) 
+(assert (=> c_2_1_6 (not c_3_4_6))) 
+(assert (=> c_2_1_6 (not c_4_1_6))) 
+(assert (=> c_2_1_6 (not c_4_2_6))) 
+(assert (=> c_2_1_6 (not c_4_3_6))) 
+(assert (=> c_2_1_6 (not c_4_4_6))) 
+(assert (=> c_2_2_6 (not c_1_1_6))) 
+(assert (=> c_2_2_6 (not c_1_2_6))) 
+(assert (=> c_2_2_6 (not c_1_3_6))) 
+(assert (=> c_2_2_6 (not c_1_4_6))) 
+(assert (=> c_2_2_6 (not c_2_1_6))) 
+(assert (=> c_2_2_6 (not c_2_3_6))) 
+(assert (=> c_2_2_6 (not c_2_4_6))) 
+(assert (=> c_2_2_6 (not c_3_1_6))) 
+(assert (=> c_2_2_6 (not c_3_2_6))) 
+(assert (=> c_2_2_6 (not c_3_3_6))) 
+(assert (=> c_2_2_6 (not c_3_4_6))) 
+(assert (=> c_2_2_6 (not c_4_1_6))) 
+(assert (=> c_2_2_6 (not c_4_2_6))) 
+(assert (=> c_2_2_6 (not c_4_3_6))) 
+(assert (=> c_2_2_6 (not c_4_4_6))) 
+(assert (=> c_2_3_6 (not c_1_1_6))) 
+(assert (=> c_2_3_6 (not c_1_2_6))) 
+(assert (=> c_2_3_6 (not c_1_3_6))) 
+(assert (=> c_2_3_6 (not c_1_4_6))) 
+(assert (=> c_2_3_6 (not c_2_1_6))) 
+(assert (=> c_2_3_6 (not c_2_2_6))) 
+(assert (=> c_2_3_6 (not c_2_4_6))) 
+(assert (=> c_2_3_6 (not c_3_1_6))) 
+(assert (=> c_2_3_6 (not c_3_2_6))) 
+(assert (=> c_2_3_6 (not c_3_3_6))) 
+(assert (=> c_2_3_6 (not c_3_4_6))) 
+(assert (=> c_2_3_6 (not c_4_1_6))) 
+(assert (=> c_2_3_6 (not c_4_2_6))) 
+(assert (=> c_2_3_6 (not c_4_3_6))) 
+(assert (=> c_2_3_6 (not c_4_4_6))) 
+(assert (=> c_2_4_6 (not c_1_1_6))) 
+(assert (=> c_2_4_6 (not c_1_2_6))) 
+(assert (=> c_2_4_6 (not c_1_3_6))) 
+(assert (=> c_2_4_6 (not c_1_4_6))) 
+(assert (=> c_2_4_6 (not c_2_1_6))) 
+(assert (=> c_2_4_6 (not c_2_2_6))) 
+(assert (=> c_2_4_6 (not c_2_3_6))) 
+(assert (=> c_2_4_6 (not c_3_1_6))) 
+(assert (=> c_2_4_6 (not c_3_2_6))) 
+(assert (=> c_2_4_6 (not c_3_3_6))) 
+(assert (=> c_2_4_6 (not c_3_4_6))) 
+(assert (=> c_2_4_6 (not c_4_1_6))) 
+(assert (=> c_2_4_6 (not c_4_2_6))) 
+(assert (=> c_2_4_6 (not c_4_3_6))) 
+(assert (=> c_2_4_6 (not c_4_4_6))) 
+(assert (=> c_3_1_6 (not c_1_1_6))) 
+(assert (=> c_3_1_6 (not c_1_2_6))) 
+(assert (=> c_3_1_6 (not c_1_3_6))) 
+(assert (=> c_3_1_6 (not c_1_4_6))) 
+(assert (=> c_3_1_6 (not c_2_1_6))) 
+(assert (=> c_3_1_6 (not c_2_2_6))) 
+(assert (=> c_3_1_6 (not c_2_3_6))) 
+(assert (=> c_3_1_6 (not c_2_4_6))) 
+(assert (=> c_3_1_6 (not c_3_2_6))) 
+(assert (=> c_3_1_6 (not c_3_3_6))) 
+(assert (=> c_3_1_6 (not c_3_4_6))) 
+(assert (=> c_3_1_6 (not c_4_1_6))) 
+(assert (=> c_3_1_6 (not c_4_2_6))) 
+(assert (=> c_3_1_6 (not c_4_3_6))) 
+(assert (=> c_3_1_6 (not c_4_4_6))) 
+(assert (=> c_3_2_6 (not c_1_1_6))) 
+(assert (=> c_3_2_6 (not c_1_2_6))) 
+(assert (=> c_3_2_6 (not c_1_3_6))) 
+(assert (=> c_3_2_6 (not c_1_4_6))) 
+(assert (=> c_3_2_6 (not c_2_1_6))) 
+(assert (=> c_3_2_6 (not c_2_2_6))) 
+(assert (=> c_3_2_6 (not c_2_3_6))) 
+(assert (=> c_3_2_6 (not c_2_4_6))) 
+(assert (=> c_3_2_6 (not c_3_1_6))) 
+(assert (=> c_3_2_6 (not c_3_3_6))) 
+(assert (=> c_3_2_6 (not c_3_4_6))) 
+(assert (=> c_3_2_6 (not c_4_1_6))) 
+(assert (=> c_3_2_6 (not c_4_2_6))) 
+(assert (=> c_3_2_6 (not c_4_3_6))) 
+(assert (=> c_3_2_6 (not c_4_4_6))) 
+(assert (=> c_3_3_6 (not c_1_1_6))) 
+(assert (=> c_3_3_6 (not c_1_2_6))) 
+(assert (=> c_3_3_6 (not c_1_3_6))) 
+(assert (=> c_3_3_6 (not c_1_4_6))) 
+(assert (=> c_3_3_6 (not c_2_1_6))) 
+(assert (=> c_3_3_6 (not c_2_2_6))) 
+(assert (=> c_3_3_6 (not c_2_3_6))) 
+(assert (=> c_3_3_6 (not c_2_4_6))) 
+(assert (=> c_3_3_6 (not c_3_1_6))) 
+(assert (=> c_3_3_6 (not c_3_2_6))) 
+(assert (=> c_3_3_6 (not c_3_4_6))) 
+(assert (=> c_3_3_6 (not c_4_1_6))) 
+(assert (=> c_3_3_6 (not c_4_2_6))) 
+(assert (=> c_3_3_6 (not c_4_3_6))) 
+(assert (=> c_3_3_6 (not c_4_4_6))) 
+(assert (=> c_3_4_6 (not c_1_1_6))) 
+(assert (=> c_3_4_6 (not c_1_2_6))) 
+(assert (=> c_3_4_6 (not c_1_3_6))) 
+(assert (=> c_3_4_6 (not c_1_4_6))) 
+(assert (=> c_3_4_6 (not c_2_1_6))) 
+(assert (=> c_3_4_6 (not c_2_2_6))) 
+(assert (=> c_3_4_6 (not c_2_3_6))) 
+(assert (=> c_3_4_6 (not c_2_4_6))) 
+(assert (=> c_3_4_6 (not c_3_1_6))) 
+(assert (=> c_3_4_6 (not c_3_2_6))) 
+(assert (=> c_3_4_6 (not c_3_3_6))) 
+(assert (=> c_3_4_6 (not c_4_1_6))) 
+(assert (=> c_3_4_6 (not c_4_2_6))) 
+(assert (=> c_3_4_6 (not c_4_3_6))) 
+(assert (=> c_3_4_6 (not c_4_4_6))) 
+(assert (=> c_4_1_6 (not c_1_1_6))) 
+(assert (=> c_4_1_6 (not c_1_2_6))) 
+(assert (=> c_4_1_6 (not c_1_3_6))) 
+(assert (=> c_4_1_6 (not c_1_4_6))) 
+(assert (=> c_4_1_6 (not c_2_1_6))) 
+(assert (=> c_4_1_6 (not c_2_2_6))) 
+(assert (=> c_4_1_6 (not c_2_3_6))) 
+(assert (=> c_4_1_6 (not c_2_4_6))) 
+(assert (=> c_4_1_6 (not c_3_1_6))) 
+(assert (=> c_4_1_6 (not c_3_2_6))) 
+(assert (=> c_4_1_6 (not c_3_3_6))) 
+(assert (=> c_4_1_6 (not c_3_4_6))) 
+(assert (=> c_4_1_6 (not c_4_2_6))) 
+(assert (=> c_4_1_6 (not c_4_3_6))) 
+(assert (=> c_4_1_6 (not c_4_4_6))) 
+(assert (=> c_4_2_6 (not c_1_1_6))) 
+(assert (=> c_4_2_6 (not c_1_2_6))) 
+(assert (=> c_4_2_6 (not c_1_3_6))) 
+(assert (=> c_4_2_6 (not c_1_4_6))) 
+(assert (=> c_4_2_6 (not c_2_1_6))) 
+(assert (=> c_4_2_6 (not c_2_2_6))) 
+(assert (=> c_4_2_6 (not c_2_3_6))) 
+(assert (=> c_4_2_6 (not c_2_4_6))) 
+(assert (=> c_4_2_6 (not c_3_1_6))) 
+(assert (=> c_4_2_6 (not c_3_2_6))) 
+(assert (=> c_4_2_6 (not c_3_3_6))) 
+(assert (=> c_4_2_6 (not c_3_4_6))) 
+(assert (=> c_4_2_6 (not c_4_1_6))) 
+(assert (=> c_4_2_6 (not c_4_3_6))) 
+(assert (=> c_4_2_6 (not c_4_4_6))) 
+(assert (=> c_4_3_6 (not c_1_1_6))) 
+(assert (=> c_4_3_6 (not c_1_2_6))) 
+(assert (=> c_4_3_6 (not c_1_3_6))) 
+(assert (=> c_4_3_6 (not c_1_4_6))) 
+(assert (=> c_4_3_6 (not c_2_1_6))) 
+(assert (=> c_4_3_6 (not c_2_2_6))) 
+(assert (=> c_4_3_6 (not c_2_3_6))) 
+(assert (=> c_4_3_6 (not c_2_4_6))) 
+(assert (=> c_4_3_6 (not c_3_1_6))) 
+(assert (=> c_4_3_6 (not c_3_2_6))) 
+(assert (=> c_4_3_6 (not c_3_3_6))) 
+(assert (=> c_4_3_6 (not c_3_4_6))) 
+(assert (=> c_4_3_6 (not c_4_1_6))) 
+(assert (=> c_4_3_6 (not c_4_2_6))) 
+(assert (=> c_4_3_6 (not c_4_4_6))) 
+(assert (=> c_4_4_6 (not c_1_1_6))) 
+(assert (=> c_4_4_6 (not c_1_2_6))) 
+(assert (=> c_4_4_6 (not c_1_3_6))) 
+(assert (=> c_4_4_6 (not c_1_4_6))) 
+(assert (=> c_4_4_6 (not c_2_1_6))) 
+(assert (=> c_4_4_6 (not c_2_2_6))) 
+(assert (=> c_4_4_6 (not c_2_3_6))) 
+(assert (=> c_4_4_6 (not c_2_4_6))) 
+(assert (=> c_4_4_6 (not c_3_1_6))) 
+(assert (=> c_4_4_6 (not c_3_2_6))) 
+(assert (=> c_4_4_6 (not c_3_3_6))) 
+(assert (=> c_4_4_6 (not c_3_4_6))) 
+(assert (=> c_4_4_6 (not c_4_1_6))) 
+(assert (=> c_4_4_6 (not c_4_2_6))) 
+(assert (=> c_4_4_6 (not c_4_3_6))) 
+(assert (=> c_1_1_7 (not c_1_2_7))) 
+(assert (=> c_1_1_7 (not c_1_3_7))) 
+(assert (=> c_1_1_7 (not c_1_4_7))) 
+(assert (=> c_1_1_7 (not c_2_1_7))) 
+(assert (=> c_1_1_7 (not c_2_2_7))) 
+(assert (=> c_1_1_7 (not c_2_3_7))) 
+(assert (=> c_1_1_7 (not c_2_4_7))) 
+(assert (=> c_1_1_7 (not c_3_1_7))) 
+(assert (=> c_1_1_7 (not c_3_2_7))) 
+(assert (=> c_1_1_7 (not c_3_3_7))) 
+(assert (=> c_1_1_7 (not c_3_4_7))) 
+(assert (=> c_1_1_7 (not c_4_1_7))) 
+(assert (=> c_1_1_7 (not c_4_2_7))) 
+(assert (=> c_1_1_7 (not c_4_3_7))) 
+(assert (=> c_1_1_7 (not c_4_4_7))) 
+(assert (=> c_1_2_7 (not c_1_1_7))) 
+(assert (=> c_1_2_7 (not c_1_3_7))) 
+(assert (=> c_1_2_7 (not c_1_4_7))) 
+(assert (=> c_1_2_7 (not c_2_1_7))) 
+(assert (=> c_1_2_7 (not c_2_2_7))) 
+(assert (=> c_1_2_7 (not c_2_3_7))) 
+(assert (=> c_1_2_7 (not c_2_4_7))) 
+(assert (=> c_1_2_7 (not c_3_1_7))) 
+(assert (=> c_1_2_7 (not c_3_2_7))) 
+(assert (=> c_1_2_7 (not c_3_3_7))) 
+(assert (=> c_1_2_7 (not c_3_4_7))) 
+(assert (=> c_1_2_7 (not c_4_1_7))) 
+(assert (=> c_1_2_7 (not c_4_2_7))) 
+(assert (=> c_1_2_7 (not c_4_3_7))) 
+(assert (=> c_1_2_7 (not c_4_4_7))) 
+(assert (=> c_1_3_7 (not c_1_1_7))) 
+(assert (=> c_1_3_7 (not c_1_2_7))) 
+(assert (=> c_1_3_7 (not c_1_4_7))) 
+(assert (=> c_1_3_7 (not c_2_1_7))) 
+(assert (=> c_1_3_7 (not c_2_2_7))) 
+(assert (=> c_1_3_7 (not c_2_3_7))) 
+(assert (=> c_1_3_7 (not c_2_4_7))) 
+(assert (=> c_1_3_7 (not c_3_1_7))) 
+(assert (=> c_1_3_7 (not c_3_2_7))) 
+(assert (=> c_1_3_7 (not c_3_3_7))) 
+(assert (=> c_1_3_7 (not c_3_4_7))) 
+(assert (=> c_1_3_7 (not c_4_1_7))) 
+(assert (=> c_1_3_7 (not c_4_2_7))) 
+(assert (=> c_1_3_7 (not c_4_3_7))) 
+(assert (=> c_1_3_7 (not c_4_4_7))) 
+(assert (=> c_1_4_7 (not c_1_1_7))) 
+(assert (=> c_1_4_7 (not c_1_2_7))) 
+(assert (=> c_1_4_7 (not c_1_3_7))) 
+(assert (=> c_1_4_7 (not c_2_1_7))) 
+(assert (=> c_1_4_7 (not c_2_2_7))) 
+(assert (=> c_1_4_7 (not c_2_3_7))) 
+(assert (=> c_1_4_7 (not c_2_4_7))) 
+(assert (=> c_1_4_7 (not c_3_1_7))) 
+(assert (=> c_1_4_7 (not c_3_2_7))) 
+(assert (=> c_1_4_7 (not c_3_3_7))) 
+(assert (=> c_1_4_7 (not c_3_4_7))) 
+(assert (=> c_1_4_7 (not c_4_1_7))) 
+(assert (=> c_1_4_7 (not c_4_2_7))) 
+(assert (=> c_1_4_7 (not c_4_3_7))) 
+(assert (=> c_1_4_7 (not c_4_4_7))) 
+(assert (=> c_2_1_7 (not c_1_1_7))) 
+(assert (=> c_2_1_7 (not c_1_2_7))) 
+(assert (=> c_2_1_7 (not c_1_3_7))) 
+(assert (=> c_2_1_7 (not c_1_4_7))) 
+(assert (=> c_2_1_7 (not c_2_2_7))) 
+(assert (=> c_2_1_7 (not c_2_3_7))) 
+(assert (=> c_2_1_7 (not c_2_4_7))) 
+(assert (=> c_2_1_7 (not c_3_1_7))) 
+(assert (=> c_2_1_7 (not c_3_2_7))) 
+(assert (=> c_2_1_7 (not c_3_3_7))) 
+(assert (=> c_2_1_7 (not c_3_4_7))) 
+(assert (=> c_2_1_7 (not c_4_1_7))) 
+(assert (=> c_2_1_7 (not c_4_2_7))) 
+(assert (=> c_2_1_7 (not c_4_3_7))) 
+(assert (=> c_2_1_7 (not c_4_4_7))) 
+(assert (=> c_2_2_7 (not c_1_1_7))) 
+(assert (=> c_2_2_7 (not c_1_2_7))) 
+(assert (=> c_2_2_7 (not c_1_3_7))) 
+(assert (=> c_2_2_7 (not c_1_4_7))) 
+(assert (=> c_2_2_7 (not c_2_1_7))) 
+(assert (=> c_2_2_7 (not c_2_3_7))) 
+(assert (=> c_2_2_7 (not c_2_4_7))) 
+(assert (=> c_2_2_7 (not c_3_1_7))) 
+(assert (=> c_2_2_7 (not c_3_2_7))) 
+(assert (=> c_2_2_7 (not c_3_3_7))) 
+(assert (=> c_2_2_7 (not c_3_4_7))) 
+(assert (=> c_2_2_7 (not c_4_1_7))) 
+(assert (=> c_2_2_7 (not c_4_2_7))) 
+(assert (=> c_2_2_7 (not c_4_3_7))) 
+(assert (=> c_2_2_7 (not c_4_4_7))) 
+(assert (=> c_2_3_7 (not c_1_1_7))) 
+(assert (=> c_2_3_7 (not c_1_2_7))) 
+(assert (=> c_2_3_7 (not c_1_3_7))) 
+(assert (=> c_2_3_7 (not c_1_4_7))) 
+(assert (=> c_2_3_7 (not c_2_1_7))) 
+(assert (=> c_2_3_7 (not c_2_2_7))) 
+(assert (=> c_2_3_7 (not c_2_4_7))) 
+(assert (=> c_2_3_7 (not c_3_1_7))) 
+(assert (=> c_2_3_7 (not c_3_2_7))) 
+(assert (=> c_2_3_7 (not c_3_3_7))) 
+(assert (=> c_2_3_7 (not c_3_4_7))) 
+(assert (=> c_2_3_7 (not c_4_1_7))) 
+(assert (=> c_2_3_7 (not c_4_2_7))) 
+(assert (=> c_2_3_7 (not c_4_3_7))) 
+(assert (=> c_2_3_7 (not c_4_4_7))) 
+(assert (=> c_2_4_7 (not c_1_1_7))) 
+(assert (=> c_2_4_7 (not c_1_2_7))) 
+(assert (=> c_2_4_7 (not c_1_3_7))) 
+(assert (=> c_2_4_7 (not c_1_4_7))) 
+(assert (=> c_2_4_7 (not c_2_1_7))) 
+(assert (=> c_2_4_7 (not c_2_2_7))) 
+(assert (=> c_2_4_7 (not c_2_3_7))) 
+(assert (=> c_2_4_7 (not c_3_1_7))) 
+(assert (=> c_2_4_7 (not c_3_2_7))) 
+(assert (=> c_2_4_7 (not c_3_3_7))) 
+(assert (=> c_2_4_7 (not c_3_4_7))) 
+(assert (=> c_2_4_7 (not c_4_1_7))) 
+(assert (=> c_2_4_7 (not c_4_2_7))) 
+(assert (=> c_2_4_7 (not c_4_3_7))) 
+(assert (=> c_2_4_7 (not c_4_4_7))) 
+(assert (=> c_3_1_7 (not c_1_1_7))) 
+(assert (=> c_3_1_7 (not c_1_2_7))) 
+(assert (=> c_3_1_7 (not c_1_3_7))) 
+(assert (=> c_3_1_7 (not c_1_4_7))) 
+(assert (=> c_3_1_7 (not c_2_1_7))) 
+(assert (=> c_3_1_7 (not c_2_2_7))) 
+(assert (=> c_3_1_7 (not c_2_3_7))) 
+(assert (=> c_3_1_7 (not c_2_4_7))) 
+(assert (=> c_3_1_7 (not c_3_2_7))) 
+(assert (=> c_3_1_7 (not c_3_3_7))) 
+(assert (=> c_3_1_7 (not c_3_4_7))) 
+(assert (=> c_3_1_7 (not c_4_1_7))) 
+(assert (=> c_3_1_7 (not c_4_2_7))) 
+(assert (=> c_3_1_7 (not c_4_3_7))) 
+(assert (=> c_3_1_7 (not c_4_4_7))) 
+(assert (=> c_3_2_7 (not c_1_1_7))) 
+(assert (=> c_3_2_7 (not c_1_2_7))) 
+(assert (=> c_3_2_7 (not c_1_3_7))) 
+(assert (=> c_3_2_7 (not c_1_4_7))) 
+(assert (=> c_3_2_7 (not c_2_1_7))) 
+(assert (=> c_3_2_7 (not c_2_2_7))) 
+(assert (=> c_3_2_7 (not c_2_3_7))) 
+(assert (=> c_3_2_7 (not c_2_4_7))) 
+(assert (=> c_3_2_7 (not c_3_1_7))) 
+(assert (=> c_3_2_7 (not c_3_3_7))) 
+(assert (=> c_3_2_7 (not c_3_4_7))) 
+(assert (=> c_3_2_7 (not c_4_1_7))) 
+(assert (=> c_3_2_7 (not c_4_2_7))) 
+(assert (=> c_3_2_7 (not c_4_3_7))) 
+(assert (=> c_3_2_7 (not c_4_4_7))) 
+(assert (=> c_3_3_7 (not c_1_1_7))) 
+(assert (=> c_3_3_7 (not c_1_2_7))) 
+(assert (=> c_3_3_7 (not c_1_3_7))) 
+(assert (=> c_3_3_7 (not c_1_4_7))) 
+(assert (=> c_3_3_7 (not c_2_1_7))) 
+(assert (=> c_3_3_7 (not c_2_2_7))) 
+(assert (=> c_3_3_7 (not c_2_3_7))) 
+(assert (=> c_3_3_7 (not c_2_4_7))) 
+(assert (=> c_3_3_7 (not c_3_1_7))) 
+(assert (=> c_3_3_7 (not c_3_2_7))) 
+(assert (=> c_3_3_7 (not c_3_4_7))) 
+(assert (=> c_3_3_7 (not c_4_1_7))) 
+(assert (=> c_3_3_7 (not c_4_2_7))) 
+(assert (=> c_3_3_7 (not c_4_3_7))) 
+(assert (=> c_3_3_7 (not c_4_4_7))) 
+(assert (=> c_3_4_7 (not c_1_1_7))) 
+(assert (=> c_3_4_7 (not c_1_2_7))) 
+(assert (=> c_3_4_7 (not c_1_3_7))) 
+(assert (=> c_3_4_7 (not c_1_4_7))) 
+(assert (=> c_3_4_7 (not c_2_1_7))) 
+(assert (=> c_3_4_7 (not c_2_2_7))) 
+(assert (=> c_3_4_7 (not c_2_3_7))) 
+(assert (=> c_3_4_7 (not c_2_4_7))) 
+(assert (=> c_3_4_7 (not c_3_1_7))) 
+(assert (=> c_3_4_7 (not c_3_2_7))) 
+(assert (=> c_3_4_7 (not c_3_3_7))) 
+(assert (=> c_3_4_7 (not c_4_1_7))) 
+(assert (=> c_3_4_7 (not c_4_2_7))) 
+(assert (=> c_3_4_7 (not c_4_3_7))) 
+(assert (=> c_3_4_7 (not c_4_4_7))) 
+(assert (=> c_4_1_7 (not c_1_1_7))) 
+(assert (=> c_4_1_7 (not c_1_2_7))) 
+(assert (=> c_4_1_7 (not c_1_3_7))) 
+(assert (=> c_4_1_7 (not c_1_4_7))) 
+(assert (=> c_4_1_7 (not c_2_1_7))) 
+(assert (=> c_4_1_7 (not c_2_2_7))) 
+(assert (=> c_4_1_7 (not c_2_3_7))) 
+(assert (=> c_4_1_7 (not c_2_4_7))) 
+(assert (=> c_4_1_7 (not c_3_1_7))) 
+(assert (=> c_4_1_7 (not c_3_2_7))) 
+(assert (=> c_4_1_7 (not c_3_3_7))) 
+(assert (=> c_4_1_7 (not c_3_4_7))) 
+(assert (=> c_4_1_7 (not c_4_2_7))) 
+(assert (=> c_4_1_7 (not c_4_3_7))) 
+(assert (=> c_4_1_7 (not c_4_4_7))) 
+(assert (=> c_4_2_7 (not c_1_1_7))) 
+(assert (=> c_4_2_7 (not c_1_2_7))) 
+(assert (=> c_4_2_7 (not c_1_3_7))) 
+(assert (=> c_4_2_7 (not c_1_4_7))) 
+(assert (=> c_4_2_7 (not c_2_1_7))) 
+(assert (=> c_4_2_7 (not c_2_2_7))) 
+(assert (=> c_4_2_7 (not c_2_3_7))) 
+(assert (=> c_4_2_7 (not c_2_4_7))) 
+(assert (=> c_4_2_7 (not c_3_1_7))) 
+(assert (=> c_4_2_7 (not c_3_2_7))) 
+(assert (=> c_4_2_7 (not c_3_3_7))) 
+(assert (=> c_4_2_7 (not c_3_4_7))) 
+(assert (=> c_4_2_7 (not c_4_1_7))) 
+(assert (=> c_4_2_7 (not c_4_3_7))) 
+(assert (=> c_4_2_7 (not c_4_4_7))) 
+(assert (=> c_4_3_7 (not c_1_1_7))) 
+(assert (=> c_4_3_7 (not c_1_2_7))) 
+(assert (=> c_4_3_7 (not c_1_3_7))) 
+(assert (=> c_4_3_7 (not c_1_4_7))) 
+(assert (=> c_4_3_7 (not c_2_1_7))) 
+(assert (=> c_4_3_7 (not c_2_2_7))) 
+(assert (=> c_4_3_7 (not c_2_3_7))) 
+(assert (=> c_4_3_7 (not c_2_4_7))) 
+(assert (=> c_4_3_7 (not c_3_1_7))) 
+(assert (=> c_4_3_7 (not c_3_2_7))) 
+(assert (=> c_4_3_7 (not c_3_3_7))) 
+(assert (=> c_4_3_7 (not c_3_4_7))) 
+(assert (=> c_4_3_7 (not c_4_1_7))) 
+(assert (=> c_4_3_7 (not c_4_2_7))) 
+(assert (=> c_4_3_7 (not c_4_4_7))) 
+(assert (=> c_4_4_7 (not c_1_1_7))) 
+(assert (=> c_4_4_7 (not c_1_2_7))) 
+(assert (=> c_4_4_7 (not c_1_3_7))) 
+(assert (=> c_4_4_7 (not c_1_4_7))) 
+(assert (=> c_4_4_7 (not c_2_1_7))) 
+(assert (=> c_4_4_7 (not c_2_2_7))) 
+(assert (=> c_4_4_7 (not c_2_3_7))) 
+(assert (=> c_4_4_7 (not c_2_4_7))) 
+(assert (=> c_4_4_7 (not c_3_1_7))) 
+(assert (=> c_4_4_7 (not c_3_2_7))) 
+(assert (=> c_4_4_7 (not c_3_3_7))) 
+(assert (=> c_4_4_7 (not c_3_4_7))) 
+(assert (=> c_4_4_7 (not c_4_1_7))) 
+(assert (=> c_4_4_7 (not c_4_2_7))) 
+(assert (=> c_4_4_7 (not c_4_3_7))) 
+(assert (=> c_1_1_8 (not c_1_2_8))) 
+(assert (=> c_1_1_8 (not c_1_3_8))) 
+(assert (=> c_1_1_8 (not c_1_4_8))) 
+(assert (=> c_1_1_8 (not c_2_1_8))) 
+(assert (=> c_1_1_8 (not c_2_2_8))) 
+(assert (=> c_1_1_8 (not c_2_3_8))) 
+(assert (=> c_1_1_8 (not c_2_4_8))) 
+(assert (=> c_1_1_8 (not c_3_1_8))) 
+(assert (=> c_1_1_8 (not c_3_2_8))) 
+(assert (=> c_1_1_8 (not c_3_3_8))) 
+(assert (=> c_1_1_8 (not c_3_4_8))) 
+(assert (=> c_1_1_8 (not c_4_1_8))) 
+(assert (=> c_1_1_8 (not c_4_2_8))) 
+(assert (=> c_1_1_8 (not c_4_3_8))) 
+(assert (=> c_1_1_8 (not c_4_4_8))) 
+(assert (=> c_1_2_8 (not c_1_1_8))) 
+(assert (=> c_1_2_8 (not c_1_3_8))) 
+(assert (=> c_1_2_8 (not c_1_4_8))) 
+(assert (=> c_1_2_8 (not c_2_1_8))) 
+(assert (=> c_1_2_8 (not c_2_2_8))) 
+(assert (=> c_1_2_8 (not c_2_3_8))) 
+(assert (=> c_1_2_8 (not c_2_4_8))) 
+(assert (=> c_1_2_8 (not c_3_1_8))) 
+(assert (=> c_1_2_8 (not c_3_2_8))) 
+(assert (=> c_1_2_8 (not c_3_3_8))) 
+(assert (=> c_1_2_8 (not c_3_4_8))) 
+(assert (=> c_1_2_8 (not c_4_1_8))) 
+(assert (=> c_1_2_8 (not c_4_2_8))) 
+(assert (=> c_1_2_8 (not c_4_3_8))) 
+(assert (=> c_1_2_8 (not c_4_4_8))) 
+(assert (=> c_1_3_8 (not c_1_1_8))) 
+(assert (=> c_1_3_8 (not c_1_2_8))) 
+(assert (=> c_1_3_8 (not c_1_4_8))) 
+(assert (=> c_1_3_8 (not c_2_1_8))) 
+(assert (=> c_1_3_8 (not c_2_2_8))) 
+(assert (=> c_1_3_8 (not c_2_3_8))) 
+(assert (=> c_1_3_8 (not c_2_4_8))) 
+(assert (=> c_1_3_8 (not c_3_1_8))) 
+(assert (=> c_1_3_8 (not c_3_2_8))) 
+(assert (=> c_1_3_8 (not c_3_3_8))) 
+(assert (=> c_1_3_8 (not c_3_4_8))) 
+(assert (=> c_1_3_8 (not c_4_1_8))) 
+(assert (=> c_1_3_8 (not c_4_2_8))) 
+(assert (=> c_1_3_8 (not c_4_3_8))) 
+(assert (=> c_1_3_8 (not c_4_4_8))) 
+(assert (=> c_1_4_8 (not c_1_1_8))) 
+(assert (=> c_1_4_8 (not c_1_2_8))) 
+(assert (=> c_1_4_8 (not c_1_3_8))) 
+(assert (=> c_1_4_8 (not c_2_1_8))) 
+(assert (=> c_1_4_8 (not c_2_2_8))) 
+(assert (=> c_1_4_8 (not c_2_3_8))) 
+(assert (=> c_1_4_8 (not c_2_4_8))) 
+(assert (=> c_1_4_8 (not c_3_1_8))) 
+(assert (=> c_1_4_8 (not c_3_2_8))) 
+(assert (=> c_1_4_8 (not c_3_3_8))) 
+(assert (=> c_1_4_8 (not c_3_4_8))) 
+(assert (=> c_1_4_8 (not c_4_1_8))) 
+(assert (=> c_1_4_8 (not c_4_2_8))) 
+(assert (=> c_1_4_8 (not c_4_3_8))) 
+(assert (=> c_1_4_8 (not c_4_4_8))) 
+(assert (=> c_2_1_8 (not c_1_1_8))) 
+(assert (=> c_2_1_8 (not c_1_2_8))) 
+(assert (=> c_2_1_8 (not c_1_3_8))) 
+(assert (=> c_2_1_8 (not c_1_4_8))) 
+(assert (=> c_2_1_8 (not c_2_2_8))) 
+(assert (=> c_2_1_8 (not c_2_3_8))) 
+(assert (=> c_2_1_8 (not c_2_4_8))) 
+(assert (=> c_2_1_8 (not c_3_1_8))) 
+(assert (=> c_2_1_8 (not c_3_2_8))) 
+(assert (=> c_2_1_8 (not c_3_3_8))) 
+(assert (=> c_2_1_8 (not c_3_4_8))) 
+(assert (=> c_2_1_8 (not c_4_1_8))) 
+(assert (=> c_2_1_8 (not c_4_2_8))) 
+(assert (=> c_2_1_8 (not c_4_3_8))) 
+(assert (=> c_2_1_8 (not c_4_4_8))) 
+(assert (=> c_2_2_8 (not c_1_1_8))) 
+(assert (=> c_2_2_8 (not c_1_2_8))) 
+(assert (=> c_2_2_8 (not c_1_3_8))) 
+(assert (=> c_2_2_8 (not c_1_4_8))) 
+(assert (=> c_2_2_8 (not c_2_1_8))) 
+(assert (=> c_2_2_8 (not c_2_3_8))) 
+(assert (=> c_2_2_8 (not c_2_4_8))) 
+(assert (=> c_2_2_8 (not c_3_1_8))) 
+(assert (=> c_2_2_8 (not c_3_2_8))) 
+(assert (=> c_2_2_8 (not c_3_3_8))) 
+(assert (=> c_2_2_8 (not c_3_4_8))) 
+(assert (=> c_2_2_8 (not c_4_1_8))) 
+(assert (=> c_2_2_8 (not c_4_2_8))) 
+(assert (=> c_2_2_8 (not c_4_3_8))) 
+(assert (=> c_2_2_8 (not c_4_4_8))) 
+(assert (=> c_2_3_8 (not c_1_1_8))) 
+(assert (=> c_2_3_8 (not c_1_2_8))) 
+(assert (=> c_2_3_8 (not c_1_3_8))) 
+(assert (=> c_2_3_8 (not c_1_4_8))) 
+(assert (=> c_2_3_8 (not c_2_1_8))) 
+(assert (=> c_2_3_8 (not c_2_2_8))) 
+(assert (=> c_2_3_8 (not c_2_4_8))) 
+(assert (=> c_2_3_8 (not c_3_1_8))) 
+(assert (=> c_2_3_8 (not c_3_2_8))) 
+(assert (=> c_2_3_8 (not c_3_3_8))) 
+(assert (=> c_2_3_8 (not c_3_4_8))) 
+(assert (=> c_2_3_8 (not c_4_1_8))) 
+(assert (=> c_2_3_8 (not c_4_2_8))) 
+(assert (=> c_2_3_8 (not c_4_3_8))) 
+(assert (=> c_2_3_8 (not c_4_4_8))) 
+(assert (=> c_2_4_8 (not c_1_1_8))) 
+(assert (=> c_2_4_8 (not c_1_2_8))) 
+(assert (=> c_2_4_8 (not c_1_3_8))) 
+(assert (=> c_2_4_8 (not c_1_4_8))) 
+(assert (=> c_2_4_8 (not c_2_1_8))) 
+(assert (=> c_2_4_8 (not c_2_2_8))) 
+(assert (=> c_2_4_8 (not c_2_3_8))) 
+(assert (=> c_2_4_8 (not c_3_1_8))) 
+(assert (=> c_2_4_8 (not c_3_2_8))) 
+(assert (=> c_2_4_8 (not c_3_3_8))) 
+(assert (=> c_2_4_8 (not c_3_4_8))) 
+(assert (=> c_2_4_8 (not c_4_1_8))) 
+(assert (=> c_2_4_8 (not c_4_2_8))) 
+(assert (=> c_2_4_8 (not c_4_3_8))) 
+(assert (=> c_2_4_8 (not c_4_4_8))) 
+(assert (=> c_3_1_8 (not c_1_1_8))) 
+(assert (=> c_3_1_8 (not c_1_2_8))) 
+(assert (=> c_3_1_8 (not c_1_3_8))) 
+(assert (=> c_3_1_8 (not c_1_4_8))) 
+(assert (=> c_3_1_8 (not c_2_1_8))) 
+(assert (=> c_3_1_8 (not c_2_2_8))) 
+(assert (=> c_3_1_8 (not c_2_3_8))) 
+(assert (=> c_3_1_8 (not c_2_4_8))) 
+(assert (=> c_3_1_8 (not c_3_2_8))) 
+(assert (=> c_3_1_8 (not c_3_3_8))) 
+(assert (=> c_3_1_8 (not c_3_4_8))) 
+(assert (=> c_3_1_8 (not c_4_1_8))) 
+(assert (=> c_3_1_8 (not c_4_2_8))) 
+(assert (=> c_3_1_8 (not c_4_3_8))) 
+(assert (=> c_3_1_8 (not c_4_4_8))) 
+(assert (=> c_3_2_8 (not c_1_1_8))) 
+(assert (=> c_3_2_8 (not c_1_2_8))) 
+(assert (=> c_3_2_8 (not c_1_3_8))) 
+(assert (=> c_3_2_8 (not c_1_4_8))) 
+(assert (=> c_3_2_8 (not c_2_1_8))) 
+(assert (=> c_3_2_8 (not c_2_2_8))) 
+(assert (=> c_3_2_8 (not c_2_3_8))) 
+(assert (=> c_3_2_8 (not c_2_4_8))) 
+(assert (=> c_3_2_8 (not c_3_1_8))) 
+(assert (=> c_3_2_8 (not c_3_3_8))) 
+(assert (=> c_3_2_8 (not c_3_4_8))) 
+(assert (=> c_3_2_8 (not c_4_1_8))) 
+(assert (=> c_3_2_8 (not c_4_2_8))) 
+(assert (=> c_3_2_8 (not c_4_3_8))) 
+(assert (=> c_3_2_8 (not c_4_4_8))) 
+(assert (=> c_3_3_8 (not c_1_1_8))) 
+(assert (=> c_3_3_8 (not c_1_2_8))) 
+(assert (=> c_3_3_8 (not c_1_3_8))) 
+(assert (=> c_3_3_8 (not c_1_4_8))) 
+(assert (=> c_3_3_8 (not c_2_1_8))) 
+(assert (=> c_3_3_8 (not c_2_2_8))) 
+(assert (=> c_3_3_8 (not c_2_3_8))) 
+(assert (=> c_3_3_8 (not c_2_4_8))) 
+(assert (=> c_3_3_8 (not c_3_1_8))) 
+(assert (=> c_3_3_8 (not c_3_2_8))) 
+(assert (=> c_3_3_8 (not c_3_4_8))) 
+(assert (=> c_3_3_8 (not c_4_1_8))) 
+(assert (=> c_3_3_8 (not c_4_2_8))) 
+(assert (=> c_3_3_8 (not c_4_3_8))) 
+(assert (=> c_3_3_8 (not c_4_4_8))) 
+(assert (=> c_3_4_8 (not c_1_1_8))) 
+(assert (=> c_3_4_8 (not c_1_2_8))) 
+(assert (=> c_3_4_8 (not c_1_3_8))) 
+(assert (=> c_3_4_8 (not c_1_4_8))) 
+(assert (=> c_3_4_8 (not c_2_1_8))) 
+(assert (=> c_3_4_8 (not c_2_2_8))) 
+(assert (=> c_3_4_8 (not c_2_3_8))) 
+(assert (=> c_3_4_8 (not c_2_4_8))) 
+(assert (=> c_3_4_8 (not c_3_1_8))) 
+(assert (=> c_3_4_8 (not c_3_2_8))) 
+(assert (=> c_3_4_8 (not c_3_3_8))) 
+(assert (=> c_3_4_8 (not c_4_1_8))) 
+(assert (=> c_3_4_8 (not c_4_2_8))) 
+(assert (=> c_3_4_8 (not c_4_3_8))) 
+(assert (=> c_3_4_8 (not c_4_4_8))) 
+(assert (=> c_4_1_8 (not c_1_1_8))) 
+(assert (=> c_4_1_8 (not c_1_2_8))) 
+(assert (=> c_4_1_8 (not c_1_3_8))) 
+(assert (=> c_4_1_8 (not c_1_4_8))) 
+(assert (=> c_4_1_8 (not c_2_1_8))) 
+(assert (=> c_4_1_8 (not c_2_2_8))) 
+(assert (=> c_4_1_8 (not c_2_3_8))) 
+(assert (=> c_4_1_8 (not c_2_4_8))) 
+(assert (=> c_4_1_8 (not c_3_1_8))) 
+(assert (=> c_4_1_8 (not c_3_2_8))) 
+(assert (=> c_4_1_8 (not c_3_3_8))) 
+(assert (=> c_4_1_8 (not c_3_4_8))) 
+(assert (=> c_4_1_8 (not c_4_2_8))) 
+(assert (=> c_4_1_8 (not c_4_3_8))) 
+(assert (=> c_4_1_8 (not c_4_4_8))) 
+(assert (=> c_4_2_8 (not c_1_1_8))) 
+(assert (=> c_4_2_8 (not c_1_2_8))) 
+(assert (=> c_4_2_8 (not c_1_3_8))) 
+(assert (=> c_4_2_8 (not c_1_4_8))) 
+(assert (=> c_4_2_8 (not c_2_1_8))) 
+(assert (=> c_4_2_8 (not c_2_2_8))) 
+(assert (=> c_4_2_8 (not c_2_3_8))) 
+(assert (=> c_4_2_8 (not c_2_4_8))) 
+(assert (=> c_4_2_8 (not c_3_1_8))) 
+(assert (=> c_4_2_8 (not c_3_2_8))) 
+(assert (=> c_4_2_8 (not c_3_3_8))) 
+(assert (=> c_4_2_8 (not c_3_4_8))) 
+(assert (=> c_4_2_8 (not c_4_1_8))) 
+(assert (=> c_4_2_8 (not c_4_3_8))) 
+(assert (=> c_4_2_8 (not c_4_4_8))) 
+(assert (=> c_4_3_8 (not c_1_1_8))) 
+(assert (=> c_4_3_8 (not c_1_2_8))) 
+(assert (=> c_4_3_8 (not c_1_3_8))) 
+(assert (=> c_4_3_8 (not c_1_4_8))) 
+(assert (=> c_4_3_8 (not c_2_1_8))) 
+(assert (=> c_4_3_8 (not c_2_2_8))) 
+(assert (=> c_4_3_8 (not c_2_3_8))) 
+(assert (=> c_4_3_8 (not c_2_4_8))) 
+(assert (=> c_4_3_8 (not c_3_1_8))) 
+(assert (=> c_4_3_8 (not c_3_2_8))) 
+(assert (=> c_4_3_8 (not c_3_3_8))) 
+(assert (=> c_4_3_8 (not c_3_4_8))) 
+(assert (=> c_4_3_8 (not c_4_1_8))) 
+(assert (=> c_4_3_8 (not c_4_2_8))) 
+(assert (=> c_4_3_8 (not c_4_4_8))) 
+(assert (=> c_4_4_8 (not c_1_1_8))) 
+(assert (=> c_4_4_8 (not c_1_2_8))) 
+(assert (=> c_4_4_8 (not c_1_3_8))) 
+(assert (=> c_4_4_8 (not c_1_4_8))) 
+(assert (=> c_4_4_8 (not c_2_1_8))) 
+(assert (=> c_4_4_8 (not c_2_2_8))) 
+(assert (=> c_4_4_8 (not c_2_3_8))) 
+(assert (=> c_4_4_8 (not c_2_4_8))) 
+(assert (=> c_4_4_8 (not c_3_1_8))) 
+(assert (=> c_4_4_8 (not c_3_2_8))) 
+(assert (=> c_4_4_8 (not c_3_3_8))) 
+(assert (=> c_4_4_8 (not c_3_4_8))) 
+(assert (=> c_4_4_8 (not c_4_1_8))) 
+(assert (=> c_4_4_8 (not c_4_2_8))) 
+(assert (=> c_4_4_8 (not c_4_3_8))) 
+(assert (=> c_1_1_9 (not c_1_2_9))) 
+(assert (=> c_1_1_9 (not c_1_3_9))) 
+(assert (=> c_1_1_9 (not c_1_4_9))) 
+(assert (=> c_1_1_9 (not c_2_1_9))) 
+(assert (=> c_1_1_9 (not c_2_2_9))) 
+(assert (=> c_1_1_9 (not c_2_3_9))) 
+(assert (=> c_1_1_9 (not c_2_4_9))) 
+(assert (=> c_1_1_9 (not c_3_1_9))) 
+(assert (=> c_1_1_9 (not c_3_2_9))) 
+(assert (=> c_1_1_9 (not c_3_3_9))) 
+(assert (=> c_1_1_9 (not c_3_4_9))) 
+(assert (=> c_1_1_9 (not c_4_1_9))) 
+(assert (=> c_1_1_9 (not c_4_2_9))) 
+(assert (=> c_1_1_9 (not c_4_3_9))) 
+(assert (=> c_1_1_9 (not c_4_4_9))) 
+(assert (=> c_1_2_9 (not c_1_1_9))) 
+(assert (=> c_1_2_9 (not c_1_3_9))) 
+(assert (=> c_1_2_9 (not c_1_4_9))) 
+(assert (=> c_1_2_9 (not c_2_1_9))) 
+(assert (=> c_1_2_9 (not c_2_2_9))) 
+(assert (=> c_1_2_9 (not c_2_3_9))) 
+(assert (=> c_1_2_9 (not c_2_4_9))) 
+(assert (=> c_1_2_9 (not c_3_1_9))) 
+(assert (=> c_1_2_9 (not c_3_2_9))) 
+(assert (=> c_1_2_9 (not c_3_3_9))) 
+(assert (=> c_1_2_9 (not c_3_4_9))) 
+(assert (=> c_1_2_9 (not c_4_1_9))) 
+(assert (=> c_1_2_9 (not c_4_2_9))) 
+(assert (=> c_1_2_9 (not c_4_3_9))) 
+(assert (=> c_1_2_9 (not c_4_4_9))) 
+(assert (=> c_1_3_9 (not c_1_1_9))) 
+(assert (=> c_1_3_9 (not c_1_2_9))) 
+(assert (=> c_1_3_9 (not c_1_4_9))) 
+(assert (=> c_1_3_9 (not c_2_1_9))) 
+(assert (=> c_1_3_9 (not c_2_2_9))) 
+(assert (=> c_1_3_9 (not c_2_3_9))) 
+(assert (=> c_1_3_9 (not c_2_4_9))) 
+(assert (=> c_1_3_9 (not c_3_1_9))) 
+(assert (=> c_1_3_9 (not c_3_2_9))) 
+(assert (=> c_1_3_9 (not c_3_3_9))) 
+(assert (=> c_1_3_9 (not c_3_4_9))) 
+(assert (=> c_1_3_9 (not c_4_1_9))) 
+(assert (=> c_1_3_9 (not c_4_2_9))) 
+(assert (=> c_1_3_9 (not c_4_3_9))) 
+(assert (=> c_1_3_9 (not c_4_4_9))) 
+(assert (=> c_1_4_9 (not c_1_1_9))) 
+(assert (=> c_1_4_9 (not c_1_2_9))) 
+(assert (=> c_1_4_9 (not c_1_3_9))) 
+(assert (=> c_1_4_9 (not c_2_1_9))) 
+(assert (=> c_1_4_9 (not c_2_2_9))) 
+(assert (=> c_1_4_9 (not c_2_3_9))) 
+(assert (=> c_1_4_9 (not c_2_4_9))) 
+(assert (=> c_1_4_9 (not c_3_1_9))) 
+(assert (=> c_1_4_9 (not c_3_2_9))) 
+(assert (=> c_1_4_9 (not c_3_3_9))) 
+(assert (=> c_1_4_9 (not c_3_4_9))) 
+(assert (=> c_1_4_9 (not c_4_1_9))) 
+(assert (=> c_1_4_9 (not c_4_2_9))) 
+(assert (=> c_1_4_9 (not c_4_3_9))) 
+(assert (=> c_1_4_9 (not c_4_4_9))) 
+(assert (=> c_2_1_9 (not c_1_1_9))) 
+(assert (=> c_2_1_9 (not c_1_2_9))) 
+(assert (=> c_2_1_9 (not c_1_3_9))) 
+(assert (=> c_2_1_9 (not c_1_4_9))) 
+(assert (=> c_2_1_9 (not c_2_2_9))) 
+(assert (=> c_2_1_9 (not c_2_3_9))) 
+(assert (=> c_2_1_9 (not c_2_4_9))) 
+(assert (=> c_2_1_9 (not c_3_1_9))) 
+(assert (=> c_2_1_9 (not c_3_2_9))) 
+(assert (=> c_2_1_9 (not c_3_3_9))) 
+(assert (=> c_2_1_9 (not c_3_4_9))) 
+(assert (=> c_2_1_9 (not c_4_1_9))) 
+(assert (=> c_2_1_9 (not c_4_2_9))) 
+(assert (=> c_2_1_9 (not c_4_3_9))) 
+(assert (=> c_2_1_9 (not c_4_4_9))) 
+(assert (=> c_2_2_9 (not c_1_1_9))) 
+(assert (=> c_2_2_9 (not c_1_2_9))) 
+(assert (=> c_2_2_9 (not c_1_3_9))) 
+(assert (=> c_2_2_9 (not c_1_4_9))) 
+(assert (=> c_2_2_9 (not c_2_1_9))) 
+(assert (=> c_2_2_9 (not c_2_3_9))) 
+(assert (=> c_2_2_9 (not c_2_4_9))) 
+(assert (=> c_2_2_9 (not c_3_1_9))) 
+(assert (=> c_2_2_9 (not c_3_2_9))) 
+(assert (=> c_2_2_9 (not c_3_3_9))) 
+(assert (=> c_2_2_9 (not c_3_4_9))) 
+(assert (=> c_2_2_9 (not c_4_1_9))) 
+(assert (=> c_2_2_9 (not c_4_2_9))) 
+(assert (=> c_2_2_9 (not c_4_3_9))) 
+(assert (=> c_2_2_9 (not c_4_4_9))) 
+(assert (=> c_2_3_9 (not c_1_1_9))) 
+(assert (=> c_2_3_9 (not c_1_2_9))) 
+(assert (=> c_2_3_9 (not c_1_3_9))) 
+(assert (=> c_2_3_9 (not c_1_4_9))) 
+(assert (=> c_2_3_9 (not c_2_1_9))) 
+(assert (=> c_2_3_9 (not c_2_2_9))) 
+(assert (=> c_2_3_9 (not c_2_4_9))) 
+(assert (=> c_2_3_9 (not c_3_1_9))) 
+(assert (=> c_2_3_9 (not c_3_2_9))) 
+(assert (=> c_2_3_9 (not c_3_3_9))) 
+(assert (=> c_2_3_9 (not c_3_4_9))) 
+(assert (=> c_2_3_9 (not c_4_1_9))) 
+(assert (=> c_2_3_9 (not c_4_2_9))) 
+(assert (=> c_2_3_9 (not c_4_3_9))) 
+(assert (=> c_2_3_9 (not c_4_4_9))) 
+(assert (=> c_2_4_9 (not c_1_1_9))) 
+(assert (=> c_2_4_9 (not c_1_2_9))) 
+(assert (=> c_2_4_9 (not c_1_3_9))) 
+(assert (=> c_2_4_9 (not c_1_4_9))) 
+(assert (=> c_2_4_9 (not c_2_1_9))) 
+(assert (=> c_2_4_9 (not c_2_2_9))) 
+(assert (=> c_2_4_9 (not c_2_3_9))) 
+(assert (=> c_2_4_9 (not c_3_1_9))) 
+(assert (=> c_2_4_9 (not c_3_2_9))) 
+(assert (=> c_2_4_9 (not c_3_3_9))) 
+(assert (=> c_2_4_9 (not c_3_4_9))) 
+(assert (=> c_2_4_9 (not c_4_1_9))) 
+(assert (=> c_2_4_9 (not c_4_2_9))) 
+(assert (=> c_2_4_9 (not c_4_3_9))) 
+(assert (=> c_2_4_9 (not c_4_4_9))) 
+(assert (=> c_3_1_9 (not c_1_1_9))) 
+(assert (=> c_3_1_9 (not c_1_2_9))) 
+(assert (=> c_3_1_9 (not c_1_3_9))) 
+(assert (=> c_3_1_9 (not c_1_4_9))) 
+(assert (=> c_3_1_9 (not c_2_1_9))) 
+(assert (=> c_3_1_9 (not c_2_2_9))) 
+(assert (=> c_3_1_9 (not c_2_3_9))) 
+(assert (=> c_3_1_9 (not c_2_4_9))) 
+(assert (=> c_3_1_9 (not c_3_2_9))) 
+(assert (=> c_3_1_9 (not c_3_3_9))) 
+(assert (=> c_3_1_9 (not c_3_4_9))) 
+(assert (=> c_3_1_9 (not c_4_1_9))) 
+(assert (=> c_3_1_9 (not c_4_2_9))) 
+(assert (=> c_3_1_9 (not c_4_3_9))) 
+(assert (=> c_3_1_9 (not c_4_4_9))) 
+(assert (=> c_3_2_9 (not c_1_1_9))) 
+(assert (=> c_3_2_9 (not c_1_2_9))) 
+(assert (=> c_3_2_9 (not c_1_3_9))) 
+(assert (=> c_3_2_9 (not c_1_4_9))) 
+(assert (=> c_3_2_9 (not c_2_1_9))) 
+(assert (=> c_3_2_9 (not c_2_2_9))) 
+(assert (=> c_3_2_9 (not c_2_3_9))) 
+(assert (=> c_3_2_9 (not c_2_4_9))) 
+(assert (=> c_3_2_9 (not c_3_1_9))) 
+(assert (=> c_3_2_9 (not c_3_3_9))) 
+(assert (=> c_3_2_9 (not c_3_4_9))) 
+(assert (=> c_3_2_9 (not c_4_1_9))) 
+(assert (=> c_3_2_9 (not c_4_2_9))) 
+(assert (=> c_3_2_9 (not c_4_3_9))) 
+(assert (=> c_3_2_9 (not c_4_4_9))) 
+(assert (=> c_3_3_9 (not c_1_1_9))) 
+(assert (=> c_3_3_9 (not c_1_2_9))) 
+(assert (=> c_3_3_9 (not c_1_3_9))) 
+(assert (=> c_3_3_9 (not c_1_4_9))) 
+(assert (=> c_3_3_9 (not c_2_1_9))) 
+(assert (=> c_3_3_9 (not c_2_2_9))) 
+(assert (=> c_3_3_9 (not c_2_3_9))) 
+(assert (=> c_3_3_9 (not c_2_4_9))) 
+(assert (=> c_3_3_9 (not c_3_1_9))) 
+(assert (=> c_3_3_9 (not c_3_2_9))) 
+(assert (=> c_3_3_9 (not c_3_4_9))) 
+(assert (=> c_3_3_9 (not c_4_1_9))) 
+(assert (=> c_3_3_9 (not c_4_2_9))) 
+(assert (=> c_3_3_9 (not c_4_3_9))) 
+(assert (=> c_3_3_9 (not c_4_4_9))) 
+(assert (=> c_3_4_9 (not c_1_1_9))) 
+(assert (=> c_3_4_9 (not c_1_2_9))) 
+(assert (=> c_3_4_9 (not c_1_3_9))) 
+(assert (=> c_3_4_9 (not c_1_4_9))) 
+(assert (=> c_3_4_9 (not c_2_1_9))) 
+(assert (=> c_3_4_9 (not c_2_2_9))) 
+(assert (=> c_3_4_9 (not c_2_3_9))) 
+(assert (=> c_3_4_9 (not c_2_4_9))) 
+(assert (=> c_3_4_9 (not c_3_1_9))) 
+(assert (=> c_3_4_9 (not c_3_2_9))) 
+(assert (=> c_3_4_9 (not c_3_3_9))) 
+(assert (=> c_3_4_9 (not c_4_1_9))) 
+(assert (=> c_3_4_9 (not c_4_2_9))) 
+(assert (=> c_3_4_9 (not c_4_3_9))) 
+(assert (=> c_3_4_9 (not c_4_4_9))) 
+(assert (=> c_4_1_9 (not c_1_1_9))) 
+(assert (=> c_4_1_9 (not c_1_2_9))) 
+(assert (=> c_4_1_9 (not c_1_3_9))) 
+(assert (=> c_4_1_9 (not c_1_4_9))) 
+(assert (=> c_4_1_9 (not c_2_1_9))) 
+(assert (=> c_4_1_9 (not c_2_2_9))) 
+(assert (=> c_4_1_9 (not c_2_3_9))) 
+(assert (=> c_4_1_9 (not c_2_4_9))) 
+(assert (=> c_4_1_9 (not c_3_1_9))) 
+(assert (=> c_4_1_9 (not c_3_2_9))) 
+(assert (=> c_4_1_9 (not c_3_3_9))) 
+(assert (=> c_4_1_9 (not c_3_4_9))) 
+(assert (=> c_4_1_9 (not c_4_2_9))) 
+(assert (=> c_4_1_9 (not c_4_3_9))) 
+(assert (=> c_4_1_9 (not c_4_4_9))) 
+(assert (=> c_4_2_9 (not c_1_1_9))) 
+(assert (=> c_4_2_9 (not c_1_2_9))) 
+(assert (=> c_4_2_9 (not c_1_3_9))) 
+(assert (=> c_4_2_9 (not c_1_4_9))) 
+(assert (=> c_4_2_9 (not c_2_1_9))) 
+(assert (=> c_4_2_9 (not c_2_2_9))) 
+(assert (=> c_4_2_9 (not c_2_3_9))) 
+(assert (=> c_4_2_9 (not c_2_4_9))) 
+(assert (=> c_4_2_9 (not c_3_1_9))) 
+(assert (=> c_4_2_9 (not c_3_2_9))) 
+(assert (=> c_4_2_9 (not c_3_3_9))) 
+(assert (=> c_4_2_9 (not c_3_4_9))) 
+(assert (=> c_4_2_9 (not c_4_1_9))) 
+(assert (=> c_4_2_9 (not c_4_3_9))) 
+(assert (=> c_4_2_9 (not c_4_4_9))) 
+(assert (=> c_4_3_9 (not c_1_1_9))) 
+(assert (=> c_4_3_9 (not c_1_2_9))) 
+(assert (=> c_4_3_9 (not c_1_3_9))) 
+(assert (=> c_4_3_9 (not c_1_4_9))) 
+(assert (=> c_4_3_9 (not c_2_1_9))) 
+(assert (=> c_4_3_9 (not c_2_2_9))) 
+(assert (=> c_4_3_9 (not c_2_3_9))) 
+(assert (=> c_4_3_9 (not c_2_4_9))) 
+(assert (=> c_4_3_9 (not c_3_1_9))) 
+(assert (=> c_4_3_9 (not c_3_2_9))) 
+(assert (=> c_4_3_9 (not c_3_3_9))) 
+(assert (=> c_4_3_9 (not c_3_4_9))) 
+(assert (=> c_4_3_9 (not c_4_1_9))) 
+(assert (=> c_4_3_9 (not c_4_2_9))) 
+(assert (=> c_4_3_9 (not c_4_4_9))) 
+(assert (=> c_4_4_9 (not c_1_1_9))) 
+(assert (=> c_4_4_9 (not c_1_2_9))) 
+(assert (=> c_4_4_9 (not c_1_3_9))) 
+(assert (=> c_4_4_9 (not c_1_4_9))) 
+(assert (=> c_4_4_9 (not c_2_1_9))) 
+(assert (=> c_4_4_9 (not c_2_2_9))) 
+(assert (=> c_4_4_9 (not c_2_3_9))) 
+(assert (=> c_4_4_9 (not c_2_4_9))) 
+(assert (=> c_4_4_9 (not c_3_1_9))) 
+(assert (=> c_4_4_9 (not c_3_2_9))) 
+(assert (=> c_4_4_9 (not c_3_3_9))) 
+(assert (=> c_4_4_9 (not c_3_4_9))) 
+(assert (=> c_4_4_9 (not c_4_1_9))) 
+(assert (=> c_4_4_9 (not c_4_2_9))) 
+(assert (=> c_4_4_9 (not c_4_3_9))) 
+(assert (=> c_1_1_10 (not c_1_2_10))) 
+(assert (=> c_1_1_10 (not c_1_3_10))) 
+(assert (=> c_1_1_10 (not c_1_4_10))) 
+(assert (=> c_1_1_10 (not c_2_1_10))) 
+(assert (=> c_1_1_10 (not c_2_2_10))) 
+(assert (=> c_1_1_10 (not c_2_3_10))) 
+(assert (=> c_1_1_10 (not c_2_4_10))) 
+(assert (=> c_1_1_10 (not c_3_1_10))) 
+(assert (=> c_1_1_10 (not c_3_2_10))) 
+(assert (=> c_1_1_10 (not c_3_3_10))) 
+(assert (=> c_1_1_10 (not c_3_4_10))) 
+(assert (=> c_1_1_10 (not c_4_1_10))) 
+(assert (=> c_1_1_10 (not c_4_2_10))) 
+(assert (=> c_1_1_10 (not c_4_3_10))) 
+(assert (=> c_1_1_10 (not c_4_4_10))) 
+(assert (=> c_1_2_10 (not c_1_1_10))) 
+(assert (=> c_1_2_10 (not c_1_3_10))) 
+(assert (=> c_1_2_10 (not c_1_4_10))) 
+(assert (=> c_1_2_10 (not c_2_1_10))) 
+(assert (=> c_1_2_10 (not c_2_2_10))) 
+(assert (=> c_1_2_10 (not c_2_3_10))) 
+(assert (=> c_1_2_10 (not c_2_4_10))) 
+(assert (=> c_1_2_10 (not c_3_1_10))) 
+(assert (=> c_1_2_10 (not c_3_2_10))) 
+(assert (=> c_1_2_10 (not c_3_3_10))) 
+(assert (=> c_1_2_10 (not c_3_4_10))) 
+(assert (=> c_1_2_10 (not c_4_1_10))) 
+(assert (=> c_1_2_10 (not c_4_2_10))) 
+(assert (=> c_1_2_10 (not c_4_3_10))) 
+(assert (=> c_1_2_10 (not c_4_4_10))) 
+(assert (=> c_1_3_10 (not c_1_1_10))) 
+(assert (=> c_1_3_10 (not c_1_2_10))) 
+(assert (=> c_1_3_10 (not c_1_4_10))) 
+(assert (=> c_1_3_10 (not c_2_1_10))) 
+(assert (=> c_1_3_10 (not c_2_2_10))) 
+(assert (=> c_1_3_10 (not c_2_3_10))) 
+(assert (=> c_1_3_10 (not c_2_4_10))) 
+(assert (=> c_1_3_10 (not c_3_1_10))) 
+(assert (=> c_1_3_10 (not c_3_2_10))) 
+(assert (=> c_1_3_10 (not c_3_3_10))) 
+(assert (=> c_1_3_10 (not c_3_4_10))) 
+(assert (=> c_1_3_10 (not c_4_1_10))) 
+(assert (=> c_1_3_10 (not c_4_2_10))) 
+(assert (=> c_1_3_10 (not c_4_3_10))) 
+(assert (=> c_1_3_10 (not c_4_4_10))) 
+(assert (=> c_1_4_10 (not c_1_1_10))) 
+(assert (=> c_1_4_10 (not c_1_2_10))) 
+(assert (=> c_1_4_10 (not c_1_3_10))) 
+(assert (=> c_1_4_10 (not c_2_1_10))) 
+(assert (=> c_1_4_10 (not c_2_2_10))) 
+(assert (=> c_1_4_10 (not c_2_3_10))) 
+(assert (=> c_1_4_10 (not c_2_4_10))) 
+(assert (=> c_1_4_10 (not c_3_1_10))) 
+(assert (=> c_1_4_10 (not c_3_2_10))) 
+(assert (=> c_1_4_10 (not c_3_3_10))) 
+(assert (=> c_1_4_10 (not c_3_4_10))) 
+(assert (=> c_1_4_10 (not c_4_1_10))) 
+(assert (=> c_1_4_10 (not c_4_2_10))) 
+(assert (=> c_1_4_10 (not c_4_3_10))) 
+(assert (=> c_1_4_10 (not c_4_4_10))) 
+(assert (=> c_2_1_10 (not c_1_1_10))) 
+(assert (=> c_2_1_10 (not c_1_2_10))) 
+(assert (=> c_2_1_10 (not c_1_3_10))) 
+(assert (=> c_2_1_10 (not c_1_4_10))) 
+(assert (=> c_2_1_10 (not c_2_2_10))) 
+(assert (=> c_2_1_10 (not c_2_3_10))) 
+(assert (=> c_2_1_10 (not c_2_4_10))) 
+(assert (=> c_2_1_10 (not c_3_1_10))) 
+(assert (=> c_2_1_10 (not c_3_2_10))) 
+(assert (=> c_2_1_10 (not c_3_3_10))) 
+(assert (=> c_2_1_10 (not c_3_4_10))) 
+(assert (=> c_2_1_10 (not c_4_1_10))) 
+(assert (=> c_2_1_10 (not c_4_2_10))) 
+(assert (=> c_2_1_10 (not c_4_3_10))) 
+(assert (=> c_2_1_10 (not c_4_4_10))) 
+(assert (=> c_2_2_10 (not c_1_1_10))) 
+(assert (=> c_2_2_10 (not c_1_2_10))) 
+(assert (=> c_2_2_10 (not c_1_3_10))) 
+(assert (=> c_2_2_10 (not c_1_4_10))) 
+(assert (=> c_2_2_10 (not c_2_1_10))) 
+(assert (=> c_2_2_10 (not c_2_3_10))) 
+(assert (=> c_2_2_10 (not c_2_4_10))) 
+(assert (=> c_2_2_10 (not c_3_1_10))) 
+(assert (=> c_2_2_10 (not c_3_2_10))) 
+(assert (=> c_2_2_10 (not c_3_3_10))) 
+(assert (=> c_2_2_10 (not c_3_4_10))) 
+(assert (=> c_2_2_10 (not c_4_1_10))) 
+(assert (=> c_2_2_10 (not c_4_2_10))) 
+(assert (=> c_2_2_10 (not c_4_3_10))) 
+(assert (=> c_2_2_10 (not c_4_4_10))) 
+(assert (=> c_2_3_10 (not c_1_1_10))) 
+(assert (=> c_2_3_10 (not c_1_2_10))) 
+(assert (=> c_2_3_10 (not c_1_3_10))) 
+(assert (=> c_2_3_10 (not c_1_4_10))) 
+(assert (=> c_2_3_10 (not c_2_1_10))) 
+(assert (=> c_2_3_10 (not c_2_2_10))) 
+(assert (=> c_2_3_10 (not c_2_4_10))) 
+(assert (=> c_2_3_10 (not c_3_1_10))) 
+(assert (=> c_2_3_10 (not c_3_2_10))) 
+(assert (=> c_2_3_10 (not c_3_3_10))) 
+(assert (=> c_2_3_10 (not c_3_4_10))) 
+(assert (=> c_2_3_10 (not c_4_1_10))) 
+(assert (=> c_2_3_10 (not c_4_2_10))) 
+(assert (=> c_2_3_10 (not c_4_3_10))) 
+(assert (=> c_2_3_10 (not c_4_4_10))) 
+(assert (=> c_2_4_10 (not c_1_1_10))) 
+(assert (=> c_2_4_10 (not c_1_2_10))) 
+(assert (=> c_2_4_10 (not c_1_3_10))) 
+(assert (=> c_2_4_10 (not c_1_4_10))) 
+(assert (=> c_2_4_10 (not c_2_1_10))) 
+(assert (=> c_2_4_10 (not c_2_2_10))) 
+(assert (=> c_2_4_10 (not c_2_3_10))) 
+(assert (=> c_2_4_10 (not c_3_1_10))) 
+(assert (=> c_2_4_10 (not c_3_2_10))) 
+(assert (=> c_2_4_10 (not c_3_3_10))) 
+(assert (=> c_2_4_10 (not c_3_4_10))) 
+(assert (=> c_2_4_10 (not c_4_1_10))) 
+(assert (=> c_2_4_10 (not c_4_2_10))) 
+(assert (=> c_2_4_10 (not c_4_3_10))) 
+(assert (=> c_2_4_10 (not c_4_4_10))) 
+(assert (=> c_3_1_10 (not c_1_1_10))) 
+(assert (=> c_3_1_10 (not c_1_2_10))) 
+(assert (=> c_3_1_10 (not c_1_3_10))) 
+(assert (=> c_3_1_10 (not c_1_4_10))) 
+(assert (=> c_3_1_10 (not c_2_1_10))) 
+(assert (=> c_3_1_10 (not c_2_2_10))) 
+(assert (=> c_3_1_10 (not c_2_3_10))) 
+(assert (=> c_3_1_10 (not c_2_4_10))) 
+(assert (=> c_3_1_10 (not c_3_2_10))) 
+(assert (=> c_3_1_10 (not c_3_3_10))) 
+(assert (=> c_3_1_10 (not c_3_4_10))) 
+(assert (=> c_3_1_10 (not c_4_1_10))) 
+(assert (=> c_3_1_10 (not c_4_2_10))) 
+(assert (=> c_3_1_10 (not c_4_3_10))) 
+(assert (=> c_3_1_10 (not c_4_4_10))) 
+(assert (=> c_3_2_10 (not c_1_1_10))) 
+(assert (=> c_3_2_10 (not c_1_2_10))) 
+(assert (=> c_3_2_10 (not c_1_3_10))) 
+(assert (=> c_3_2_10 (not c_1_4_10))) 
+(assert (=> c_3_2_10 (not c_2_1_10))) 
+(assert (=> c_3_2_10 (not c_2_2_10))) 
+(assert (=> c_3_2_10 (not c_2_3_10))) 
+(assert (=> c_3_2_10 (not c_2_4_10))) 
+(assert (=> c_3_2_10 (not c_3_1_10))) 
+(assert (=> c_3_2_10 (not c_3_3_10))) 
+(assert (=> c_3_2_10 (not c_3_4_10))) 
+(assert (=> c_3_2_10 (not c_4_1_10))) 
+(assert (=> c_3_2_10 (not c_4_2_10))) 
+(assert (=> c_3_2_10 (not c_4_3_10))) 
+(assert (=> c_3_2_10 (not c_4_4_10))) 
+(assert (=> c_3_3_10 (not c_1_1_10))) 
+(assert (=> c_3_3_10 (not c_1_2_10))) 
+(assert (=> c_3_3_10 (not c_1_3_10))) 
+(assert (=> c_3_3_10 (not c_1_4_10))) 
+(assert (=> c_3_3_10 (not c_2_1_10))) 
+(assert (=> c_3_3_10 (not c_2_2_10))) 
+(assert (=> c_3_3_10 (not c_2_3_10))) 
+(assert (=> c_3_3_10 (not c_2_4_10))) 
+(assert (=> c_3_3_10 (not c_3_1_10))) 
+(assert (=> c_3_3_10 (not c_3_2_10))) 
+(assert (=> c_3_3_10 (not c_3_4_10))) 
+(assert (=> c_3_3_10 (not c_4_1_10))) 
+(assert (=> c_3_3_10 (not c_4_2_10))) 
+(assert (=> c_3_3_10 (not c_4_3_10))) 
+(assert (=> c_3_3_10 (not c_4_4_10))) 
+(assert (=> c_3_4_10 (not c_1_1_10))) 
+(assert (=> c_3_4_10 (not c_1_2_10))) 
+(assert (=> c_3_4_10 (not c_1_3_10))) 
+(assert (=> c_3_4_10 (not c_1_4_10))) 
+(assert (=> c_3_4_10 (not c_2_1_10))) 
+(assert (=> c_3_4_10 (not c_2_2_10))) 
+(assert (=> c_3_4_10 (not c_2_3_10))) 
+(assert (=> c_3_4_10 (not c_2_4_10))) 
+(assert (=> c_3_4_10 (not c_3_1_10))) 
+(assert (=> c_3_4_10 (not c_3_2_10))) 
+(assert (=> c_3_4_10 (not c_3_3_10))) 
+(assert (=> c_3_4_10 (not c_4_1_10))) 
+(assert (=> c_3_4_10 (not c_4_2_10))) 
+(assert (=> c_3_4_10 (not c_4_3_10))) 
+(assert (=> c_3_4_10 (not c_4_4_10))) 
+(assert (=> c_4_1_10 (not c_1_1_10))) 
+(assert (=> c_4_1_10 (not c_1_2_10))) 
+(assert (=> c_4_1_10 (not c_1_3_10))) 
+(assert (=> c_4_1_10 (not c_1_4_10))) 
+(assert (=> c_4_1_10 (not c_2_1_10))) 
+(assert (=> c_4_1_10 (not c_2_2_10))) 
+(assert (=> c_4_1_10 (not c_2_3_10))) 
+(assert (=> c_4_1_10 (not c_2_4_10))) 
+(assert (=> c_4_1_10 (not c_3_1_10))) 
+(assert (=> c_4_1_10 (not c_3_2_10))) 
+(assert (=> c_4_1_10 (not c_3_3_10))) 
+(assert (=> c_4_1_10 (not c_3_4_10))) 
+(assert (=> c_4_1_10 (not c_4_2_10))) 
+(assert (=> c_4_1_10 (not c_4_3_10))) 
+(assert (=> c_4_1_10 (not c_4_4_10))) 
+(assert (=> c_4_2_10 (not c_1_1_10))) 
+(assert (=> c_4_2_10 (not c_1_2_10))) 
+(assert (=> c_4_2_10 (not c_1_3_10))) 
+(assert (=> c_4_2_10 (not c_1_4_10))) 
+(assert (=> c_4_2_10 (not c_2_1_10))) 
+(assert (=> c_4_2_10 (not c_2_2_10))) 
+(assert (=> c_4_2_10 (not c_2_3_10))) 
+(assert (=> c_4_2_10 (not c_2_4_10))) 
+(assert (=> c_4_2_10 (not c_3_1_10))) 
+(assert (=> c_4_2_10 (not c_3_2_10))) 
+(assert (=> c_4_2_10 (not c_3_3_10))) 
+(assert (=> c_4_2_10 (not c_3_4_10))) 
+(assert (=> c_4_2_10 (not c_4_1_10))) 
+(assert (=> c_4_2_10 (not c_4_3_10))) 
+(assert (=> c_4_2_10 (not c_4_4_10))) 
+(assert (=> c_4_3_10 (not c_1_1_10))) 
+(assert (=> c_4_3_10 (not c_1_2_10))) 
+(assert (=> c_4_3_10 (not c_1_3_10))) 
+(assert (=> c_4_3_10 (not c_1_4_10))) 
+(assert (=> c_4_3_10 (not c_2_1_10))) 
+(assert (=> c_4_3_10 (not c_2_2_10))) 
+(assert (=> c_4_3_10 (not c_2_3_10))) 
+(assert (=> c_4_3_10 (not c_2_4_10))) 
+(assert (=> c_4_3_10 (not c_3_1_10))) 
+(assert (=> c_4_3_10 (not c_3_2_10))) 
+(assert (=> c_4_3_10 (not c_3_3_10))) 
+(assert (=> c_4_3_10 (not c_3_4_10))) 
+(assert (=> c_4_3_10 (not c_4_1_10))) 
+(assert (=> c_4_3_10 (not c_4_2_10))) 
+(assert (=> c_4_3_10 (not c_4_4_10))) 
+(assert (=> c_4_4_10 (not c_1_1_10))) 
+(assert (=> c_4_4_10 (not c_1_2_10))) 
+(assert (=> c_4_4_10 (not c_1_3_10))) 
+(assert (=> c_4_4_10 (not c_1_4_10))) 
+(assert (=> c_4_4_10 (not c_2_1_10))) 
+(assert (=> c_4_4_10 (not c_2_2_10))) 
+(assert (=> c_4_4_10 (not c_2_3_10))) 
+(assert (=> c_4_4_10 (not c_2_4_10))) 
+(assert (=> c_4_4_10 (not c_3_1_10))) 
+(assert (=> c_4_4_10 (not c_3_2_10))) 
+(assert (=> c_4_4_10 (not c_3_3_10))) 
+(assert (=> c_4_4_10 (not c_3_4_10))) 
+(assert (=> c_4_4_10 (not c_4_1_10))) 
+(assert (=> c_4_4_10 (not c_4_2_10))) 
+(assert (=> c_4_4_10 (not c_4_3_10))) 
+(assert (=> c_1_1_11 (not c_1_2_11))) 
+(assert (=> c_1_1_11 (not c_1_3_11))) 
+(assert (=> c_1_1_11 (not c_1_4_11))) 
+(assert (=> c_1_1_11 (not c_2_1_11))) 
+(assert (=> c_1_1_11 (not c_2_2_11))) 
+(assert (=> c_1_1_11 (not c_2_3_11))) 
+(assert (=> c_1_1_11 (not c_2_4_11))) 
+(assert (=> c_1_1_11 (not c_3_1_11))) 
+(assert (=> c_1_1_11 (not c_3_2_11))) 
+(assert (=> c_1_1_11 (not c_3_3_11))) 
+(assert (=> c_1_1_11 (not c_3_4_11))) 
+(assert (=> c_1_1_11 (not c_4_1_11))) 
+(assert (=> c_1_1_11 (not c_4_2_11))) 
+(assert (=> c_1_1_11 (not c_4_3_11))) 
+(assert (=> c_1_1_11 (not c_4_4_11))) 
+(assert (=> c_1_2_11 (not c_1_1_11))) 
+(assert (=> c_1_2_11 (not c_1_3_11))) 
+(assert (=> c_1_2_11 (not c_1_4_11))) 
+(assert (=> c_1_2_11 (not c_2_1_11))) 
+(assert (=> c_1_2_11 (not c_2_2_11))) 
+(assert (=> c_1_2_11 (not c_2_3_11))) 
+(assert (=> c_1_2_11 (not c_2_4_11))) 
+(assert (=> c_1_2_11 (not c_3_1_11))) 
+(assert (=> c_1_2_11 (not c_3_2_11))) 
+(assert (=> c_1_2_11 (not c_3_3_11))) 
+(assert (=> c_1_2_11 (not c_3_4_11))) 
+(assert (=> c_1_2_11 (not c_4_1_11))) 
+(assert (=> c_1_2_11 (not c_4_2_11))) 
+(assert (=> c_1_2_11 (not c_4_3_11))) 
+(assert (=> c_1_2_11 (not c_4_4_11))) 
+(assert (=> c_1_3_11 (not c_1_1_11))) 
+(assert (=> c_1_3_11 (not c_1_2_11))) 
+(assert (=> c_1_3_11 (not c_1_4_11))) 
+(assert (=> c_1_3_11 (not c_2_1_11))) 
+(assert (=> c_1_3_11 (not c_2_2_11))) 
+(assert (=> c_1_3_11 (not c_2_3_11))) 
+(assert (=> c_1_3_11 (not c_2_4_11))) 
+(assert (=> c_1_3_11 (not c_3_1_11))) 
+(assert (=> c_1_3_11 (not c_3_2_11))) 
+(assert (=> c_1_3_11 (not c_3_3_11))) 
+(assert (=> c_1_3_11 (not c_3_4_11))) 
+(assert (=> c_1_3_11 (not c_4_1_11))) 
+(assert (=> c_1_3_11 (not c_4_2_11))) 
+(assert (=> c_1_3_11 (not c_4_3_11))) 
+(assert (=> c_1_3_11 (not c_4_4_11))) 
+(assert (=> c_1_4_11 (not c_1_1_11))) 
+(assert (=> c_1_4_11 (not c_1_2_11))) 
+(assert (=> c_1_4_11 (not c_1_3_11))) 
+(assert (=> c_1_4_11 (not c_2_1_11))) 
+(assert (=> c_1_4_11 (not c_2_2_11))) 
+(assert (=> c_1_4_11 (not c_2_3_11))) 
+(assert (=> c_1_4_11 (not c_2_4_11))) 
+(assert (=> c_1_4_11 (not c_3_1_11))) 
+(assert (=> c_1_4_11 (not c_3_2_11))) 
+(assert (=> c_1_4_11 (not c_3_3_11))) 
+(assert (=> c_1_4_11 (not c_3_4_11))) 
+(assert (=> c_1_4_11 (not c_4_1_11))) 
+(assert (=> c_1_4_11 (not c_4_2_11))) 
+(assert (=> c_1_4_11 (not c_4_3_11))) 
+(assert (=> c_1_4_11 (not c_4_4_11))) 
+(assert (=> c_2_1_11 (not c_1_1_11))) 
+(assert (=> c_2_1_11 (not c_1_2_11))) 
+(assert (=> c_2_1_11 (not c_1_3_11))) 
+(assert (=> c_2_1_11 (not c_1_4_11))) 
+(assert (=> c_2_1_11 (not c_2_2_11))) 
+(assert (=> c_2_1_11 (not c_2_3_11))) 
+(assert (=> c_2_1_11 (not c_2_4_11))) 
+(assert (=> c_2_1_11 (not c_3_1_11))) 
+(assert (=> c_2_1_11 (not c_3_2_11))) 
+(assert (=> c_2_1_11 (not c_3_3_11))) 
+(assert (=> c_2_1_11 (not c_3_4_11))) 
+(assert (=> c_2_1_11 (not c_4_1_11))) 
+(assert (=> c_2_1_11 (not c_4_2_11))) 
+(assert (=> c_2_1_11 (not c_4_3_11))) 
+(assert (=> c_2_1_11 (not c_4_4_11))) 
+(assert (=> c_2_2_11 (not c_1_1_11))) 
+(assert (=> c_2_2_11 (not c_1_2_11))) 
+(assert (=> c_2_2_11 (not c_1_3_11))) 
+(assert (=> c_2_2_11 (not c_1_4_11))) 
+(assert (=> c_2_2_11 (not c_2_1_11))) 
+(assert (=> c_2_2_11 (not c_2_3_11))) 
+(assert (=> c_2_2_11 (not c_2_4_11))) 
+(assert (=> c_2_2_11 (not c_3_1_11))) 
+(assert (=> c_2_2_11 (not c_3_2_11))) 
+(assert (=> c_2_2_11 (not c_3_3_11))) 
+(assert (=> c_2_2_11 (not c_3_4_11))) 
+(assert (=> c_2_2_11 (not c_4_1_11))) 
+(assert (=> c_2_2_11 (not c_4_2_11))) 
+(assert (=> c_2_2_11 (not c_4_3_11))) 
+(assert (=> c_2_2_11 (not c_4_4_11))) 
+(assert (=> c_2_3_11 (not c_1_1_11))) 
+(assert (=> c_2_3_11 (not c_1_2_11))) 
+(assert (=> c_2_3_11 (not c_1_3_11))) 
+(assert (=> c_2_3_11 (not c_1_4_11))) 
+(assert (=> c_2_3_11 (not c_2_1_11))) 
+(assert (=> c_2_3_11 (not c_2_2_11))) 
+(assert (=> c_2_3_11 (not c_2_4_11))) 
+(assert (=> c_2_3_11 (not c_3_1_11))) 
+(assert (=> c_2_3_11 (not c_3_2_11))) 
+(assert (=> c_2_3_11 (not c_3_3_11))) 
+(assert (=> c_2_3_11 (not c_3_4_11))) 
+(assert (=> c_2_3_11 (not c_4_1_11))) 
+(assert (=> c_2_3_11 (not c_4_2_11))) 
+(assert (=> c_2_3_11 (not c_4_3_11))) 
+(assert (=> c_2_3_11 (not c_4_4_11))) 
+(assert (=> c_2_4_11 (not c_1_1_11))) 
+(assert (=> c_2_4_11 (not c_1_2_11))) 
+(assert (=> c_2_4_11 (not c_1_3_11))) 
+(assert (=> c_2_4_11 (not c_1_4_11))) 
+(assert (=> c_2_4_11 (not c_2_1_11))) 
+(assert (=> c_2_4_11 (not c_2_2_11))) 
+(assert (=> c_2_4_11 (not c_2_3_11))) 
+(assert (=> c_2_4_11 (not c_3_1_11))) 
+(assert (=> c_2_4_11 (not c_3_2_11))) 
+(assert (=> c_2_4_11 (not c_3_3_11))) 
+(assert (=> c_2_4_11 (not c_3_4_11))) 
+(assert (=> c_2_4_11 (not c_4_1_11))) 
+(assert (=> c_2_4_11 (not c_4_2_11))) 
+(assert (=> c_2_4_11 (not c_4_3_11))) 
+(assert (=> c_2_4_11 (not c_4_4_11))) 
+(assert (=> c_3_1_11 (not c_1_1_11))) 
+(assert (=> c_3_1_11 (not c_1_2_11))) 
+(assert (=> c_3_1_11 (not c_1_3_11))) 
+(assert (=> c_3_1_11 (not c_1_4_11))) 
+(assert (=> c_3_1_11 (not c_2_1_11))) 
+(assert (=> c_3_1_11 (not c_2_2_11))) 
+(assert (=> c_3_1_11 (not c_2_3_11))) 
+(assert (=> c_3_1_11 (not c_2_4_11))) 
+(assert (=> c_3_1_11 (not c_3_2_11))) 
+(assert (=> c_3_1_11 (not c_3_3_11))) 
+(assert (=> c_3_1_11 (not c_3_4_11))) 
+(assert (=> c_3_1_11 (not c_4_1_11))) 
+(assert (=> c_3_1_11 (not c_4_2_11))) 
+(assert (=> c_3_1_11 (not c_4_3_11))) 
+(assert (=> c_3_1_11 (not c_4_4_11))) 
+(assert (=> c_3_2_11 (not c_1_1_11))) 
+(assert (=> c_3_2_11 (not c_1_2_11))) 
+(assert (=> c_3_2_11 (not c_1_3_11))) 
+(assert (=> c_3_2_11 (not c_1_4_11))) 
+(assert (=> c_3_2_11 (not c_2_1_11))) 
+(assert (=> c_3_2_11 (not c_2_2_11))) 
+(assert (=> c_3_2_11 (not c_2_3_11))) 
+(assert (=> c_3_2_11 (not c_2_4_11))) 
+(assert (=> c_3_2_11 (not c_3_1_11))) 
+(assert (=> c_3_2_11 (not c_3_3_11))) 
+(assert (=> c_3_2_11 (not c_3_4_11))) 
+(assert (=> c_3_2_11 (not c_4_1_11))) 
+(assert (=> c_3_2_11 (not c_4_2_11))) 
+(assert (=> c_3_2_11 (not c_4_3_11))) 
+(assert (=> c_3_2_11 (not c_4_4_11))) 
+(assert (=> c_3_3_11 (not c_1_1_11))) 
+(assert (=> c_3_3_11 (not c_1_2_11))) 
+(assert (=> c_3_3_11 (not c_1_3_11))) 
+(assert (=> c_3_3_11 (not c_1_4_11))) 
+(assert (=> c_3_3_11 (not c_2_1_11))) 
+(assert (=> c_3_3_11 (not c_2_2_11))) 
+(assert (=> c_3_3_11 (not c_2_3_11))) 
+(assert (=> c_3_3_11 (not c_2_4_11))) 
+(assert (=> c_3_3_11 (not c_3_1_11))) 
+(assert (=> c_3_3_11 (not c_3_2_11))) 
+(assert (=> c_3_3_11 (not c_3_4_11))) 
+(assert (=> c_3_3_11 (not c_4_1_11))) 
+(assert (=> c_3_3_11 (not c_4_2_11))) 
+(assert (=> c_3_3_11 (not c_4_3_11))) 
+(assert (=> c_3_3_11 (not c_4_4_11))) 
+(assert (=> c_3_4_11 (not c_1_1_11))) 
+(assert (=> c_3_4_11 (not c_1_2_11))) 
+(assert (=> c_3_4_11 (not c_1_3_11))) 
+(assert (=> c_3_4_11 (not c_1_4_11))) 
+(assert (=> c_3_4_11 (not c_2_1_11))) 
+(assert (=> c_3_4_11 (not c_2_2_11))) 
+(assert (=> c_3_4_11 (not c_2_3_11))) 
+(assert (=> c_3_4_11 (not c_2_4_11))) 
+(assert (=> c_3_4_11 (not c_3_1_11))) 
+(assert (=> c_3_4_11 (not c_3_2_11))) 
+(assert (=> c_3_4_11 (not c_3_3_11))) 
+(assert (=> c_3_4_11 (not c_4_1_11))) 
+(assert (=> c_3_4_11 (not c_4_2_11))) 
+(assert (=> c_3_4_11 (not c_4_3_11))) 
+(assert (=> c_3_4_11 (not c_4_4_11))) 
+(assert (=> c_4_1_11 (not c_1_1_11))) 
+(assert (=> c_4_1_11 (not c_1_2_11))) 
+(assert (=> c_4_1_11 (not c_1_3_11))) 
+(assert (=> c_4_1_11 (not c_1_4_11))) 
+(assert (=> c_4_1_11 (not c_2_1_11))) 
+(assert (=> c_4_1_11 (not c_2_2_11))) 
+(assert (=> c_4_1_11 (not c_2_3_11))) 
+(assert (=> c_4_1_11 (not c_2_4_11))) 
+(assert (=> c_4_1_11 (not c_3_1_11))) 
+(assert (=> c_4_1_11 (not c_3_2_11))) 
+(assert (=> c_4_1_11 (not c_3_3_11))) 
+(assert (=> c_4_1_11 (not c_3_4_11))) 
+(assert (=> c_4_1_11 (not c_4_2_11))) 
+(assert (=> c_4_1_11 (not c_4_3_11))) 
+(assert (=> c_4_1_11 (not c_4_4_11))) 
+(assert (=> c_4_2_11 (not c_1_1_11))) 
+(assert (=> c_4_2_11 (not c_1_2_11))) 
+(assert (=> c_4_2_11 (not c_1_3_11))) 
+(assert (=> c_4_2_11 (not c_1_4_11))) 
+(assert (=> c_4_2_11 (not c_2_1_11))) 
+(assert (=> c_4_2_11 (not c_2_2_11))) 
+(assert (=> c_4_2_11 (not c_2_3_11))) 
+(assert (=> c_4_2_11 (not c_2_4_11))) 
+(assert (=> c_4_2_11 (not c_3_1_11))) 
+(assert (=> c_4_2_11 (not c_3_2_11))) 
+(assert (=> c_4_2_11 (not c_3_3_11))) 
+(assert (=> c_4_2_11 (not c_3_4_11))) 
+(assert (=> c_4_2_11 (not c_4_1_11))) 
+(assert (=> c_4_2_11 (not c_4_3_11))) 
+(assert (=> c_4_2_11 (not c_4_4_11))) 
+(assert (=> c_4_3_11 (not c_1_1_11))) 
+(assert (=> c_4_3_11 (not c_1_2_11))) 
+(assert (=> c_4_3_11 (not c_1_3_11))) 
+(assert (=> c_4_3_11 (not c_1_4_11))) 
+(assert (=> c_4_3_11 (not c_2_1_11))) 
+(assert (=> c_4_3_11 (not c_2_2_11))) 
+(assert (=> c_4_3_11 (not c_2_3_11))) 
+(assert (=> c_4_3_11 (not c_2_4_11))) 
+(assert (=> c_4_3_11 (not c_3_1_11))) 
+(assert (=> c_4_3_11 (not c_3_2_11))) 
+(assert (=> c_4_3_11 (not c_3_3_11))) 
+(assert (=> c_4_3_11 (not c_3_4_11))) 
+(assert (=> c_4_3_11 (not c_4_1_11))) 
+(assert (=> c_4_3_11 (not c_4_2_11))) 
+(assert (=> c_4_3_11 (not c_4_4_11))) 
+(assert (=> c_4_4_11 (not c_1_1_11))) 
+(assert (=> c_4_4_11 (not c_1_2_11))) 
+(assert (=> c_4_4_11 (not c_1_3_11))) 
+(assert (=> c_4_4_11 (not c_1_4_11))) 
+(assert (=> c_4_4_11 (not c_2_1_11))) 
+(assert (=> c_4_4_11 (not c_2_2_11))) 
+(assert (=> c_4_4_11 (not c_2_3_11))) 
+(assert (=> c_4_4_11 (not c_2_4_11))) 
+(assert (=> c_4_4_11 (not c_3_1_11))) 
+(assert (=> c_4_4_11 (not c_3_2_11))) 
+(assert (=> c_4_4_11 (not c_3_3_11))) 
+(assert (=> c_4_4_11 (not c_3_4_11))) 
+(assert (=> c_4_4_11 (not c_4_1_11))) 
+(assert (=> c_4_4_11 (not c_4_2_11))) 
+(assert (=> c_4_4_11 (not c_4_3_11))) 
+(assert (=> c_1_1_12 (not c_1_2_12))) 
+(assert (=> c_1_1_12 (not c_1_3_12))) 
+(assert (=> c_1_1_12 (not c_1_4_12))) 
+(assert (=> c_1_1_12 (not c_2_1_12))) 
+(assert (=> c_1_1_12 (not c_2_2_12))) 
+(assert (=> c_1_1_12 (not c_2_3_12))) 
+(assert (=> c_1_1_12 (not c_2_4_12))) 
+(assert (=> c_1_1_12 (not c_3_1_12))) 
+(assert (=> c_1_1_12 (not c_3_2_12))) 
+(assert (=> c_1_1_12 (not c_3_3_12))) 
+(assert (=> c_1_1_12 (not c_3_4_12))) 
+(assert (=> c_1_1_12 (not c_4_1_12))) 
+(assert (=> c_1_1_12 (not c_4_2_12))) 
+(assert (=> c_1_1_12 (not c_4_3_12))) 
+(assert (=> c_1_1_12 (not c_4_4_12))) 
+(assert (=> c_1_2_12 (not c_1_1_12))) 
+(assert (=> c_1_2_12 (not c_1_3_12))) 
+(assert (=> c_1_2_12 (not c_1_4_12))) 
+(assert (=> c_1_2_12 (not c_2_1_12))) 
+(assert (=> c_1_2_12 (not c_2_2_12))) 
+(assert (=> c_1_2_12 (not c_2_3_12))) 
+(assert (=> c_1_2_12 (not c_2_4_12))) 
+(assert (=> c_1_2_12 (not c_3_1_12))) 
+(assert (=> c_1_2_12 (not c_3_2_12))) 
+(assert (=> c_1_2_12 (not c_3_3_12))) 
+(assert (=> c_1_2_12 (not c_3_4_12))) 
+(assert (=> c_1_2_12 (not c_4_1_12))) 
+(assert (=> c_1_2_12 (not c_4_2_12))) 
+(assert (=> c_1_2_12 (not c_4_3_12))) 
+(assert (=> c_1_2_12 (not c_4_4_12))) 
+(assert (=> c_1_3_12 (not c_1_1_12))) 
+(assert (=> c_1_3_12 (not c_1_2_12))) 
+(assert (=> c_1_3_12 (not c_1_4_12))) 
+(assert (=> c_1_3_12 (not c_2_1_12))) 
+(assert (=> c_1_3_12 (not c_2_2_12))) 
+(assert (=> c_1_3_12 (not c_2_3_12))) 
+(assert (=> c_1_3_12 (not c_2_4_12))) 
+(assert (=> c_1_3_12 (not c_3_1_12))) 
+(assert (=> c_1_3_12 (not c_3_2_12))) 
+(assert (=> c_1_3_12 (not c_3_3_12))) 
+(assert (=> c_1_3_12 (not c_3_4_12))) 
+(assert (=> c_1_3_12 (not c_4_1_12))) 
+(assert (=> c_1_3_12 (not c_4_2_12))) 
+(assert (=> c_1_3_12 (not c_4_3_12))) 
+(assert (=> c_1_3_12 (not c_4_4_12))) 
+(assert (=> c_1_4_12 (not c_1_1_12))) 
+(assert (=> c_1_4_12 (not c_1_2_12))) 
+(assert (=> c_1_4_12 (not c_1_3_12))) 
+(assert (=> c_1_4_12 (not c_2_1_12))) 
+(assert (=> c_1_4_12 (not c_2_2_12))) 
+(assert (=> c_1_4_12 (not c_2_3_12))) 
+(assert (=> c_1_4_12 (not c_2_4_12))) 
+(assert (=> c_1_4_12 (not c_3_1_12))) 
+(assert (=> c_1_4_12 (not c_3_2_12))) 
+(assert (=> c_1_4_12 (not c_3_3_12))) 
+(assert (=> c_1_4_12 (not c_3_4_12))) 
+(assert (=> c_1_4_12 (not c_4_1_12))) 
+(assert (=> c_1_4_12 (not c_4_2_12))) 
+(assert (=> c_1_4_12 (not c_4_3_12))) 
+(assert (=> c_1_4_12 (not c_4_4_12))) 
+(assert (=> c_2_1_12 (not c_1_1_12))) 
+(assert (=> c_2_1_12 (not c_1_2_12))) 
+(assert (=> c_2_1_12 (not c_1_3_12))) 
+(assert (=> c_2_1_12 (not c_1_4_12))) 
+(assert (=> c_2_1_12 (not c_2_2_12))) 
+(assert (=> c_2_1_12 (not c_2_3_12))) 
+(assert (=> c_2_1_12 (not c_2_4_12))) 
+(assert (=> c_2_1_12 (not c_3_1_12))) 
+(assert (=> c_2_1_12 (not c_3_2_12))) 
+(assert (=> c_2_1_12 (not c_3_3_12))) 
+(assert (=> c_2_1_12 (not c_3_4_12))) 
+(assert (=> c_2_1_12 (not c_4_1_12))) 
+(assert (=> c_2_1_12 (not c_4_2_12))) 
+(assert (=> c_2_1_12 (not c_4_3_12))) 
+(assert (=> c_2_1_12 (not c_4_4_12))) 
+(assert (=> c_2_2_12 (not c_1_1_12))) 
+(assert (=> c_2_2_12 (not c_1_2_12))) 
+(assert (=> c_2_2_12 (not c_1_3_12))) 
+(assert (=> c_2_2_12 (not c_1_4_12))) 
+(assert (=> c_2_2_12 (not c_2_1_12))) 
+(assert (=> c_2_2_12 (not c_2_3_12))) 
+(assert (=> c_2_2_12 (not c_2_4_12))) 
+(assert (=> c_2_2_12 (not c_3_1_12))) 
+(assert (=> c_2_2_12 (not c_3_2_12))) 
+(assert (=> c_2_2_12 (not c_3_3_12))) 
+(assert (=> c_2_2_12 (not c_3_4_12))) 
+(assert (=> c_2_2_12 (not c_4_1_12))) 
+(assert (=> c_2_2_12 (not c_4_2_12))) 
+(assert (=> c_2_2_12 (not c_4_3_12))) 
+(assert (=> c_2_2_12 (not c_4_4_12))) 
+(assert (=> c_2_3_12 (not c_1_1_12))) 
+(assert (=> c_2_3_12 (not c_1_2_12))) 
+(assert (=> c_2_3_12 (not c_1_3_12))) 
+(assert (=> c_2_3_12 (not c_1_4_12))) 
+(assert (=> c_2_3_12 (not c_2_1_12))) 
+(assert (=> c_2_3_12 (not c_2_2_12))) 
+(assert (=> c_2_3_12 (not c_2_4_12))) 
+(assert (=> c_2_3_12 (not c_3_1_12))) 
+(assert (=> c_2_3_12 (not c_3_2_12))) 
+(assert (=> c_2_3_12 (not c_3_3_12))) 
+(assert (=> c_2_3_12 (not c_3_4_12))) 
+(assert (=> c_2_3_12 (not c_4_1_12))) 
+(assert (=> c_2_3_12 (not c_4_2_12))) 
+(assert (=> c_2_3_12 (not c_4_3_12))) 
+(assert (=> c_2_3_12 (not c_4_4_12))) 
+(assert (=> c_2_4_12 (not c_1_1_12))) 
+(assert (=> c_2_4_12 (not c_1_2_12))) 
+(assert (=> c_2_4_12 (not c_1_3_12))) 
+(assert (=> c_2_4_12 (not c_1_4_12))) 
+(assert (=> c_2_4_12 (not c_2_1_12))) 
+(assert (=> c_2_4_12 (not c_2_2_12))) 
+(assert (=> c_2_4_12 (not c_2_3_12))) 
+(assert (=> c_2_4_12 (not c_3_1_12))) 
+(assert (=> c_2_4_12 (not c_3_2_12))) 
+(assert (=> c_2_4_12 (not c_3_3_12))) 
+(assert (=> c_2_4_12 (not c_3_4_12))) 
+(assert (=> c_2_4_12 (not c_4_1_12))) 
+(assert (=> c_2_4_12 (not c_4_2_12))) 
+(assert (=> c_2_4_12 (not c_4_3_12))) 
+(assert (=> c_2_4_12 (not c_4_4_12))) 
+(assert (=> c_3_1_12 (not c_1_1_12))) 
+(assert (=> c_3_1_12 (not c_1_2_12))) 
+(assert (=> c_3_1_12 (not c_1_3_12))) 
+(assert (=> c_3_1_12 (not c_1_4_12))) 
+(assert (=> c_3_1_12 (not c_2_1_12))) 
+(assert (=> c_3_1_12 (not c_2_2_12))) 
+(assert (=> c_3_1_12 (not c_2_3_12))) 
+(assert (=> c_3_1_12 (not c_2_4_12))) 
+(assert (=> c_3_1_12 (not c_3_2_12))) 
+(assert (=> c_3_1_12 (not c_3_3_12))) 
+(assert (=> c_3_1_12 (not c_3_4_12))) 
+(assert (=> c_3_1_12 (not c_4_1_12))) 
+(assert (=> c_3_1_12 (not c_4_2_12))) 
+(assert (=> c_3_1_12 (not c_4_3_12))) 
+(assert (=> c_3_1_12 (not c_4_4_12))) 
+(assert (=> c_3_2_12 (not c_1_1_12))) 
+(assert (=> c_3_2_12 (not c_1_2_12))) 
+(assert (=> c_3_2_12 (not c_1_3_12))) 
+(assert (=> c_3_2_12 (not c_1_4_12))) 
+(assert (=> c_3_2_12 (not c_2_1_12))) 
+(assert (=> c_3_2_12 (not c_2_2_12))) 
+(assert (=> c_3_2_12 (not c_2_3_12))) 
+(assert (=> c_3_2_12 (not c_2_4_12))) 
+(assert (=> c_3_2_12 (not c_3_1_12))) 
+(assert (=> c_3_2_12 (not c_3_3_12))) 
+(assert (=> c_3_2_12 (not c_3_4_12))) 
+(assert (=> c_3_2_12 (not c_4_1_12))) 
+(assert (=> c_3_2_12 (not c_4_2_12))) 
+(assert (=> c_3_2_12 (not c_4_3_12))) 
+(assert (=> c_3_2_12 (not c_4_4_12))) 
+(assert (=> c_3_3_12 (not c_1_1_12))) 
+(assert (=> c_3_3_12 (not c_1_2_12))) 
+(assert (=> c_3_3_12 (not c_1_3_12))) 
+(assert (=> c_3_3_12 (not c_1_4_12))) 
+(assert (=> c_3_3_12 (not c_2_1_12))) 
+(assert (=> c_3_3_12 (not c_2_2_12))) 
+(assert (=> c_3_3_12 (not c_2_3_12))) 
+(assert (=> c_3_3_12 (not c_2_4_12))) 
+(assert (=> c_3_3_12 (not c_3_1_12))) 
+(assert (=> c_3_3_12 (not c_3_2_12))) 
+(assert (=> c_3_3_12 (not c_3_4_12))) 
+(assert (=> c_3_3_12 (not c_4_1_12))) 
+(assert (=> c_3_3_12 (not c_4_2_12))) 
+(assert (=> c_3_3_12 (not c_4_3_12))) 
+(assert (=> c_3_3_12 (not c_4_4_12))) 
+(assert (=> c_3_4_12 (not c_1_1_12))) 
+(assert (=> c_3_4_12 (not c_1_2_12))) 
+(assert (=> c_3_4_12 (not c_1_3_12))) 
+(assert (=> c_3_4_12 (not c_1_4_12))) 
+(assert (=> c_3_4_12 (not c_2_1_12))) 
+(assert (=> c_3_4_12 (not c_2_2_12))) 
+(assert (=> c_3_4_12 (not c_2_3_12))) 
+(assert (=> c_3_4_12 (not c_2_4_12))) 
+(assert (=> c_3_4_12 (not c_3_1_12))) 
+(assert (=> c_3_4_12 (not c_3_2_12))) 
+(assert (=> c_3_4_12 (not c_3_3_12))) 
+(assert (=> c_3_4_12 (not c_4_1_12))) 
+(assert (=> c_3_4_12 (not c_4_2_12))) 
+(assert (=> c_3_4_12 (not c_4_3_12))) 
+(assert (=> c_3_4_12 (not c_4_4_12))) 
+(assert (=> c_4_1_12 (not c_1_1_12))) 
+(assert (=> c_4_1_12 (not c_1_2_12))) 
+(assert (=> c_4_1_12 (not c_1_3_12))) 
+(assert (=> c_4_1_12 (not c_1_4_12))) 
+(assert (=> c_4_1_12 (not c_2_1_12))) 
+(assert (=> c_4_1_12 (not c_2_2_12))) 
+(assert (=> c_4_1_12 (not c_2_3_12))) 
+(assert (=> c_4_1_12 (not c_2_4_12))) 
+(assert (=> c_4_1_12 (not c_3_1_12))) 
+(assert (=> c_4_1_12 (not c_3_2_12))) 
+(assert (=> c_4_1_12 (not c_3_3_12))) 
+(assert (=> c_4_1_12 (not c_3_4_12))) 
+(assert (=> c_4_1_12 (not c_4_2_12))) 
+(assert (=> c_4_1_12 (not c_4_3_12))) 
+(assert (=> c_4_1_12 (not c_4_4_12))) 
+(assert (=> c_4_2_12 (not c_1_1_12))) 
+(assert (=> c_4_2_12 (not c_1_2_12))) 
+(assert (=> c_4_2_12 (not c_1_3_12))) 
+(assert (=> c_4_2_12 (not c_1_4_12))) 
+(assert (=> c_4_2_12 (not c_2_1_12))) 
+(assert (=> c_4_2_12 (not c_2_2_12))) 
+(assert (=> c_4_2_12 (not c_2_3_12))) 
+(assert (=> c_4_2_12 (not c_2_4_12))) 
+(assert (=> c_4_2_12 (not c_3_1_12))) 
+(assert (=> c_4_2_12 (not c_3_2_12))) 
+(assert (=> c_4_2_12 (not c_3_3_12))) 
+(assert (=> c_4_2_12 (not c_3_4_12))) 
+(assert (=> c_4_2_12 (not c_4_1_12))) 
+(assert (=> c_4_2_12 (not c_4_3_12))) 
+(assert (=> c_4_2_12 (not c_4_4_12))) 
+(assert (=> c_4_3_12 (not c_1_1_12))) 
+(assert (=> c_4_3_12 (not c_1_2_12))) 
+(assert (=> c_4_3_12 (not c_1_3_12))) 
+(assert (=> c_4_3_12 (not c_1_4_12))) 
+(assert (=> c_4_3_12 (not c_2_1_12))) 
+(assert (=> c_4_3_12 (not c_2_2_12))) 
+(assert (=> c_4_3_12 (not c_2_3_12))) 
+(assert (=> c_4_3_12 (not c_2_4_12))) 
+(assert (=> c_4_3_12 (not c_3_1_12))) 
+(assert (=> c_4_3_12 (not c_3_2_12))) 
+(assert (=> c_4_3_12 (not c_3_3_12))) 
+(assert (=> c_4_3_12 (not c_3_4_12))) 
+(assert (=> c_4_3_12 (not c_4_1_12))) 
+(assert (=> c_4_3_12 (not c_4_2_12))) 
+(assert (=> c_4_3_12 (not c_4_4_12))) 
+(assert (=> c_4_4_12 (not c_1_1_12))) 
+(assert (=> c_4_4_12 (not c_1_2_12))) 
+(assert (=> c_4_4_12 (not c_1_3_12))) 
+(assert (=> c_4_4_12 (not c_1_4_12))) 
+(assert (=> c_4_4_12 (not c_2_1_12))) 
+(assert (=> c_4_4_12 (not c_2_2_12))) 
+(assert (=> c_4_4_12 (not c_2_3_12))) 
+(assert (=> c_4_4_12 (not c_2_4_12))) 
+(assert (=> c_4_4_12 (not c_3_1_12))) 
+(assert (=> c_4_4_12 (not c_3_2_12))) 
+(assert (=> c_4_4_12 (not c_3_3_12))) 
+(assert (=> c_4_4_12 (not c_3_4_12))) 
+(assert (=> c_4_4_12 (not c_4_1_12))) 
+(assert (=> c_4_4_12 (not c_4_2_12))) 
+(assert (=> c_4_4_12 (not c_4_3_12))) 
+(assert (=> c_1_1_13 (not c_1_2_13))) 
+(assert (=> c_1_1_13 (not c_1_3_13))) 
+(assert (=> c_1_1_13 (not c_1_4_13))) 
+(assert (=> c_1_1_13 (not c_2_1_13))) 
+(assert (=> c_1_1_13 (not c_2_2_13))) 
+(assert (=> c_1_1_13 (not c_2_3_13))) 
+(assert (=> c_1_1_13 (not c_2_4_13))) 
+(assert (=> c_1_1_13 (not c_3_1_13))) 
+(assert (=> c_1_1_13 (not c_3_2_13))) 
+(assert (=> c_1_1_13 (not c_3_3_13))) 
+(assert (=> c_1_1_13 (not c_3_4_13))) 
+(assert (=> c_1_1_13 (not c_4_1_13))) 
+(assert (=> c_1_1_13 (not c_4_2_13))) 
+(assert (=> c_1_1_13 (not c_4_3_13))) 
+(assert (=> c_1_1_13 (not c_4_4_13))) 
+(assert (=> c_1_2_13 (not c_1_1_13))) 
+(assert (=> c_1_2_13 (not c_1_3_13))) 
+(assert (=> c_1_2_13 (not c_1_4_13))) 
+(assert (=> c_1_2_13 (not c_2_1_13))) 
+(assert (=> c_1_2_13 (not c_2_2_13))) 
+(assert (=> c_1_2_13 (not c_2_3_13))) 
+(assert (=> c_1_2_13 (not c_2_4_13))) 
+(assert (=> c_1_2_13 (not c_3_1_13))) 
+(assert (=> c_1_2_13 (not c_3_2_13))) 
+(assert (=> c_1_2_13 (not c_3_3_13))) 
+(assert (=> c_1_2_13 (not c_3_4_13))) 
+(assert (=> c_1_2_13 (not c_4_1_13))) 
+(assert (=> c_1_2_13 (not c_4_2_13))) 
+(assert (=> c_1_2_13 (not c_4_3_13))) 
+(assert (=> c_1_2_13 (not c_4_4_13))) 
+(assert (=> c_1_3_13 (not c_1_1_13))) 
+(assert (=> c_1_3_13 (not c_1_2_13))) 
+(assert (=> c_1_3_13 (not c_1_4_13))) 
+(assert (=> c_1_3_13 (not c_2_1_13))) 
+(assert (=> c_1_3_13 (not c_2_2_13))) 
+(assert (=> c_1_3_13 (not c_2_3_13))) 
+(assert (=> c_1_3_13 (not c_2_4_13))) 
+(assert (=> c_1_3_13 (not c_3_1_13))) 
+(assert (=> c_1_3_13 (not c_3_2_13))) 
+(assert (=> c_1_3_13 (not c_3_3_13))) 
+(assert (=> c_1_3_13 (not c_3_4_13))) 
+(assert (=> c_1_3_13 (not c_4_1_13))) 
+(assert (=> c_1_3_13 (not c_4_2_13))) 
+(assert (=> c_1_3_13 (not c_4_3_13))) 
+(assert (=> c_1_3_13 (not c_4_4_13))) 
+(assert (=> c_1_4_13 (not c_1_1_13))) 
+(assert (=> c_1_4_13 (not c_1_2_13))) 
+(assert (=> c_1_4_13 (not c_1_3_13))) 
+(assert (=> c_1_4_13 (not c_2_1_13))) 
+(assert (=> c_1_4_13 (not c_2_2_13))) 
+(assert (=> c_1_4_13 (not c_2_3_13))) 
+(assert (=> c_1_4_13 (not c_2_4_13))) 
+(assert (=> c_1_4_13 (not c_3_1_13))) 
+(assert (=> c_1_4_13 (not c_3_2_13))) 
+(assert (=> c_1_4_13 (not c_3_3_13))) 
+(assert (=> c_1_4_13 (not c_3_4_13))) 
+(assert (=> c_1_4_13 (not c_4_1_13))) 
+(assert (=> c_1_4_13 (not c_4_2_13))) 
+(assert (=> c_1_4_13 (not c_4_3_13))) 
+(assert (=> c_1_4_13 (not c_4_4_13))) 
+(assert (=> c_2_1_13 (not c_1_1_13))) 
+(assert (=> c_2_1_13 (not c_1_2_13))) 
+(assert (=> c_2_1_13 (not c_1_3_13))) 
+(assert (=> c_2_1_13 (not c_1_4_13))) 
+(assert (=> c_2_1_13 (not c_2_2_13))) 
+(assert (=> c_2_1_13 (not c_2_3_13))) 
+(assert (=> c_2_1_13 (not c_2_4_13))) 
+(assert (=> c_2_1_13 (not c_3_1_13))) 
+(assert (=> c_2_1_13 (not c_3_2_13))) 
+(assert (=> c_2_1_13 (not c_3_3_13))) 
+(assert (=> c_2_1_13 (not c_3_4_13))) 
+(assert (=> c_2_1_13 (not c_4_1_13))) 
+(assert (=> c_2_1_13 (not c_4_2_13))) 
+(assert (=> c_2_1_13 (not c_4_3_13))) 
+(assert (=> c_2_1_13 (not c_4_4_13))) 
+(assert (=> c_2_2_13 (not c_1_1_13))) 
+(assert (=> c_2_2_13 (not c_1_2_13))) 
+(assert (=> c_2_2_13 (not c_1_3_13))) 
+(assert (=> c_2_2_13 (not c_1_4_13))) 
+(assert (=> c_2_2_13 (not c_2_1_13))) 
+(assert (=> c_2_2_13 (not c_2_3_13))) 
+(assert (=> c_2_2_13 (not c_2_4_13))) 
+(assert (=> c_2_2_13 (not c_3_1_13))) 
+(assert (=> c_2_2_13 (not c_3_2_13))) 
+(assert (=> c_2_2_13 (not c_3_3_13))) 
+(assert (=> c_2_2_13 (not c_3_4_13))) 
+(assert (=> c_2_2_13 (not c_4_1_13))) 
+(assert (=> c_2_2_13 (not c_4_2_13))) 
+(assert (=> c_2_2_13 (not c_4_3_13))) 
+(assert (=> c_2_2_13 (not c_4_4_13))) 
+(assert (=> c_2_3_13 (not c_1_1_13))) 
+(assert (=> c_2_3_13 (not c_1_2_13))) 
+(assert (=> c_2_3_13 (not c_1_3_13))) 
+(assert (=> c_2_3_13 (not c_1_4_13))) 
+(assert (=> c_2_3_13 (not c_2_1_13))) 
+(assert (=> c_2_3_13 (not c_2_2_13))) 
+(assert (=> c_2_3_13 (not c_2_4_13))) 
+(assert (=> c_2_3_13 (not c_3_1_13))) 
+(assert (=> c_2_3_13 (not c_3_2_13))) 
+(assert (=> c_2_3_13 (not c_3_3_13))) 
+(assert (=> c_2_3_13 (not c_3_4_13))) 
+(assert (=> c_2_3_13 (not c_4_1_13))) 
+(assert (=> c_2_3_13 (not c_4_2_13))) 
+(assert (=> c_2_3_13 (not c_4_3_13))) 
+(assert (=> c_2_3_13 (not c_4_4_13))) 
+(assert (=> c_2_4_13 (not c_1_1_13))) 
+(assert (=> c_2_4_13 (not c_1_2_13))) 
+(assert (=> c_2_4_13 (not c_1_3_13))) 
+(assert (=> c_2_4_13 (not c_1_4_13))) 
+(assert (=> c_2_4_13 (not c_2_1_13))) 
+(assert (=> c_2_4_13 (not c_2_2_13))) 
+(assert (=> c_2_4_13 (not c_2_3_13))) 
+(assert (=> c_2_4_13 (not c_3_1_13))) 
+(assert (=> c_2_4_13 (not c_3_2_13))) 
+(assert (=> c_2_4_13 (not c_3_3_13))) 
+(assert (=> c_2_4_13 (not c_3_4_13))) 
+(assert (=> c_2_4_13 (not c_4_1_13))) 
+(assert (=> c_2_4_13 (not c_4_2_13))) 
+(assert (=> c_2_4_13 (not c_4_3_13))) 
+(assert (=> c_2_4_13 (not c_4_4_13))) 
+(assert (=> c_3_1_13 (not c_1_1_13))) 
+(assert (=> c_3_1_13 (not c_1_2_13))) 
+(assert (=> c_3_1_13 (not c_1_3_13))) 
+(assert (=> c_3_1_13 (not c_1_4_13))) 
+(assert (=> c_3_1_13 (not c_2_1_13))) 
+(assert (=> c_3_1_13 (not c_2_2_13))) 
+(assert (=> c_3_1_13 (not c_2_3_13))) 
+(assert (=> c_3_1_13 (not c_2_4_13))) 
+(assert (=> c_3_1_13 (not c_3_2_13))) 
+(assert (=> c_3_1_13 (not c_3_3_13))) 
+(assert (=> c_3_1_13 (not c_3_4_13))) 
+(assert (=> c_3_1_13 (not c_4_1_13))) 
+(assert (=> c_3_1_13 (not c_4_2_13))) 
+(assert (=> c_3_1_13 (not c_4_3_13))) 
+(assert (=> c_3_1_13 (not c_4_4_13))) 
+(assert (=> c_3_2_13 (not c_1_1_13))) 
+(assert (=> c_3_2_13 (not c_1_2_13))) 
+(assert (=> c_3_2_13 (not c_1_3_13))) 
+(assert (=> c_3_2_13 (not c_1_4_13))) 
+(assert (=> c_3_2_13 (not c_2_1_13))) 
+(assert (=> c_3_2_13 (not c_2_2_13))) 
+(assert (=> c_3_2_13 (not c_2_3_13))) 
+(assert (=> c_3_2_13 (not c_2_4_13))) 
+(assert (=> c_3_2_13 (not c_3_1_13))) 
+(assert (=> c_3_2_13 (not c_3_3_13))) 
+(assert (=> c_3_2_13 (not c_3_4_13))) 
+(assert (=> c_3_2_13 (not c_4_1_13))) 
+(assert (=> c_3_2_13 (not c_4_2_13))) 
+(assert (=> c_3_2_13 (not c_4_3_13))) 
+(assert (=> c_3_2_13 (not c_4_4_13))) 
+(assert (=> c_3_3_13 (not c_1_1_13))) 
+(assert (=> c_3_3_13 (not c_1_2_13))) 
+(assert (=> c_3_3_13 (not c_1_3_13))) 
+(assert (=> c_3_3_13 (not c_1_4_13))) 
+(assert (=> c_3_3_13 (not c_2_1_13))) 
+(assert (=> c_3_3_13 (not c_2_2_13))) 
+(assert (=> c_3_3_13 (not c_2_3_13))) 
+(assert (=> c_3_3_13 (not c_2_4_13))) 
+(assert (=> c_3_3_13 (not c_3_1_13))) 
+(assert (=> c_3_3_13 (not c_3_2_13))) 
+(assert (=> c_3_3_13 (not c_3_4_13))) 
+(assert (=> c_3_3_13 (not c_4_1_13))) 
+(assert (=> c_3_3_13 (not c_4_2_13))) 
+(assert (=> c_3_3_13 (not c_4_3_13))) 
+(assert (=> c_3_3_13 (not c_4_4_13))) 
+(assert (=> c_3_4_13 (not c_1_1_13))) 
+(assert (=> c_3_4_13 (not c_1_2_13))) 
+(assert (=> c_3_4_13 (not c_1_3_13))) 
+(assert (=> c_3_4_13 (not c_1_4_13))) 
+(assert (=> c_3_4_13 (not c_2_1_13))) 
+(assert (=> c_3_4_13 (not c_2_2_13))) 
+(assert (=> c_3_4_13 (not c_2_3_13))) 
+(assert (=> c_3_4_13 (not c_2_4_13))) 
+(assert (=> c_3_4_13 (not c_3_1_13))) 
+(assert (=> c_3_4_13 (not c_3_2_13))) 
+(assert (=> c_3_4_13 (not c_3_3_13))) 
+(assert (=> c_3_4_13 (not c_4_1_13))) 
+(assert (=> c_3_4_13 (not c_4_2_13))) 
+(assert (=> c_3_4_13 (not c_4_3_13))) 
+(assert (=> c_3_4_13 (not c_4_4_13))) 
+(assert (=> c_4_1_13 (not c_1_1_13))) 
+(assert (=> c_4_1_13 (not c_1_2_13))) 
+(assert (=> c_4_1_13 (not c_1_3_13))) 
+(assert (=> c_4_1_13 (not c_1_4_13))) 
+(assert (=> c_4_1_13 (not c_2_1_13))) 
+(assert (=> c_4_1_13 (not c_2_2_13))) 
+(assert (=> c_4_1_13 (not c_2_3_13))) 
+(assert (=> c_4_1_13 (not c_2_4_13))) 
+(assert (=> c_4_1_13 (not c_3_1_13))) 
+(assert (=> c_4_1_13 (not c_3_2_13))) 
+(assert (=> c_4_1_13 (not c_3_3_13))) 
+(assert (=> c_4_1_13 (not c_3_4_13))) 
+(assert (=> c_4_1_13 (not c_4_2_13))) 
+(assert (=> c_4_1_13 (not c_4_3_13))) 
+(assert (=> c_4_1_13 (not c_4_4_13))) 
+(assert (=> c_4_2_13 (not c_1_1_13))) 
+(assert (=> c_4_2_13 (not c_1_2_13))) 
+(assert (=> c_4_2_13 (not c_1_3_13))) 
+(assert (=> c_4_2_13 (not c_1_4_13))) 
+(assert (=> c_4_2_13 (not c_2_1_13))) 
+(assert (=> c_4_2_13 (not c_2_2_13))) 
+(assert (=> c_4_2_13 (not c_2_3_13))) 
+(assert (=> c_4_2_13 (not c_2_4_13))) 
+(assert (=> c_4_2_13 (not c_3_1_13))) 
+(assert (=> c_4_2_13 (not c_3_2_13))) 
+(assert (=> c_4_2_13 (not c_3_3_13))) 
+(assert (=> c_4_2_13 (not c_3_4_13))) 
+(assert (=> c_4_2_13 (not c_4_1_13))) 
+(assert (=> c_4_2_13 (not c_4_3_13))) 
+(assert (=> c_4_2_13 (not c_4_4_13))) 
+(assert (=> c_4_3_13 (not c_1_1_13))) 
+(assert (=> c_4_3_13 (not c_1_2_13))) 
+(assert (=> c_4_3_13 (not c_1_3_13))) 
+(assert (=> c_4_3_13 (not c_1_4_13))) 
+(assert (=> c_4_3_13 (not c_2_1_13))) 
+(assert (=> c_4_3_13 (not c_2_2_13))) 
+(assert (=> c_4_3_13 (not c_2_3_13))) 
+(assert (=> c_4_3_13 (not c_2_4_13))) 
+(assert (=> c_4_3_13 (not c_3_1_13))) 
+(assert (=> c_4_3_13 (not c_3_2_13))) 
+(assert (=> c_4_3_13 (not c_3_3_13))) 
+(assert (=> c_4_3_13 (not c_3_4_13))) 
+(assert (=> c_4_3_13 (not c_4_1_13))) 
+(assert (=> c_4_3_13 (not c_4_2_13))) 
+(assert (=> c_4_3_13 (not c_4_4_13))) 
+(assert (=> c_4_4_13 (not c_1_1_13))) 
+(assert (=> c_4_4_13 (not c_1_2_13))) 
+(assert (=> c_4_4_13 (not c_1_3_13))) 
+(assert (=> c_4_4_13 (not c_1_4_13))) 
+(assert (=> c_4_4_13 (not c_2_1_13))) 
+(assert (=> c_4_4_13 (not c_2_2_13))) 
+(assert (=> c_4_4_13 (not c_2_3_13))) 
+(assert (=> c_4_4_13 (not c_2_4_13))) 
+(assert (=> c_4_4_13 (not c_3_1_13))) 
+(assert (=> c_4_4_13 (not c_3_2_13))) 
+(assert (=> c_4_4_13 (not c_3_3_13))) 
+(assert (=> c_4_4_13 (not c_3_4_13))) 
+(assert (=> c_4_4_13 (not c_4_1_13))) 
+(assert (=> c_4_4_13 (not c_4_2_13))) 
+(assert (=> c_4_4_13 (not c_4_3_13))) 
+(assert (=> c_1_1_14 (not c_1_2_14))) 
+(assert (=> c_1_1_14 (not c_1_3_14))) 
+(assert (=> c_1_1_14 (not c_1_4_14))) 
+(assert (=> c_1_1_14 (not c_2_1_14))) 
+(assert (=> c_1_1_14 (not c_2_2_14))) 
+(assert (=> c_1_1_14 (not c_2_3_14))) 
+(assert (=> c_1_1_14 (not c_2_4_14))) 
+(assert (=> c_1_1_14 (not c_3_1_14))) 
+(assert (=> c_1_1_14 (not c_3_2_14))) 
+(assert (=> c_1_1_14 (not c_3_3_14))) 
+(assert (=> c_1_1_14 (not c_3_4_14))) 
+(assert (=> c_1_1_14 (not c_4_1_14))) 
+(assert (=> c_1_1_14 (not c_4_2_14))) 
+(assert (=> c_1_1_14 (not c_4_3_14))) 
+(assert (=> c_1_1_14 (not c_4_4_14))) 
+(assert (=> c_1_2_14 (not c_1_1_14))) 
+(assert (=> c_1_2_14 (not c_1_3_14))) 
+(assert (=> c_1_2_14 (not c_1_4_14))) 
+(assert (=> c_1_2_14 (not c_2_1_14))) 
+(assert (=> c_1_2_14 (not c_2_2_14))) 
+(assert (=> c_1_2_14 (not c_2_3_14))) 
+(assert (=> c_1_2_14 (not c_2_4_14))) 
+(assert (=> c_1_2_14 (not c_3_1_14))) 
+(assert (=> c_1_2_14 (not c_3_2_14))) 
+(assert (=> c_1_2_14 (not c_3_3_14))) 
+(assert (=> c_1_2_14 (not c_3_4_14))) 
+(assert (=> c_1_2_14 (not c_4_1_14))) 
+(assert (=> c_1_2_14 (not c_4_2_14))) 
+(assert (=> c_1_2_14 (not c_4_3_14))) 
+(assert (=> c_1_2_14 (not c_4_4_14))) 
+(assert (=> c_1_3_14 (not c_1_1_14))) 
+(assert (=> c_1_3_14 (not c_1_2_14))) 
+(assert (=> c_1_3_14 (not c_1_4_14))) 
+(assert (=> c_1_3_14 (not c_2_1_14))) 
+(assert (=> c_1_3_14 (not c_2_2_14))) 
+(assert (=> c_1_3_14 (not c_2_3_14))) 
+(assert (=> c_1_3_14 (not c_2_4_14))) 
+(assert (=> c_1_3_14 (not c_3_1_14))) 
+(assert (=> c_1_3_14 (not c_3_2_14))) 
+(assert (=> c_1_3_14 (not c_3_3_14))) 
+(assert (=> c_1_3_14 (not c_3_4_14))) 
+(assert (=> c_1_3_14 (not c_4_1_14))) 
+(assert (=> c_1_3_14 (not c_4_2_14))) 
+(assert (=> c_1_3_14 (not c_4_3_14))) 
+(assert (=> c_1_3_14 (not c_4_4_14))) 
+(assert (=> c_1_4_14 (not c_1_1_14))) 
+(assert (=> c_1_4_14 (not c_1_2_14))) 
+(assert (=> c_1_4_14 (not c_1_3_14))) 
+(assert (=> c_1_4_14 (not c_2_1_14))) 
+(assert (=> c_1_4_14 (not c_2_2_14))) 
+(assert (=> c_1_4_14 (not c_2_3_14))) 
+(assert (=> c_1_4_14 (not c_2_4_14))) 
+(assert (=> c_1_4_14 (not c_3_1_14))) 
+(assert (=> c_1_4_14 (not c_3_2_14))) 
+(assert (=> c_1_4_14 (not c_3_3_14))) 
+(assert (=> c_1_4_14 (not c_3_4_14))) 
+(assert (=> c_1_4_14 (not c_4_1_14))) 
+(assert (=> c_1_4_14 (not c_4_2_14))) 
+(assert (=> c_1_4_14 (not c_4_3_14))) 
+(assert (=> c_1_4_14 (not c_4_4_14))) 
+(assert (=> c_2_1_14 (not c_1_1_14))) 
+(assert (=> c_2_1_14 (not c_1_2_14))) 
+(assert (=> c_2_1_14 (not c_1_3_14))) 
+(assert (=> c_2_1_14 (not c_1_4_14))) 
+(assert (=> c_2_1_14 (not c_2_2_14))) 
+(assert (=> c_2_1_14 (not c_2_3_14))) 
+(assert (=> c_2_1_14 (not c_2_4_14))) 
+(assert (=> c_2_1_14 (not c_3_1_14))) 
+(assert (=> c_2_1_14 (not c_3_2_14))) 
+(assert (=> c_2_1_14 (not c_3_3_14))) 
+(assert (=> c_2_1_14 (not c_3_4_14))) 
+(assert (=> c_2_1_14 (not c_4_1_14))) 
+(assert (=> c_2_1_14 (not c_4_2_14))) 
+(assert (=> c_2_1_14 (not c_4_3_14))) 
+(assert (=> c_2_1_14 (not c_4_4_14))) 
+(assert (=> c_2_2_14 (not c_1_1_14))) 
+(assert (=> c_2_2_14 (not c_1_2_14))) 
+(assert (=> c_2_2_14 (not c_1_3_14))) 
+(assert (=> c_2_2_14 (not c_1_4_14))) 
+(assert (=> c_2_2_14 (not c_2_1_14))) 
+(assert (=> c_2_2_14 (not c_2_3_14))) 
+(assert (=> c_2_2_14 (not c_2_4_14))) 
+(assert (=> c_2_2_14 (not c_3_1_14))) 
+(assert (=> c_2_2_14 (not c_3_2_14))) 
+(assert (=> c_2_2_14 (not c_3_3_14))) 
+(assert (=> c_2_2_14 (not c_3_4_14))) 
+(assert (=> c_2_2_14 (not c_4_1_14))) 
+(assert (=> c_2_2_14 (not c_4_2_14))) 
+(assert (=> c_2_2_14 (not c_4_3_14))) 
+(assert (=> c_2_2_14 (not c_4_4_14))) 
+(assert (=> c_2_3_14 (not c_1_1_14))) 
+(assert (=> c_2_3_14 (not c_1_2_14))) 
+(assert (=> c_2_3_14 (not c_1_3_14))) 
+(assert (=> c_2_3_14 (not c_1_4_14))) 
+(assert (=> c_2_3_14 (not c_2_1_14))) 
+(assert (=> c_2_3_14 (not c_2_2_14))) 
+(assert (=> c_2_3_14 (not c_2_4_14))) 
+(assert (=> c_2_3_14 (not c_3_1_14))) 
+(assert (=> c_2_3_14 (not c_3_2_14))) 
+(assert (=> c_2_3_14 (not c_3_3_14))) 
+(assert (=> c_2_3_14 (not c_3_4_14))) 
+(assert (=> c_2_3_14 (not c_4_1_14))) 
+(assert (=> c_2_3_14 (not c_4_2_14))) 
+(assert (=> c_2_3_14 (not c_4_3_14))) 
+(assert (=> c_2_3_14 (not c_4_4_14))) 
+(assert (=> c_2_4_14 (not c_1_1_14))) 
+(assert (=> c_2_4_14 (not c_1_2_14))) 
+(assert (=> c_2_4_14 (not c_1_3_14))) 
+(assert (=> c_2_4_14 (not c_1_4_14))) 
+(assert (=> c_2_4_14 (not c_2_1_14))) 
+(assert (=> c_2_4_14 (not c_2_2_14))) 
+(assert (=> c_2_4_14 (not c_2_3_14))) 
+(assert (=> c_2_4_14 (not c_3_1_14))) 
+(assert (=> c_2_4_14 (not c_3_2_14))) 
+(assert (=> c_2_4_14 (not c_3_3_14))) 
+(assert (=> c_2_4_14 (not c_3_4_14))) 
+(assert (=> c_2_4_14 (not c_4_1_14))) 
+(assert (=> c_2_4_14 (not c_4_2_14))) 
+(assert (=> c_2_4_14 (not c_4_3_14))) 
+(assert (=> c_2_4_14 (not c_4_4_14))) 
+(assert (=> c_3_1_14 (not c_1_1_14))) 
+(assert (=> c_3_1_14 (not c_1_2_14))) 
+(assert (=> c_3_1_14 (not c_1_3_14))) 
+(assert (=> c_3_1_14 (not c_1_4_14))) 
+(assert (=> c_3_1_14 (not c_2_1_14))) 
+(assert (=> c_3_1_14 (not c_2_2_14))) 
+(assert (=> c_3_1_14 (not c_2_3_14))) 
+(assert (=> c_3_1_14 (not c_2_4_14))) 
+(assert (=> c_3_1_14 (not c_3_2_14))) 
+(assert (=> c_3_1_14 (not c_3_3_14))) 
+(assert (=> c_3_1_14 (not c_3_4_14))) 
+(assert (=> c_3_1_14 (not c_4_1_14))) 
+(assert (=> c_3_1_14 (not c_4_2_14))) 
+(assert (=> c_3_1_14 (not c_4_3_14))) 
+(assert (=> c_3_1_14 (not c_4_4_14))) 
+(assert (=> c_3_2_14 (not c_1_1_14))) 
+(assert (=> c_3_2_14 (not c_1_2_14))) 
+(assert (=> c_3_2_14 (not c_1_3_14))) 
+(assert (=> c_3_2_14 (not c_1_4_14))) 
+(assert (=> c_3_2_14 (not c_2_1_14))) 
+(assert (=> c_3_2_14 (not c_2_2_14))) 
+(assert (=> c_3_2_14 (not c_2_3_14))) 
+(assert (=> c_3_2_14 (not c_2_4_14))) 
+(assert (=> c_3_2_14 (not c_3_1_14))) 
+(assert (=> c_3_2_14 (not c_3_3_14))) 
+(assert (=> c_3_2_14 (not c_3_4_14))) 
+(assert (=> c_3_2_14 (not c_4_1_14))) 
+(assert (=> c_3_2_14 (not c_4_2_14))) 
+(assert (=> c_3_2_14 (not c_4_3_14))) 
+(assert (=> c_3_2_14 (not c_4_4_14))) 
+(assert (=> c_3_3_14 (not c_1_1_14))) 
+(assert (=> c_3_3_14 (not c_1_2_14))) 
+(assert (=> c_3_3_14 (not c_1_3_14))) 
+(assert (=> c_3_3_14 (not c_1_4_14))) 
+(assert (=> c_3_3_14 (not c_2_1_14))) 
+(assert (=> c_3_3_14 (not c_2_2_14))) 
+(assert (=> c_3_3_14 (not c_2_3_14))) 
+(assert (=> c_3_3_14 (not c_2_4_14))) 
+(assert (=> c_3_3_14 (not c_3_1_14))) 
+(assert (=> c_3_3_14 (not c_3_2_14))) 
+(assert (=> c_3_3_14 (not c_3_4_14))) 
+(assert (=> c_3_3_14 (not c_4_1_14))) 
+(assert (=> c_3_3_14 (not c_4_2_14))) 
+(assert (=> c_3_3_14 (not c_4_3_14))) 
+(assert (=> c_3_3_14 (not c_4_4_14))) 
+(assert (=> c_3_4_14 (not c_1_1_14))) 
+(assert (=> c_3_4_14 (not c_1_2_14))) 
+(assert (=> c_3_4_14 (not c_1_3_14))) 
+(assert (=> c_3_4_14 (not c_1_4_14))) 
+(assert (=> c_3_4_14 (not c_2_1_14))) 
+(assert (=> c_3_4_14 (not c_2_2_14))) 
+(assert (=> c_3_4_14 (not c_2_3_14))) 
+(assert (=> c_3_4_14 (not c_2_4_14))) 
+(assert (=> c_3_4_14 (not c_3_1_14))) 
+(assert (=> c_3_4_14 (not c_3_2_14))) 
+(assert (=> c_3_4_14 (not c_3_3_14))) 
+(assert (=> c_3_4_14 (not c_4_1_14))) 
+(assert (=> c_3_4_14 (not c_4_2_14))) 
+(assert (=> c_3_4_14 (not c_4_3_14))) 
+(assert (=> c_3_4_14 (not c_4_4_14))) 
+(assert (=> c_4_1_14 (not c_1_1_14))) 
+(assert (=> c_4_1_14 (not c_1_2_14))) 
+(assert (=> c_4_1_14 (not c_1_3_14))) 
+(assert (=> c_4_1_14 (not c_1_4_14))) 
+(assert (=> c_4_1_14 (not c_2_1_14))) 
+(assert (=> c_4_1_14 (not c_2_2_14))) 
+(assert (=> c_4_1_14 (not c_2_3_14))) 
+(assert (=> c_4_1_14 (not c_2_4_14))) 
+(assert (=> c_4_1_14 (not c_3_1_14))) 
+(assert (=> c_4_1_14 (not c_3_2_14))) 
+(assert (=> c_4_1_14 (not c_3_3_14))) 
+(assert (=> c_4_1_14 (not c_3_4_14))) 
+(assert (=> c_4_1_14 (not c_4_2_14))) 
+(assert (=> c_4_1_14 (not c_4_3_14))) 
+(assert (=> c_4_1_14 (not c_4_4_14))) 
+(assert (=> c_4_2_14 (not c_1_1_14))) 
+(assert (=> c_4_2_14 (not c_1_2_14))) 
+(assert (=> c_4_2_14 (not c_1_3_14))) 
+(assert (=> c_4_2_14 (not c_1_4_14))) 
+(assert (=> c_4_2_14 (not c_2_1_14))) 
+(assert (=> c_4_2_14 (not c_2_2_14))) 
+(assert (=> c_4_2_14 (not c_2_3_14))) 
+(assert (=> c_4_2_14 (not c_2_4_14))) 
+(assert (=> c_4_2_14 (not c_3_1_14))) 
+(assert (=> c_4_2_14 (not c_3_2_14))) 
+(assert (=> c_4_2_14 (not c_3_3_14))) 
+(assert (=> c_4_2_14 (not c_3_4_14))) 
+(assert (=> c_4_2_14 (not c_4_1_14))) 
+(assert (=> c_4_2_14 (not c_4_3_14))) 
+(assert (=> c_4_2_14 (not c_4_4_14))) 
+(assert (=> c_4_3_14 (not c_1_1_14))) 
+(assert (=> c_4_3_14 (not c_1_2_14))) 
+(assert (=> c_4_3_14 (not c_1_3_14))) 
+(assert (=> c_4_3_14 (not c_1_4_14))) 
+(assert (=> c_4_3_14 (not c_2_1_14))) 
+(assert (=> c_4_3_14 (not c_2_2_14))) 
+(assert (=> c_4_3_14 (not c_2_3_14))) 
+(assert (=> c_4_3_14 (not c_2_4_14))) 
+(assert (=> c_4_3_14 (not c_3_1_14))) 
+(assert (=> c_4_3_14 (not c_3_2_14))) 
+(assert (=> c_4_3_14 (not c_3_3_14))) 
+(assert (=> c_4_3_14 (not c_3_4_14))) 
+(assert (=> c_4_3_14 (not c_4_1_14))) 
+(assert (=> c_4_3_14 (not c_4_2_14))) 
+(assert (=> c_4_3_14 (not c_4_4_14))) 
+(assert (=> c_4_4_14 (not c_1_1_14))) 
+(assert (=> c_4_4_14 (not c_1_2_14))) 
+(assert (=> c_4_4_14 (not c_1_3_14))) 
+(assert (=> c_4_4_14 (not c_1_4_14))) 
+(assert (=> c_4_4_14 (not c_2_1_14))) 
+(assert (=> c_4_4_14 (not c_2_2_14))) 
+(assert (=> c_4_4_14 (not c_2_3_14))) 
+(assert (=> c_4_4_14 (not c_2_4_14))) 
+(assert (=> c_4_4_14 (not c_3_1_14))) 
+(assert (=> c_4_4_14 (not c_3_2_14))) 
+(assert (=> c_4_4_14 (not c_3_3_14))) 
+(assert (=> c_4_4_14 (not c_3_4_14))) 
+(assert (=> c_4_4_14 (not c_4_1_14))) 
+(assert (=> c_4_4_14 (not c_4_2_14))) 
+(assert (=> c_4_4_14 (not c_4_3_14))) 
+(assert (=> c_1_1_15 (not c_1_2_15))) 
+(assert (=> c_1_1_15 (not c_1_3_15))) 
+(assert (=> c_1_1_15 (not c_1_4_15))) 
+(assert (=> c_1_1_15 (not c_2_1_15))) 
+(assert (=> c_1_1_15 (not c_2_2_15))) 
+(assert (=> c_1_1_15 (not c_2_3_15))) 
+(assert (=> c_1_1_15 (not c_2_4_15))) 
+(assert (=> c_1_1_15 (not c_3_1_15))) 
+(assert (=> c_1_1_15 (not c_3_2_15))) 
+(assert (=> c_1_1_15 (not c_3_3_15))) 
+(assert (=> c_1_1_15 (not c_3_4_15))) 
+(assert (=> c_1_1_15 (not c_4_1_15))) 
+(assert (=> c_1_1_15 (not c_4_2_15))) 
+(assert (=> c_1_1_15 (not c_4_3_15))) 
+(assert (=> c_1_1_15 (not c_4_4_15))) 
+(assert (=> c_1_2_15 (not c_1_1_15))) 
+(assert (=> c_1_2_15 (not c_1_3_15))) 
+(assert (=> c_1_2_15 (not c_1_4_15))) 
+(assert (=> c_1_2_15 (not c_2_1_15))) 
+(assert (=> c_1_2_15 (not c_2_2_15))) 
+(assert (=> c_1_2_15 (not c_2_3_15))) 
+(assert (=> c_1_2_15 (not c_2_4_15))) 
+(assert (=> c_1_2_15 (not c_3_1_15))) 
+(assert (=> c_1_2_15 (not c_3_2_15))) 
+(assert (=> c_1_2_15 (not c_3_3_15))) 
+(assert (=> c_1_2_15 (not c_3_4_15))) 
+(assert (=> c_1_2_15 (not c_4_1_15))) 
+(assert (=> c_1_2_15 (not c_4_2_15))) 
+(assert (=> c_1_2_15 (not c_4_3_15))) 
+(assert (=> c_1_2_15 (not c_4_4_15))) 
+(assert (=> c_1_3_15 (not c_1_1_15))) 
+(assert (=> c_1_3_15 (not c_1_2_15))) 
+(assert (=> c_1_3_15 (not c_1_4_15))) 
+(assert (=> c_1_3_15 (not c_2_1_15))) 
+(assert (=> c_1_3_15 (not c_2_2_15))) 
+(assert (=> c_1_3_15 (not c_2_3_15))) 
+(assert (=> c_1_3_15 (not c_2_4_15))) 
+(assert (=> c_1_3_15 (not c_3_1_15))) 
+(assert (=> c_1_3_15 (not c_3_2_15))) 
+(assert (=> c_1_3_15 (not c_3_3_15))) 
+(assert (=> c_1_3_15 (not c_3_4_15))) 
+(assert (=> c_1_3_15 (not c_4_1_15))) 
+(assert (=> c_1_3_15 (not c_4_2_15))) 
+(assert (=> c_1_3_15 (not c_4_3_15))) 
+(assert (=> c_1_3_15 (not c_4_4_15))) 
+(assert (=> c_1_4_15 (not c_1_1_15))) 
+(assert (=> c_1_4_15 (not c_1_2_15))) 
+(assert (=> c_1_4_15 (not c_1_3_15))) 
+(assert (=> c_1_4_15 (not c_2_1_15))) 
+(assert (=> c_1_4_15 (not c_2_2_15))) 
+(assert (=> c_1_4_15 (not c_2_3_15))) 
+(assert (=> c_1_4_15 (not c_2_4_15))) 
+(assert (=> c_1_4_15 (not c_3_1_15))) 
+(assert (=> c_1_4_15 (not c_3_2_15))) 
+(assert (=> c_1_4_15 (not c_3_3_15))) 
+(assert (=> c_1_4_15 (not c_3_4_15))) 
+(assert (=> c_1_4_15 (not c_4_1_15))) 
+(assert (=> c_1_4_15 (not c_4_2_15))) 
+(assert (=> c_1_4_15 (not c_4_3_15))) 
+(assert (=> c_1_4_15 (not c_4_4_15))) 
+(assert (=> c_2_1_15 (not c_1_1_15))) 
+(assert (=> c_2_1_15 (not c_1_2_15))) 
+(assert (=> c_2_1_15 (not c_1_3_15))) 
+(assert (=> c_2_1_15 (not c_1_4_15))) 
+(assert (=> c_2_1_15 (not c_2_2_15))) 
+(assert (=> c_2_1_15 (not c_2_3_15))) 
+(assert (=> c_2_1_15 (not c_2_4_15))) 
+(assert (=> c_2_1_15 (not c_3_1_15))) 
+(assert (=> c_2_1_15 (not c_3_2_15))) 
+(assert (=> c_2_1_15 (not c_3_3_15))) 
+(assert (=> c_2_1_15 (not c_3_4_15))) 
+(assert (=> c_2_1_15 (not c_4_1_15))) 
+(assert (=> c_2_1_15 (not c_4_2_15))) 
+(assert (=> c_2_1_15 (not c_4_3_15))) 
+(assert (=> c_2_1_15 (not c_4_4_15))) 
+(assert (=> c_2_2_15 (not c_1_1_15))) 
+(assert (=> c_2_2_15 (not c_1_2_15))) 
+(assert (=> c_2_2_15 (not c_1_3_15))) 
+(assert (=> c_2_2_15 (not c_1_4_15))) 
+(assert (=> c_2_2_15 (not c_2_1_15))) 
+(assert (=> c_2_2_15 (not c_2_3_15))) 
+(assert (=> c_2_2_15 (not c_2_4_15))) 
+(assert (=> c_2_2_15 (not c_3_1_15))) 
+(assert (=> c_2_2_15 (not c_3_2_15))) 
+(assert (=> c_2_2_15 (not c_3_3_15))) 
+(assert (=> c_2_2_15 (not c_3_4_15))) 
+(assert (=> c_2_2_15 (not c_4_1_15))) 
+(assert (=> c_2_2_15 (not c_4_2_15))) 
+(assert (=> c_2_2_15 (not c_4_3_15))) 
+(assert (=> c_2_2_15 (not c_4_4_15))) 
+(assert (=> c_2_3_15 (not c_1_1_15))) 
+(assert (=> c_2_3_15 (not c_1_2_15))) 
+(assert (=> c_2_3_15 (not c_1_3_15))) 
+(assert (=> c_2_3_15 (not c_1_4_15))) 
+(assert (=> c_2_3_15 (not c_2_1_15))) 
+(assert (=> c_2_3_15 (not c_2_2_15))) 
+(assert (=> c_2_3_15 (not c_2_4_15))) 
+(assert (=> c_2_3_15 (not c_3_1_15))) 
+(assert (=> c_2_3_15 (not c_3_2_15))) 
+(assert (=> c_2_3_15 (not c_3_3_15))) 
+(assert (=> c_2_3_15 (not c_3_4_15))) 
+(assert (=> c_2_3_15 (not c_4_1_15))) 
+(assert (=> c_2_3_15 (not c_4_2_15))) 
+(assert (=> c_2_3_15 (not c_4_3_15))) 
+(assert (=> c_2_3_15 (not c_4_4_15))) 
+(assert (=> c_2_4_15 (not c_1_1_15))) 
+(assert (=> c_2_4_15 (not c_1_2_15))) 
+(assert (=> c_2_4_15 (not c_1_3_15))) 
+(assert (=> c_2_4_15 (not c_1_4_15))) 
+(assert (=> c_2_4_15 (not c_2_1_15))) 
+(assert (=> c_2_4_15 (not c_2_2_15))) 
+(assert (=> c_2_4_15 (not c_2_3_15))) 
+(assert (=> c_2_4_15 (not c_3_1_15))) 
+(assert (=> c_2_4_15 (not c_3_2_15))) 
+(assert (=> c_2_4_15 (not c_3_3_15))) 
+(assert (=> c_2_4_15 (not c_3_4_15))) 
+(assert (=> c_2_4_15 (not c_4_1_15))) 
+(assert (=> c_2_4_15 (not c_4_2_15))) 
+(assert (=> c_2_4_15 (not c_4_3_15))) 
+(assert (=> c_2_4_15 (not c_4_4_15))) 
+(assert (=> c_3_1_15 (not c_1_1_15))) 
+(assert (=> c_3_1_15 (not c_1_2_15))) 
+(assert (=> c_3_1_15 (not c_1_3_15))) 
+(assert (=> c_3_1_15 (not c_1_4_15))) 
+(assert (=> c_3_1_15 (not c_2_1_15))) 
+(assert (=> c_3_1_15 (not c_2_2_15))) 
+(assert (=> c_3_1_15 (not c_2_3_15))) 
+(assert (=> c_3_1_15 (not c_2_4_15))) 
+(assert (=> c_3_1_15 (not c_3_2_15))) 
+(assert (=> c_3_1_15 (not c_3_3_15))) 
+(assert (=> c_3_1_15 (not c_3_4_15))) 
+(assert (=> c_3_1_15 (not c_4_1_15))) 
+(assert (=> c_3_1_15 (not c_4_2_15))) 
+(assert (=> c_3_1_15 (not c_4_3_15))) 
+(assert (=> c_3_1_15 (not c_4_4_15))) 
+(assert (=> c_3_2_15 (not c_1_1_15))) 
+(assert (=> c_3_2_15 (not c_1_2_15))) 
+(assert (=> c_3_2_15 (not c_1_3_15))) 
+(assert (=> c_3_2_15 (not c_1_4_15))) 
+(assert (=> c_3_2_15 (not c_2_1_15))) 
+(assert (=> c_3_2_15 (not c_2_2_15))) 
+(assert (=> c_3_2_15 (not c_2_3_15))) 
+(assert (=> c_3_2_15 (not c_2_4_15))) 
+(assert (=> c_3_2_15 (not c_3_1_15))) 
+(assert (=> c_3_2_15 (not c_3_3_15))) 
+(assert (=> c_3_2_15 (not c_3_4_15))) 
+(assert (=> c_3_2_15 (not c_4_1_15))) 
+(assert (=> c_3_2_15 (not c_4_2_15))) 
+(assert (=> c_3_2_15 (not c_4_3_15))) 
+(assert (=> c_3_2_15 (not c_4_4_15))) 
+(assert (=> c_3_3_15 (not c_1_1_15))) 
+(assert (=> c_3_3_15 (not c_1_2_15))) 
+(assert (=> c_3_3_15 (not c_1_3_15))) 
+(assert (=> c_3_3_15 (not c_1_4_15))) 
+(assert (=> c_3_3_15 (not c_2_1_15))) 
+(assert (=> c_3_3_15 (not c_2_2_15))) 
+(assert (=> c_3_3_15 (not c_2_3_15))) 
+(assert (=> c_3_3_15 (not c_2_4_15))) 
+(assert (=> c_3_3_15 (not c_3_1_15))) 
+(assert (=> c_3_3_15 (not c_3_2_15))) 
+(assert (=> c_3_3_15 (not c_3_4_15))) 
+(assert (=> c_3_3_15 (not c_4_1_15))) 
+(assert (=> c_3_3_15 (not c_4_2_15))) 
+(assert (=> c_3_3_15 (not c_4_3_15))) 
+(assert (=> c_3_3_15 (not c_4_4_15))) 
+(assert (=> c_3_4_15 (not c_1_1_15))) 
+(assert (=> c_3_4_15 (not c_1_2_15))) 
+(assert (=> c_3_4_15 (not c_1_3_15))) 
+(assert (=> c_3_4_15 (not c_1_4_15))) 
+(assert (=> c_3_4_15 (not c_2_1_15))) 
+(assert (=> c_3_4_15 (not c_2_2_15))) 
+(assert (=> c_3_4_15 (not c_2_3_15))) 
+(assert (=> c_3_4_15 (not c_2_4_15))) 
+(assert (=> c_3_4_15 (not c_3_1_15))) 
+(assert (=> c_3_4_15 (not c_3_2_15))) 
+(assert (=> c_3_4_15 (not c_3_3_15))) 
+(assert (=> c_3_4_15 (not c_4_1_15))) 
+(assert (=> c_3_4_15 (not c_4_2_15))) 
+(assert (=> c_3_4_15 (not c_4_3_15))) 
+(assert (=> c_3_4_15 (not c_4_4_15))) 
+(assert (=> c_4_1_15 (not c_1_1_15))) 
+(assert (=> c_4_1_15 (not c_1_2_15))) 
+(assert (=> c_4_1_15 (not c_1_3_15))) 
+(assert (=> c_4_1_15 (not c_1_4_15))) 
+(assert (=> c_4_1_15 (not c_2_1_15))) 
+(assert (=> c_4_1_15 (not c_2_2_15))) 
+(assert (=> c_4_1_15 (not c_2_3_15))) 
+(assert (=> c_4_1_15 (not c_2_4_15))) 
+(assert (=> c_4_1_15 (not c_3_1_15))) 
+(assert (=> c_4_1_15 (not c_3_2_15))) 
+(assert (=> c_4_1_15 (not c_3_3_15))) 
+(assert (=> c_4_1_15 (not c_3_4_15))) 
+(assert (=> c_4_1_15 (not c_4_2_15))) 
+(assert (=> c_4_1_15 (not c_4_3_15))) 
+(assert (=> c_4_1_15 (not c_4_4_15))) 
+(assert (=> c_4_2_15 (not c_1_1_15))) 
+(assert (=> c_4_2_15 (not c_1_2_15))) 
+(assert (=> c_4_2_15 (not c_1_3_15))) 
+(assert (=> c_4_2_15 (not c_1_4_15))) 
+(assert (=> c_4_2_15 (not c_2_1_15))) 
+(assert (=> c_4_2_15 (not c_2_2_15))) 
+(assert (=> c_4_2_15 (not c_2_3_15))) 
+(assert (=> c_4_2_15 (not c_2_4_15))) 
+(assert (=> c_4_2_15 (not c_3_1_15))) 
+(assert (=> c_4_2_15 (not c_3_2_15))) 
+(assert (=> c_4_2_15 (not c_3_3_15))) 
+(assert (=> c_4_2_15 (not c_3_4_15))) 
+(assert (=> c_4_2_15 (not c_4_1_15))) 
+(assert (=> c_4_2_15 (not c_4_3_15))) 
+(assert (=> c_4_2_15 (not c_4_4_15))) 
+(assert (=> c_4_3_15 (not c_1_1_15))) 
+(assert (=> c_4_3_15 (not c_1_2_15))) 
+(assert (=> c_4_3_15 (not c_1_3_15))) 
+(assert (=> c_4_3_15 (not c_1_4_15))) 
+(assert (=> c_4_3_15 (not c_2_1_15))) 
+(assert (=> c_4_3_15 (not c_2_2_15))) 
+(assert (=> c_4_3_15 (not c_2_3_15))) 
+(assert (=> c_4_3_15 (not c_2_4_15))) 
+(assert (=> c_4_3_15 (not c_3_1_15))) 
+(assert (=> c_4_3_15 (not c_3_2_15))) 
+(assert (=> c_4_3_15 (not c_3_3_15))) 
+(assert (=> c_4_3_15 (not c_3_4_15))) 
+(assert (=> c_4_3_15 (not c_4_1_15))) 
+(assert (=> c_4_3_15 (not c_4_2_15))) 
+(assert (=> c_4_3_15 (not c_4_4_15))) 
+(assert (=> c_4_4_15 (not c_1_1_15))) 
+(assert (=> c_4_4_15 (not c_1_2_15))) 
+(assert (=> c_4_4_15 (not c_1_3_15))) 
+(assert (=> c_4_4_15 (not c_1_4_15))) 
+(assert (=> c_4_4_15 (not c_2_1_15))) 
+(assert (=> c_4_4_15 (not c_2_2_15))) 
+(assert (=> c_4_4_15 (not c_2_3_15))) 
+(assert (=> c_4_4_15 (not c_2_4_15))) 
+(assert (=> c_4_4_15 (not c_3_1_15))) 
+(assert (=> c_4_4_15 (not c_3_2_15))) 
+(assert (=> c_4_4_15 (not c_3_3_15))) 
+(assert (=> c_4_4_15 (not c_3_4_15))) 
+(assert (=> c_4_4_15 (not c_4_1_15))) 
+(assert (=> c_4_4_15 (not c_4_2_15))) 
+(assert (=> c_4_4_15 (not c_4_3_15))) 
+
+;Action variables 
+(assert (=> 
+  c_1_1_0 
+  (or 
+    c_2_1_1 
+    c_1_2_1 
+  ) 
+)) 
+(assert (=> 
+  c_1_2_0 
+  (or 
+    c_2_2_1 
+    c_1_1_1 
+    c_1_3_1 
+  ) 
+)) 
+(assert (=> 
+  c_1_3_0 
+  (or 
+    c_2_3_1 
+    c_1_2_1 
+    c_1_4_1 
+  ) 
+)) 
+(assert (=> 
+  c_1_4_0 
+  (or 
+    c_2_4_1 
+    c_1_3_1 
+  ) 
+)) 
+(assert (=> 
+  c_2_1_0 
+  (or 
+    c_1_1_1 
+    c_3_1_1 
+    c_2_2_1 
+  ) 
+)) 
+(assert (=> 
+  c_2_2_0 
+  (or 
+    c_1_2_1 
+    c_3_2_1 
+    c_2_1_1 
+    c_2_3_1 
+  ) 
+)) 
+(assert (=> 
+  c_2_3_0 
+  (or 
+    c_1_3_1 
+    c_3_3_1 
+    c_2_2_1 
+    c_2_4_1 
+  ) 
+)) 
+(assert (=> 
+  c_2_4_0 
+  (or 
+    c_1_4_1 
+    c_3_4_1 
+    c_2_3_1 
+  ) 
+)) 
+(assert (=> 
+  c_3_1_0 
+  (or 
+    c_2_1_1 
+    c_4_1_1 
+    c_3_2_1 
+  ) 
+)) 
+(assert (=> 
+  c_3_2_0 
+  (or 
+    c_2_2_1 
+    c_4_2_1 
+    c_3_1_1 
+    c_3_3_1 
+  ) 
+)) 
+(assert (=> 
+  c_3_3_0 
+  (or 
+    c_2_3_1 
+    c_4_3_1 
+    c_3_2_1 
+    c_3_4_1 
+  ) 
+)) 
+(assert (=> 
+  c_3_4_0 
+  (or 
+    c_2_4_1 
+    c_4_4_1 
+    c_3_3_1 
+  ) 
+)) 
+(assert (=> 
+  c_4_1_0 
+  (or 
+    c_3_1_1 
+    c_4_2_1 
+  ) 
+)) 
+(assert (=> 
+  c_4_2_0 
+  (or 
+    c_3_2_1 
+    c_4_1_1 
+    c_4_3_1 
+  ) 
+)) 
+(assert (=> 
+  c_4_3_0 
+  (or 
+    c_3_3_1 
+    c_4_2_1 
+    c_4_4_1 
+  ) 
+)) 
+(assert (=> 
+  c_4_4_0 
+  (or 
+    c_3_4_1 
+    c_4_3_1 
+  ) 
+)) 
+(assert (=> 
+  c_1_1_1 
+  (or 
+    c_2_1_2 
+    c_1_2_2 
+  ) 
+)) 
+(assert (=> 
+  c_1_2_1 
+  (or 
+    c_2_2_2 
+    c_1_1_2 
+    c_1_3_2 
+  ) 
+)) 
+(assert (=> 
+  c_1_3_1 
+  (or 
+    c_2_3_2 
+    c_1_2_2 
+    c_1_4_2 
+  ) 
+)) 
+(assert (=> 
+  c_1_4_1 
+  (or 
+    c_2_4_2 
+    c_1_3_2 
+  ) 
+)) 
+(assert (=> 
+  c_2_1_1 
+  (or 
+    c_1_1_2 
+    c_3_1_2 
+    c_2_2_2 
+  ) 
+)) 
+(assert (=> 
+  c_2_2_1 
+  (or 
+    c_1_2_2 
+    c_3_2_2 
+    c_2_1_2 
+    c_2_3_2 
+  ) 
+)) 
+(assert (=> 
+  c_2_3_1 
+  (or 
+    c_1_3_2 
+    c_3_3_2 
+    c_2_2_2 
+    c_2_4_2 
+  ) 
+)) 
+(assert (=> 
+  c_2_4_1 
+  (or 
+    c_1_4_2 
+    c_3_4_2 
+    c_2_3_2 
+  ) 
+)) 
+(assert (=> 
+  c_3_1_1 
+  (or 
+    c_2_1_2 
+    c_4_1_2 
+    c_3_2_2 
+  ) 
+)) 
+(assert (=> 
+  c_3_2_1 
+  (or 
+    c_2_2_2 
+    c_4_2_2 
+    c_3_1_2 
+    c_3_3_2 
+  ) 
+)) 
+(assert (=> 
+  c_3_3_1 
+  (or 
+    c_2_3_2 
+    c_4_3_2 
+    c_3_2_2 
+    c_3_4_2 
+  ) 
+)) 
+(assert (=> 
+  c_3_4_1 
+  (or 
+    c_2_4_2 
+    c_4_4_2 
+    c_3_3_2 
+  ) 
+)) 
+(assert (=> 
+  c_4_1_1 
+  (or 
+    c_3_1_2 
+    c_4_2_2 
+  ) 
+)) 
+(assert (=> 
+  c_4_2_1 
+  (or 
+    c_3_2_2 
+    c_4_1_2 
+    c_4_3_2 
+  ) 
+)) 
+(assert (=> 
+  c_4_3_1 
+  (or 
+    c_3_3_2 
+    c_4_2_2 
+    c_4_4_2 
+  ) 
+)) 
+(assert (=> 
+  c_4_4_1 
+  (or 
+    c_3_4_2 
+    c_4_3_2 
+  ) 
+)) 
+(assert (=> 
+  c_1_1_2 
+  (or 
+    c_2_1_3 
+    c_1_2_3 
+  ) 
+)) 
+(assert (=> 
+  c_1_2_2 
+  (or 
+    c_2_2_3 
+    c_1_1_3 
+    c_1_3_3 
+  ) 
+)) 
+(assert (=> 
+  c_1_3_2 
+  (or 
+    c_2_3_3 
+    c_1_2_3 
+    c_1_4_3 
+  ) 
+)) 
+(assert (=> 
+  c_1_4_2 
+  (or 
+    c_2_4_3 
+    c_1_3_3 
+  ) 
+)) 
+(assert (=> 
+  c_2_1_2 
+  (or 
+    c_1_1_3 
+    c_3_1_3 
+    c_2_2_3 
+  ) 
+)) 
+(assert (=> 
+  c_2_2_2 
+  (or 
+    c_1_2_3 
+    c_3_2_3 
+    c_2_1_3 
+    c_2_3_3 
+  ) 
+)) 
+(assert (=> 
+  c_2_3_2 
+  (or 
+    c_1_3_3 
+    c_3_3_3 
+    c_2_2_3 
+    c_2_4_3 
+  ) 
+)) 
+(assert (=> 
+  c_2_4_2 
+  (or 
+    c_1_4_3 
+    c_3_4_3 
+    c_2_3_3 
+  ) 
+)) 
+(assert (=> 
+  c_3_1_2 
+  (or 
+    c_2_1_3 
+    c_4_1_3 
+    c_3_2_3 
+  ) 
+)) 
+(assert (=> 
+  c_3_2_2 
+  (or 
+    c_2_2_3 
+    c_4_2_3 
+    c_3_1_3 
+    c_3_3_3 
+  ) 
+)) 
+(assert (=> 
+  c_3_3_2 
+  (or 
+    c_2_3_3 
+    c_4_3_3 
+    c_3_2_3 
+    c_3_4_3 
+  ) 
+)) 
+(assert (=> 
+  c_3_4_2 
+  (or 
+    c_2_4_3 
+    c_4_4_3 
+    c_3_3_3 
+  ) 
+)) 
+(assert (=> 
+  c_4_1_2 
+  (or 
+    c_3_1_3 
+    c_4_2_3 
+  ) 
+)) 
+(assert (=> 
+  c_4_2_2 
+  (or 
+    c_3_2_3 
+    c_4_1_3 
+    c_4_3_3 
+  ) 
+)) 
+(assert (=> 
+  c_4_3_2 
+  (or 
+    c_3_3_3 
+    c_4_2_3 
+    c_4_4_3 
+  ) 
+)) 
+(assert (=> 
+  c_4_4_2 
+  (or 
+    c_3_4_3 
+    c_4_3_3 
+  ) 
+)) 
+(assert (=> 
+  c_1_1_3 
+  (or 
+    c_2_1_4 
+    c_1_2_4 
+  ) 
+)) 
+(assert (=> 
+  c_1_2_3 
+  (or 
+    c_2_2_4 
+    c_1_1_4 
+    c_1_3_4 
+  ) 
+)) 
+(assert (=> 
+  c_1_3_3 
+  (or 
+    c_2_3_4 
+    c_1_2_4 
+    c_1_4_4 
+  ) 
+)) 
+(assert (=> 
+  c_1_4_3 
+  (or 
+    c_2_4_4 
+    c_1_3_4 
+  ) 
+)) 
+(assert (=> 
+  c_2_1_3 
+  (or 
+    c_1_1_4 
+    c_3_1_4 
+    c_2_2_4 
+  ) 
+)) 
+(assert (=> 
+  c_2_2_3 
+  (or 
+    c_1_2_4 
+    c_3_2_4 
+    c_2_1_4 
+    c_2_3_4 
+  ) 
+)) 
+(assert (=> 
+  c_2_3_3 
+  (or 
+    c_1_3_4 
+    c_3_3_4 
+    c_2_2_4 
+    c_2_4_4 
+  ) 
+)) 
+(assert (=> 
+  c_2_4_3 
+  (or 
+    c_1_4_4 
+    c_3_4_4 
+    c_2_3_4 
+  ) 
+)) 
+(assert (=> 
+  c_3_1_3 
+  (or 
+    c_2_1_4 
+    c_4_1_4 
+    c_3_2_4 
+  ) 
+)) 
+(assert (=> 
+  c_3_2_3 
+  (or 
+    c_2_2_4 
+    c_4_2_4 
+    c_3_1_4 
+    c_3_3_4 
+  ) 
+)) 
+(assert (=> 
+  c_3_3_3 
+  (or 
+    c_2_3_4 
+    c_4_3_4 
+    c_3_2_4 
+    c_3_4_4 
+  ) 
+)) 
+(assert (=> 
+  c_3_4_3 
+  (or 
+    c_2_4_4 
+    c_4_4_4 
+    c_3_3_4 
+  ) 
+)) 
+(assert (=> 
+  c_4_1_3 
+  (or 
+    c_3_1_4 
+    c_4_2_4 
+  ) 
+)) 
+(assert (=> 
+  c_4_2_3 
+  (or 
+    c_3_2_4 
+    c_4_1_4 
+    c_4_3_4 
+  ) 
+)) 
+(assert (=> 
+  c_4_3_3 
+  (or 
+    c_3_3_4 
+    c_4_2_4 
+    c_4_4_4 
+  ) 
+)) 
+(assert (=> 
+  c_4_4_3 
+  (or 
+    c_3_4_4 
+    c_4_3_4 
+  ) 
+)) 
+(assert (=> 
+  c_1_1_4 
+  (or 
+    c_2_1_5 
+    c_1_2_5 
+  ) 
+)) 
+(assert (=> 
+  c_1_2_4 
+  (or 
+    c_2_2_5 
+    c_1_1_5 
+    c_1_3_5 
+  ) 
+)) 
+(assert (=> 
+  c_1_3_4 
+  (or 
+    c_2_3_5 
+    c_1_2_5 
+    c_1_4_5 
+  ) 
+)) 
+(assert (=> 
+  c_1_4_4 
+  (or 
+    c_2_4_5 
+    c_1_3_5 
+  ) 
+)) 
+(assert (=> 
+  c_2_1_4 
+  (or 
+    c_1_1_5 
+    c_3_1_5 
+    c_2_2_5 
+  ) 
+)) 
+(assert (=> 
+  c_2_2_4 
+  (or 
+    c_1_2_5 
+    c_3_2_5 
+    c_2_1_5 
+    c_2_3_5 
+  ) 
+)) 
+(assert (=> 
+  c_2_3_4 
+  (or 
+    c_1_3_5 
+    c_3_3_5 
+    c_2_2_5 
+    c_2_4_5 
+  ) 
+)) 
+(assert (=> 
+  c_2_4_4 
+  (or 
+    c_1_4_5 
+    c_3_4_5 
+    c_2_3_5 
+  ) 
+)) 
+(assert (=> 
+  c_3_1_4 
+  (or 
+    c_2_1_5 
+    c_4_1_5 
+    c_3_2_5 
+  ) 
+)) 
+(assert (=> 
+  c_3_2_4 
+  (or 
+    c_2_2_5 
+    c_4_2_5 
+    c_3_1_5 
+    c_3_3_5 
+  ) 
+)) 
+(assert (=> 
+  c_3_3_4 
+  (or 
+    c_2_3_5 
+    c_4_3_5 
+    c_3_2_5 
+    c_3_4_5 
+  ) 
+)) 
+(assert (=> 
+  c_3_4_4 
+  (or 
+    c_2_4_5 
+    c_4_4_5 
+    c_3_3_5 
+  ) 
+)) 
+(assert (=> 
+  c_4_1_4 
+  (or 
+    c_3_1_5 
+    c_4_2_5 
+  ) 
+)) 
+(assert (=> 
+  c_4_2_4 
+  (or 
+    c_3_2_5 
+    c_4_1_5 
+    c_4_3_5 
+  ) 
+)) 
+(assert (=> 
+  c_4_3_4 
+  (or 
+    c_3_3_5 
+    c_4_2_5 
+    c_4_4_5 
+  ) 
+)) 
+(assert (=> 
+  c_4_4_4 
+  (or 
+    c_3_4_5 
+    c_4_3_5 
+  ) 
+)) 
+(assert (=> 
+  c_1_1_5 
+  (or 
+    c_2_1_6 
+    c_1_2_6 
+  ) 
+)) 
+(assert (=> 
+  c_1_2_5 
+  (or 
+    c_2_2_6 
+    c_1_1_6 
+    c_1_3_6 
+  ) 
+)) 
+(assert (=> 
+  c_1_3_5 
+  (or 
+    c_2_3_6 
+    c_1_2_6 
+    c_1_4_6 
+  ) 
+)) 
+(assert (=> 
+  c_1_4_5 
+  (or 
+    c_2_4_6 
+    c_1_3_6 
+  ) 
+)) 
+(assert (=> 
+  c_2_1_5 
+  (or 
+    c_1_1_6 
+    c_3_1_6 
+    c_2_2_6 
+  ) 
+)) 
+(assert (=> 
+  c_2_2_5 
+  (or 
+    c_1_2_6 
+    c_3_2_6 
+    c_2_1_6 
+    c_2_3_6 
+  ) 
+)) 
+(assert (=> 
+  c_2_3_5 
+  (or 
+    c_1_3_6 
+    c_3_3_6 
+    c_2_2_6 
+    c_2_4_6 
+  ) 
+)) 
+(assert (=> 
+  c_2_4_5 
+  (or 
+    c_1_4_6 
+    c_3_4_6 
+    c_2_3_6 
+  ) 
+)) 
+(assert (=> 
+  c_3_1_5 
+  (or 
+    c_2_1_6 
+    c_4_1_6 
+    c_3_2_6 
+  ) 
+)) 
+(assert (=> 
+  c_3_2_5 
+  (or 
+    c_2_2_6 
+    c_4_2_6 
+    c_3_1_6 
+    c_3_3_6 
+  ) 
+)) 
+(assert (=> 
+  c_3_3_5 
+  (or 
+    c_2_3_6 
+    c_4_3_6 
+    c_3_2_6 
+    c_3_4_6 
+  ) 
+)) 
+(assert (=> 
+  c_3_4_5 
+  (or 
+    c_2_4_6 
+    c_4_4_6 
+    c_3_3_6 
+  ) 
+)) 
+(assert (=> 
+  c_4_1_5 
+  (or 
+    c_3_1_6 
+    c_4_2_6 
+  ) 
+)) 
+(assert (=> 
+  c_4_2_5 
+  (or 
+    c_3_2_6 
+    c_4_1_6 
+    c_4_3_6 
+  ) 
+)) 
+(assert (=> 
+  c_4_3_5 
+  (or 
+    c_3_3_6 
+    c_4_2_6 
+    c_4_4_6 
+  ) 
+)) 
+(assert (=> 
+  c_4_4_5 
+  (or 
+    c_3_4_6 
+    c_4_3_6 
+  ) 
+)) 
+(assert (=> 
+  c_1_1_6 
+  (or 
+    c_2_1_7 
+    c_1_2_7 
+  ) 
+)) 
+(assert (=> 
+  c_1_2_6 
+  (or 
+    c_2_2_7 
+    c_1_1_7 
+    c_1_3_7 
+  ) 
+)) 
+(assert (=> 
+  c_1_3_6 
+  (or 
+    c_2_3_7 
+    c_1_2_7 
+    c_1_4_7 
+  ) 
+)) 
+(assert (=> 
+  c_1_4_6 
+  (or 
+    c_2_4_7 
+    c_1_3_7 
+  ) 
+)) 
+(assert (=> 
+  c_2_1_6 
+  (or 
+    c_1_1_7 
+    c_3_1_7 
+    c_2_2_7 
+  ) 
+)) 
+(assert (=> 
+  c_2_2_6 
+  (or 
+    c_1_2_7 
+    c_3_2_7 
+    c_2_1_7 
+    c_2_3_7 
+  ) 
+)) 
+(assert (=> 
+  c_2_3_6 
+  (or 
+    c_1_3_7 
+    c_3_3_7 
+    c_2_2_7 
+    c_2_4_7 
+  ) 
+)) 
+(assert (=> 
+  c_2_4_6 
+  (or 
+    c_1_4_7 
+    c_3_4_7 
+    c_2_3_7 
+  ) 
+)) 
+(assert (=> 
+  c_3_1_6 
+  (or 
+    c_2_1_7 
+    c_4_1_7 
+    c_3_2_7 
+  ) 
+)) 
+(assert (=> 
+  c_3_2_6 
+  (or 
+    c_2_2_7 
+    c_4_2_7 
+    c_3_1_7 
+    c_3_3_7 
+  ) 
+)) 
+(assert (=> 
+  c_3_3_6 
+  (or 
+    c_2_3_7 
+    c_4_3_7 
+    c_3_2_7 
+    c_3_4_7 
+  ) 
+)) 
+(assert (=> 
+  c_3_4_6 
+  (or 
+    c_2_4_7 
+    c_4_4_7 
+    c_3_3_7 
+  ) 
+)) 
+(assert (=> 
+  c_4_1_6 
+  (or 
+    c_3_1_7 
+    c_4_2_7 
+  ) 
+)) 
+(assert (=> 
+  c_4_2_6 
+  (or 
+    c_3_2_7 
+    c_4_1_7 
+    c_4_3_7 
+  ) 
+)) 
+(assert (=> 
+  c_4_3_6 
+  (or 
+    c_3_3_7 
+    c_4_2_7 
+    c_4_4_7 
+  ) 
+)) 
+(assert (=> 
+  c_4_4_6 
+  (or 
+    c_3_4_7 
+    c_4_3_7 
+  ) 
+)) 
+(assert (=> 
+  c_1_1_7 
+  (or 
+    c_2_1_8 
+    c_1_2_8 
+  ) 
+)) 
+(assert (=> 
+  c_1_2_7 
+  (or 
+    c_2_2_8 
+    c_1_1_8 
+    c_1_3_8 
+  ) 
+)) 
+(assert (=> 
+  c_1_3_7 
+  (or 
+    c_2_3_8 
+    c_1_2_8 
+    c_1_4_8 
+  ) 
+)) 
+(assert (=> 
+  c_1_4_7 
+  (or 
+    c_2_4_8 
+    c_1_3_8 
+  ) 
+)) 
+(assert (=> 
+  c_2_1_7 
+  (or 
+    c_1_1_8 
+    c_3_1_8 
+    c_2_2_8 
+  ) 
+)) 
+(assert (=> 
+  c_2_2_7 
+  (or 
+    c_1_2_8 
+    c_3_2_8 
+    c_2_1_8 
+    c_2_3_8 
+  ) 
+)) 
+(assert (=> 
+  c_2_3_7 
+  (or 
+    c_1_3_8 
+    c_3_3_8 
+    c_2_2_8 
+    c_2_4_8 
+  ) 
+)) 
+(assert (=> 
+  c_2_4_7 
+  (or 
+    c_1_4_8 
+    c_3_4_8 
+    c_2_3_8 
+  ) 
+)) 
+(assert (=> 
+  c_3_1_7 
+  (or 
+    c_2_1_8 
+    c_4_1_8 
+    c_3_2_8 
+  ) 
+)) 
+(assert (=> 
+  c_3_2_7 
+  (or 
+    c_2_2_8 
+    c_4_2_8 
+    c_3_1_8 
+    c_3_3_8 
+  ) 
+)) 
+(assert (=> 
+  c_3_3_7 
+  (or 
+    c_2_3_8 
+    c_4_3_8 
+    c_3_2_8 
+    c_3_4_8 
+  ) 
+)) 
+(assert (=> 
+  c_3_4_7 
+  (or 
+    c_2_4_8 
+    c_4_4_8 
+    c_3_3_8 
+  ) 
+)) 
+(assert (=> 
+  c_4_1_7 
+  (or 
+    c_3_1_8 
+    c_4_2_8 
+  ) 
+)) 
+(assert (=> 
+  c_4_2_7 
+  (or 
+    c_3_2_8 
+    c_4_1_8 
+    c_4_3_8 
+  ) 
+)) 
+(assert (=> 
+  c_4_3_7 
+  (or 
+    c_3_3_8 
+    c_4_2_8 
+    c_4_4_8 
+  ) 
+)) 
+(assert (=> 
+  c_4_4_7 
+  (or 
+    c_3_4_8 
+    c_4_3_8 
+  ) 
+)) 
+(assert (=> 
+  c_1_1_8 
+  (or 
+    c_2_1_9 
+    c_1_2_9 
+  ) 
+)) 
+(assert (=> 
+  c_1_2_8 
+  (or 
+    c_2_2_9 
+    c_1_1_9 
+    c_1_3_9 
+  ) 
+)) 
+(assert (=> 
+  c_1_3_8 
+  (or 
+    c_2_3_9 
+    c_1_2_9 
+    c_1_4_9 
+  ) 
+)) 
+(assert (=> 
+  c_1_4_8 
+  (or 
+    c_2_4_9 
+    c_1_3_9 
+  ) 
+)) 
+(assert (=> 
+  c_2_1_8 
+  (or 
+    c_1_1_9 
+    c_3_1_9 
+    c_2_2_9 
+  ) 
+)) 
+(assert (=> 
+  c_2_2_8 
+  (or 
+    c_1_2_9 
+    c_3_2_9 
+    c_2_1_9 
+    c_2_3_9 
+  ) 
+)) 
+(assert (=> 
+  c_2_3_8 
+  (or 
+    c_1_3_9 
+    c_3_3_9 
+    c_2_2_9 
+    c_2_4_9 
+  ) 
+)) 
+(assert (=> 
+  c_2_4_8 
+  (or 
+    c_1_4_9 
+    c_3_4_9 
+    c_2_3_9 
+  ) 
+)) 
+(assert (=> 
+  c_3_1_8 
+  (or 
+    c_2_1_9 
+    c_4_1_9 
+    c_3_2_9 
+  ) 
+)) 
+(assert (=> 
+  c_3_2_8 
+  (or 
+    c_2_2_9 
+    c_4_2_9 
+    c_3_1_9 
+    c_3_3_9 
+  ) 
+)) 
+(assert (=> 
+  c_3_3_8 
+  (or 
+    c_2_3_9 
+    c_4_3_9 
+    c_3_2_9 
+    c_3_4_9 
+  ) 
+)) 
+(assert (=> 
+  c_3_4_8 
+  (or 
+    c_2_4_9 
+    c_4_4_9 
+    c_3_3_9 
+  ) 
+)) 
+(assert (=> 
+  c_4_1_8 
+  (or 
+    c_3_1_9 
+    c_4_2_9 
+  ) 
+)) 
+(assert (=> 
+  c_4_2_8 
+  (or 
+    c_3_2_9 
+    c_4_1_9 
+    c_4_3_9 
+  ) 
+)) 
+(assert (=> 
+  c_4_3_8 
+  (or 
+    c_3_3_9 
+    c_4_2_9 
+    c_4_4_9 
+  ) 
+)) 
+(assert (=> 
+  c_4_4_8 
+  (or 
+    c_3_4_9 
+    c_4_3_9 
+  ) 
+)) 
+(assert (=> 
+  c_1_1_9 
+  (or 
+    c_2_1_10 
+    c_1_2_10 
+  ) 
+)) 
+(assert (=> 
+  c_1_2_9 
+  (or 
+    c_2_2_10 
+    c_1_1_10 
+    c_1_3_10 
+  ) 
+)) 
+(assert (=> 
+  c_1_3_9 
+  (or 
+    c_2_3_10 
+    c_1_2_10 
+    c_1_4_10 
+  ) 
+)) 
+(assert (=> 
+  c_1_4_9 
+  (or 
+    c_2_4_10 
+    c_1_3_10 
+  ) 
+)) 
+(assert (=> 
+  c_2_1_9 
+  (or 
+    c_1_1_10 
+    c_3_1_10 
+    c_2_2_10 
+  ) 
+)) 
+(assert (=> 
+  c_2_2_9 
+  (or 
+    c_1_2_10 
+    c_3_2_10 
+    c_2_1_10 
+    c_2_3_10 
+  ) 
+)) 
+(assert (=> 
+  c_2_3_9 
+  (or 
+    c_1_3_10 
+    c_3_3_10 
+    c_2_2_10 
+    c_2_4_10 
+  ) 
+)) 
+(assert (=> 
+  c_2_4_9 
+  (or 
+    c_1_4_10 
+    c_3_4_10 
+    c_2_3_10 
+  ) 
+)) 
+(assert (=> 
+  c_3_1_9 
+  (or 
+    c_2_1_10 
+    c_4_1_10 
+    c_3_2_10 
+  ) 
+)) 
+(assert (=> 
+  c_3_2_9 
+  (or 
+    c_2_2_10 
+    c_4_2_10 
+    c_3_1_10 
+    c_3_3_10 
+  ) 
+)) 
+(assert (=> 
+  c_3_3_9 
+  (or 
+    c_2_3_10 
+    c_4_3_10 
+    c_3_2_10 
+    c_3_4_10 
+  ) 
+)) 
+(assert (=> 
+  c_3_4_9 
+  (or 
+    c_2_4_10 
+    c_4_4_10 
+    c_3_3_10 
+  ) 
+)) 
+(assert (=> 
+  c_4_1_9 
+  (or 
+    c_3_1_10 
+    c_4_2_10 
+  ) 
+)) 
+(assert (=> 
+  c_4_2_9 
+  (or 
+    c_3_2_10 
+    c_4_1_10 
+    c_4_3_10 
+  ) 
+)) 
+(assert (=> 
+  c_4_3_9 
+  (or 
+    c_3_3_10 
+    c_4_2_10 
+    c_4_4_10 
+  ) 
+)) 
+(assert (=> 
+  c_4_4_9 
+  (or 
+    c_3_4_10 
+    c_4_3_10 
+  ) 
+)) 
+(assert (=> 
+  c_1_1_10 
+  (or 
+    c_2_1_11 
+    c_1_2_11 
+  ) 
+)) 
+(assert (=> 
+  c_1_2_10 
+  (or 
+    c_2_2_11 
+    c_1_1_11 
+    c_1_3_11 
+  ) 
+)) 
+(assert (=> 
+  c_1_3_10 
+  (or 
+    c_2_3_11 
+    c_1_2_11 
+    c_1_4_11 
+  ) 
+)) 
+(assert (=> 
+  c_1_4_10 
+  (or 
+    c_2_4_11 
+    c_1_3_11 
+  ) 
+)) 
+(assert (=> 
+  c_2_1_10 
+  (or 
+    c_1_1_11 
+    c_3_1_11 
+    c_2_2_11 
+  ) 
+)) 
+(assert (=> 
+  c_2_2_10 
+  (or 
+    c_1_2_11 
+    c_3_2_11 
+    c_2_1_11 
+    c_2_3_11 
+  ) 
+)) 
+(assert (=> 
+  c_2_3_10 
+  (or 
+    c_1_3_11 
+    c_3_3_11 
+    c_2_2_11 
+    c_2_4_11 
+  ) 
+)) 
+(assert (=> 
+  c_2_4_10 
+  (or 
+    c_1_4_11 
+    c_3_4_11 
+    c_2_3_11 
+  ) 
+)) 
+(assert (=> 
+  c_3_1_10 
+  (or 
+    c_2_1_11 
+    c_4_1_11 
+    c_3_2_11 
+  ) 
+)) 
+(assert (=> 
+  c_3_2_10 
+  (or 
+    c_2_2_11 
+    c_4_2_11 
+    c_3_1_11 
+    c_3_3_11 
+  ) 
+)) 
+(assert (=> 
+  c_3_3_10 
+  (or 
+    c_2_3_11 
+    c_4_3_11 
+    c_3_2_11 
+    c_3_4_11 
+  ) 
+)) 
+(assert (=> 
+  c_3_4_10 
+  (or 
+    c_2_4_11 
+    c_4_4_11 
+    c_3_3_11 
+  ) 
+)) 
+(assert (=> 
+  c_4_1_10 
+  (or 
+    c_3_1_11 
+    c_4_2_11 
+  ) 
+)) 
+(assert (=> 
+  c_4_2_10 
+  (or 
+    c_3_2_11 
+    c_4_1_11 
+    c_4_3_11 
+  ) 
+)) 
+(assert (=> 
+  c_4_3_10 
+  (or 
+    c_3_3_11 
+    c_4_2_11 
+    c_4_4_11 
+  ) 
+)) 
+(assert (=> 
+  c_4_4_10 
+  (or 
+    c_3_4_11 
+    c_4_3_11 
+  ) 
+)) 
+(assert (=> 
+  c_1_1_11 
+  (or 
+    c_2_1_12 
+    c_1_2_12 
+  ) 
+)) 
+(assert (=> 
+  c_1_2_11 
+  (or 
+    c_2_2_12 
+    c_1_1_12 
+    c_1_3_12 
+  ) 
+)) 
+(assert (=> 
+  c_1_3_11 
+  (or 
+    c_2_3_12 
+    c_1_2_12 
+    c_1_4_12 
+  ) 
+)) 
+(assert (=> 
+  c_1_4_11 
+  (or 
+    c_2_4_12 
+    c_1_3_12 
+  ) 
+)) 
+(assert (=> 
+  c_2_1_11 
+  (or 
+    c_1_1_12 
+    c_3_1_12 
+    c_2_2_12 
+  ) 
+)) 
+(assert (=> 
+  c_2_2_11 
+  (or 
+    c_1_2_12 
+    c_3_2_12 
+    c_2_1_12 
+    c_2_3_12 
+  ) 
+)) 
+(assert (=> 
+  c_2_3_11 
+  (or 
+    c_1_3_12 
+    c_3_3_12 
+    c_2_2_12 
+    c_2_4_12 
+  ) 
+)) 
+(assert (=> 
+  c_2_4_11 
+  (or 
+    c_1_4_12 
+    c_3_4_12 
+    c_2_3_12 
+  ) 
+)) 
+(assert (=> 
+  c_3_1_11 
+  (or 
+    c_2_1_12 
+    c_4_1_12 
+    c_3_2_12 
+  ) 
+)) 
+(assert (=> 
+  c_3_2_11 
+  (or 
+    c_2_2_12 
+    c_4_2_12 
+    c_3_1_12 
+    c_3_3_12 
+  ) 
+)) 
+(assert (=> 
+  c_3_3_11 
+  (or 
+    c_2_3_12 
+    c_4_3_12 
+    c_3_2_12 
+    c_3_4_12 
+  ) 
+)) 
+(assert (=> 
+  c_3_4_11 
+  (or 
+    c_2_4_12 
+    c_4_4_12 
+    c_3_3_12 
+  ) 
+)) 
+(assert (=> 
+  c_4_1_11 
+  (or 
+    c_3_1_12 
+    c_4_2_12 
+  ) 
+)) 
+(assert (=> 
+  c_4_2_11 
+  (or 
+    c_3_2_12 
+    c_4_1_12 
+    c_4_3_12 
+  ) 
+)) 
+(assert (=> 
+  c_4_3_11 
+  (or 
+    c_3_3_12 
+    c_4_2_12 
+    c_4_4_12 
+  ) 
+)) 
+(assert (=> 
+  c_4_4_11 
+  (or 
+    c_3_4_12 
+    c_4_3_12 
+  ) 
+)) 
+(assert (=> 
+  c_1_1_12 
+  (or 
+    c_2_1_13 
+    c_1_2_13 
+  ) 
+)) 
+(assert (=> 
+  c_1_2_12 
+  (or 
+    c_2_2_13 
+    c_1_1_13 
+    c_1_3_13 
+  ) 
+)) 
+(assert (=> 
+  c_1_3_12 
+  (or 
+    c_2_3_13 
+    c_1_2_13 
+    c_1_4_13 
+  ) 
+)) 
+(assert (=> 
+  c_1_4_12 
+  (or 
+    c_2_4_13 
+    c_1_3_13 
+  ) 
+)) 
+(assert (=> 
+  c_2_1_12 
+  (or 
+    c_1_1_13 
+    c_3_1_13 
+    c_2_2_13 
+  ) 
+)) 
+(assert (=> 
+  c_2_2_12 
+  (or 
+    c_1_2_13 
+    c_3_2_13 
+    c_2_1_13 
+    c_2_3_13 
+  ) 
+)) 
+(assert (=> 
+  c_2_3_12 
+  (or 
+    c_1_3_13 
+    c_3_3_13 
+    c_2_2_13 
+    c_2_4_13 
+  ) 
+)) 
+(assert (=> 
+  c_2_4_12 
+  (or 
+    c_1_4_13 
+    c_3_4_13 
+    c_2_3_13 
+  ) 
+)) 
+(assert (=> 
+  c_3_1_12 
+  (or 
+    c_2_1_13 
+    c_4_1_13 
+    c_3_2_13 
+  ) 
+)) 
+(assert (=> 
+  c_3_2_12 
+  (or 
+    c_2_2_13 
+    c_4_2_13 
+    c_3_1_13 
+    c_3_3_13 
+  ) 
+)) 
+(assert (=> 
+  c_3_3_12 
+  (or 
+    c_2_3_13 
+    c_4_3_13 
+    c_3_2_13 
+    c_3_4_13 
+  ) 
+)) 
+(assert (=> 
+  c_3_4_12 
+  (or 
+    c_2_4_13 
+    c_4_4_13 
+    c_3_3_13 
+  ) 
+)) 
+(assert (=> 
+  c_4_1_12 
+  (or 
+    c_3_1_13 
+    c_4_2_13 
+  ) 
+)) 
+(assert (=> 
+  c_4_2_12 
+  (or 
+    c_3_2_13 
+    c_4_1_13 
+    c_4_3_13 
+  ) 
+)) 
+(assert (=> 
+  c_4_3_12 
+  (or 
+    c_3_3_13 
+    c_4_2_13 
+    c_4_4_13 
+  ) 
+)) 
+(assert (=> 
+  c_4_4_12 
+  (or 
+    c_3_4_13 
+    c_4_3_13 
+  ) 
+)) 
+(assert (=> 
+  c_1_1_13 
+  (or 
+    c_2_1_14 
+    c_1_2_14 
+  ) 
+)) 
+(assert (=> 
+  c_1_2_13 
+  (or 
+    c_2_2_14 
+    c_1_1_14 
+    c_1_3_14 
+  ) 
+)) 
+(assert (=> 
+  c_1_3_13 
+  (or 
+    c_2_3_14 
+    c_1_2_14 
+    c_1_4_14 
+  ) 
+)) 
+(assert (=> 
+  c_1_4_13 
+  (or 
+    c_2_4_14 
+    c_1_3_14 
+  ) 
+)) 
+(assert (=> 
+  c_2_1_13 
+  (or 
+    c_1_1_14 
+    c_3_1_14 
+    c_2_2_14 
+  ) 
+)) 
+(assert (=> 
+  c_2_2_13 
+  (or 
+    c_1_2_14 
+    c_3_2_14 
+    c_2_1_14 
+    c_2_3_14 
+  ) 
+)) 
+(assert (=> 
+  c_2_3_13 
+  (or 
+    c_1_3_14 
+    c_3_3_14 
+    c_2_2_14 
+    c_2_4_14 
+  ) 
+)) 
+(assert (=> 
+  c_2_4_13 
+  (or 
+    c_1_4_14 
+    c_3_4_14 
+    c_2_3_14 
+  ) 
+)) 
+(assert (=> 
+  c_3_1_13 
+  (or 
+    c_2_1_14 
+    c_4_1_14 
+    c_3_2_14 
+  ) 
+)) 
+(assert (=> 
+  c_3_2_13 
+  (or 
+    c_2_2_14 
+    c_4_2_14 
+    c_3_1_14 
+    c_3_3_14 
+  ) 
+)) 
+(assert (=> 
+  c_3_3_13 
+  (or 
+    c_2_3_14 
+    c_4_3_14 
+    c_3_2_14 
+    c_3_4_14 
+  ) 
+)) 
+(assert (=> 
+  c_3_4_13 
+  (or 
+    c_2_4_14 
+    c_4_4_14 
+    c_3_3_14 
+  ) 
+)) 
+(assert (=> 
+  c_4_1_13 
+  (or 
+    c_3_1_14 
+    c_4_2_14 
+  ) 
+)) 
+(assert (=> 
+  c_4_2_13 
+  (or 
+    c_3_2_14 
+    c_4_1_14 
+    c_4_3_14 
+  ) 
+)) 
+(assert (=> 
+  c_4_3_13 
+  (or 
+    c_3_3_14 
+    c_4_2_14 
+    c_4_4_14 
+  ) 
+)) 
+(assert (=> 
+  c_4_4_13 
+  (or 
+    c_3_4_14 
+    c_4_3_14 
+  ) 
+)) 
+(assert (=> 
+  c_1_1_14 
+  (or 
+    c_2_1_15 
+    c_1_2_15 
+  ) 
+)) 
+(assert (=> 
+  c_1_2_14 
+  (or 
+    c_2_2_15 
+    c_1_1_15 
+    c_1_3_15 
+  ) 
+)) 
+(assert (=> 
+  c_1_3_14 
+  (or 
+    c_2_3_15 
+    c_1_2_15 
+    c_1_4_15 
+  ) 
+)) 
+(assert (=> 
+  c_1_4_14 
+  (or 
+    c_2_4_15 
+    c_1_3_15 
+  ) 
+)) 
+(assert (=> 
+  c_2_1_14 
+  (or 
+    c_1_1_15 
+    c_3_1_15 
+    c_2_2_15 
+  ) 
+)) 
+(assert (=> 
+  c_2_2_14 
+  (or 
+    c_1_2_15 
+    c_3_2_15 
+    c_2_1_15 
+    c_2_3_15 
+  ) 
+)) 
+(assert (=> 
+  c_2_3_14 
+  (or 
+    c_1_3_15 
+    c_3_3_15 
+    c_2_2_15 
+    c_2_4_15 
+  ) 
+)) 
+(assert (=> 
+  c_2_4_14 
+  (or 
+    c_1_4_15 
+    c_3_4_15 
+    c_2_3_15 
+  ) 
+)) 
+(assert (=> 
+  c_3_1_14 
+  (or 
+    c_2_1_15 
+    c_4_1_15 
+    c_3_2_15 
+  ) 
+)) 
+(assert (=> 
+  c_3_2_14 
+  (or 
+    c_2_2_15 
+    c_4_2_15 
+    c_3_1_15 
+    c_3_3_15 
+  ) 
+)) 
+(assert (=> 
+  c_3_3_14 
+  (or 
+    c_2_3_15 
+    c_4_3_15 
+    c_3_2_15 
+    c_3_4_15 
+  ) 
+)) 
+(assert (=> 
+  c_3_4_14 
+  (or 
+    c_2_4_15 
+    c_4_4_15 
+    c_3_3_15 
+  ) 
+)) 
+(assert (=> 
+  c_4_1_14 
+  (or 
+    c_3_1_15 
+    c_4_2_15 
+  ) 
+)) 
+(assert (=> 
+  c_4_2_14 
+  (or 
+    c_3_2_15 
+    c_4_1_15 
+    c_4_3_15 
+  ) 
+)) 
+(assert (=> 
+  c_4_3_14 
+  (or 
+    c_3_3_15 
+    c_4_2_15 
+    c_4_4_15 
+  ) 
+)) 
+(assert (=> 
+  c_4_4_14 
+  (or 
+    c_3_4_15 
+    c_4_3_15 
+  ) 
+)) 
+
+(check-sat) 
+(get-model) 
